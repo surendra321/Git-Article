@@ -1,0 +1,4 @@
+<apex:page controller="listclss">
+	<apex:outputtext >hello</apex:outputtext>
+
+</apex:page>

@@ -1,0 +1,33 @@
+<apex:page controller="jQuerycls">
+    <apex:includeScript value="{!URLFOR($Resource.jQuery_ui,'jquery_ui/js/jquery-1.9.1.js')}"  />
+    <apex:includeScript value="{!URLFOR($Resource.jQuery_ui,'jquery_ui/js/jquery-ui-1.10.3.custom.js')}"  />
+    <apex:includeScript value="{!URLFOR($Resource.jQuery_ui,'jquery_ui/js/jquery-ui-1.10.3.custom.min.js')}"  />
+    <apex:includeScript value="{!URLFOR($Resource.jQuery_min,'jQuery_min/jquery.treeview.edit.js')}"  />    
+    <apex:includeScript value="{!URLFOR($Resource.jQuery_min,'jQuery_min/jquery.treeview.js')}"  />   
+    <apex:stylesheet value="{!URLFOR($Resource.jQuery_min,'jQuery_min/jquery.treeview.css')}"  />  
+    <script>
+      $(document).ready(function(){
+        $("#browser").treeview();
+      });
+    </script>
+    <apex:form >
+        <apex:pageBlock >                 
+          <ul class="filetree" id="browser" >
+            <apex:repeat value="{!lst}" var="acc">
+            <li class="closed"><span class="folder">{!acc.name}</span>
+                <ul>
+                    <apex:repeat value="{!acc.contacts}" var="c">
+                    <li class="closed"><span class="folder">{!c.name}</span>
+                        <ul class="filetree,closed">
+                            <li ><span class="file">1</span></li>
+                            <li ><span class="file">2</span></li>                            
+                        </ul>
+                    </li>
+                    </apex:repeat>
+                </ul>
+             </li>
+             </apex:repeat>
+           </ul>
+        </apex:pageBlock>
+    </apex:form>  
+</apex:page>

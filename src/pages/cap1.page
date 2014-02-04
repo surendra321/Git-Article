@@ -1,0 +1,25 @@
+<apex:page standardController="Account" showHeader="true" sidebar="false">
+    <apex:form >
+        <apex:pageblock title="account edit">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="save" action="{!save}"/>
+                <apex:commandButton value="save&new" action="{!quicksave}"/>
+                <apex:commandButton value="cancel" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Account information">
+                <apex:inputfield value="{!Account.name}"/>
+                <apex:inputfield value="{!Account.phone}"/>
+                <apex:inputfield value="{!Account.type}"/>
+                <apex:inputfield value="{!Account.parentid}"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Address information">
+                <apex:inputfield value="{!Account.BillingCity}"/>
+                <apex:inputfield value="{!Account.BillingCountry}"/>
+                <apex:inputfield value="{!Account.BillingPostalCode}"/>
+              
+            </apex:pageBlockSection>
+        
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

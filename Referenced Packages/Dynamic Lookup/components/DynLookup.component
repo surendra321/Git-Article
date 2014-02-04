@@ -1,0 +1,102 @@
+<apex:component controller="dynl.DynLookup" selfClosing="true" access="global" id="DynComp">
+    
+    <apex:stylesheet value="{!URLFOR($Resource.dynl__css, 'LovCss/skin.css')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.dynl__css, 'LovCss/yahoo-dom-event.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.dynl__css,'LovCss/container-min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.dynl__css, 'LovCss/animation-min.js')}"/>
+
+   <script>
+        YAHOO.namespace("force.com");
+        
+        YAHOO.force.com.showMe{!ComponentIdentifier} = function()
+                                 {
+                                    document.getElementById("mypanel{!ComponentIdentifier}").style.display = "block";
+                                    YAHOO.force.com.myDialog{!ComponentIdentifier}.show();                                    
+                                 }                                                                                                                          
+
+        YAHOO.force.com.hideMe{!ComponentIdentifier} = function()
+                                 {
+                                   YAHOO.force.com.myDialog{!ComponentIdentifier}.hide();                                                                                                         
+                                 }                                                                                                   
+                                
+        YAHOO.force.com.init = function()
+                               {
+                                  document.body.className = document.body.className+" yui-skin-sam";
+                                   
+                                  YAHOO.force.com.myDialog{!ComponentIdentifier} = new YAHOO.widget.Panel(
+                                                                        "mypanel{!ComponentIdentifier}",
+                                                                         { width       : 300,                                                                           
+                                                                           visible     : false,
+                                                                           xy          : [350,50],
+                                                                           draggable   : true,
+                                                                           close       : true,
+                                                                           modal       : true,                                                                           
+                                                                           zindex      : 200,
+                                                                           effect      : { effect:YAHOO.widget.ContainerEffect.FADE,
+                                                                                           duration: 0.10
+                                                                                         }
+                                                                          }
+                                                                        );
+                                  YAHOO.force.com.myDialog{!ComponentIdentifier}.render(document.body);                                                                                                    
+                       
+                               }
+        
+        YAHOO.util.Event.addListener(window,"load",YAHOO.force.com.init);                                                                          
+    </script>
+
+    <apex:attribute name="fieldLabelName" description="This is the Field Label Name" type="String" access="global" required="true" />        
+    <apex:attribute name="LovName" description="This is the name, in which he saved his Query" required="true" access="global" type="Object" assignTo="{!LovName}"/>
+    <apex:attribute name="ComponentIdentifier" description="This is the Field Label Name" type="String" access="global" assignTo="{!ComponentIdentifier}" />
+    <apex:panelGroup id="appblk">
+        <apex:outputLabel value="{!fieldLabelName}" style="vertical-align :middle" for="text"/> &nbsp;
+        
+        <apex:outputPanel id="tex">
+            <apex:inputText id="text" value="{!TextName}" style="vertical-align :bottom; width: 120px"/> &nbsp; 
+            <apex:inputHidden id="secondtext" value="{!TextNameId}" /> 
+            <apex:inputHidden id="textid" value="{!TextNameId2}" />      
+        </apex:outputPanel>
+        <apex:commandButton value="LOV" image="{!$Resource.dynl__searchIcon}" rerender="popupblk1, labelId"
+              style="height:13px;vertical-align:bottom" oncomplete="YAHOO.force.com.showMe{!ComponentIdentifier}();" >
+        </apex:commandButton>                             
+    </apex:panelGroup>
+
+        <div  id="mypanel{!ComponentIdentifier}" style="display: none" >
+            <div class="hd">
+              <apex:outputText value="{!PopupWindowTitle}"/>
+            </div>
+            <div style="height: 400px; width: 300px; overflow: auto;">            
+                <apex:pageBlock id="popupblk1">
+                   <apex:outputpanel id="keyvalue1">
+                       <apex:pageBlockTable columns="2"  value="{!ListOfVals}" var="item" id="Table">
+                           <apex:column >                      
+                               <apex:commandLink oncomplete="YAHOO.force.com.hideMe{!ComponentIdentifier}();" rendered="{!grpby1}" rerender="tex" > 
+                                   <apex:outputText value="{!item[firstval]}" />                                    
+                                    <apex:param name="lky1" value="{!item[firstval]}" assignTo="{!TextName}"/>
+                                    <apex:param name="lky2" value="{!item[secondval]}" assignTo="{!TextNameId}"/>                                    
+                                    <apex:param name="lky3" value="{!item['id']}" assignTo="{!TextNameId2}"  />                                   
+                               </apex:commandLink>
+                               <apex:commandLink oncomplete="YAHOO.force.com.hideMe{!ComponentIdentifier}();" rendered="{!grpby2}" rerender="tex" > 
+                                   <apex:outputText value="{!item[firstval]}" />                                    
+                                    <apex:param name="lky4" value="{!item[firstval]}" assignTo="{!TextName}"/>
+                                    <apex:param name="lky5" value="{!item[secondval]}" assignTo="{!TextNameId}"/>                                                                        
+                               </apex:commandLink>                                
+                               <apex:facet name="header">{!firstColumn}</apex:facet>     
+                          </apex:column>
+                          
+                         <apex:column >                                           
+                               <apex:outputText value="{!item[secondval]}" />                                                 
+                               <apex:facet name="header">{!secondColumn}</apex:facet>     
+                          </apex:column>
+                          
+                       </apex:pageBlockTable> <br />
+                   </apex:outputpanel>
+                   <apex:variable value="{!TextName}" var="text"/>
+                   <apex:outputlabel rendered="{!IF(text==null,FALSE,TRUE)}" value="Note: This lookup has '{!TextName}' , the values shown are only that contain '{!TextName}'" />
+                   <div style="text-align : right;">                    
+                       <apex:commandButton value="Cancel" immediate="true" oncomplete="YAHOO.force.com.hideMe{!ComponentIdentifier}();" />
+                   </div>
+                </apex:pageBlock>                             
+            </div>
+        </div> 
+
+</apex:component>

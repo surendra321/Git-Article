@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>user</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>users</value>
+    </caseValues>
+    <fields>
+        <label><!-- hiring manager --></label>
+        <name>hiring_manager__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>26.0</apiVersion>
+    <description>This page provides user with a nested view of all Asset headers and related Account Assets. This the home page that is displayed for the Account Asset Tab</description>
+    <label>AssetHeaderListPage</label>
+</ApexPage>

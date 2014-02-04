@@ -1,0 +1,28 @@
+<apex:page standardController="Account" extensions="multicontactrelationship">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:sectionHeader title="contacts"/>
+            <apex:commandButton value="contact relationship"/>
+            <apex:pageBlockTable value="{!conrec}" var="con">
+                <apex:column headerValue="Action" >
+                    <apex:facet name="header">Action</apex:facet>
+                    <apex:inputCheckbox ></apex:inputCheckbox>
+                </apex:column>
+                
+                <apex:column >
+                    <apex:facet name="header">name</apex:facet>
+                    <apex:outputText value="{!con.name}"/>
+                </apex:column>
+               <!--<apex:column value="{!con.name}"/>-->
+                <apex:column >
+                    <apex:facet name="header">phone</apex:facet>
+                    <apex:outputText value="{!con.phone}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Email</apex:facet>
+                    <apex:outputText value="{!con.Email}"/>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,17 @@
+<apex:page standardController="book__c" sidebar="false" extensions="mystbookex" >
+<apex:form >
+registration page step1
+<apex:pageBlock >
+<apex:panelGrid columns="3" >
+  <apex:outputText >bookname</apex:outputText>
+  <apex:inputtext value="{!book__c.name}" /><br/>
+  
+  <apex:outputText >bookprice</apex:outputText>
+  <apex:inputtext value="{!book__c.price__c}" /><br/>
+  </apex:panelGrid>
+
+<apex:commandButton action="{!next}" value="next"/>
+
+</apex:pageBlock>
+</apex:form>  
+</apex:page>

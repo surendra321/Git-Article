@@ -1,0 +1,6 @@
+<apex:page standardController="Employee__c">
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations </h1>
+  This is your new Page: empnew : This is Employee controller
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

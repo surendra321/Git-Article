@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>department</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>departments</value>
+    </caseValues>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>contact__c</name>
+        <relationshipLabel><!-- departments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- dept name --></label>
+        <name>dept_name__c</name>
+    </fields>
+    <fields>
+        <label><!-- doj --></label>
+        <name>doj__c</name>
+    </fields>
+    <fields>
+        <label><!-- emps --></label>
+        <name>emps__c</name>
+    </fields>
+    <fields>
+        <label><!-- location --></label>
+        <name>location__c</name>
+    </fields>
+    <fields>
+        <label><!-- noemps --></label>
+        <name>noemps__c</name>
+    </fields>
+    <fields>
+        <label><!-- salary --></label>
+        <name>salary__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LeadSharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <ownerRules>
+        <fullName>lds</fullName>
+        <sharedTo>
+            <roleAndSubordinates>VPNorthAmericanSales</roleAndSubordinates>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>SVPHumanResources</roleAndSubordinates>
+        </sharedFrom>
+        <leadAccessLevel>Edit</leadAccessLevel>
+        <name>lds</name>
+    </ownerRules>
+</LeadSharingRules>

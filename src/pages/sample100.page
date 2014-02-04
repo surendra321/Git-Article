@@ -1,0 +1,9 @@
+<apex:page >
+    <apex:form >
+        <c:samplecomponent identifier="CI1" />
+        <c:samplecomponent identifier="CI1" />
+    </apex:form> 
+    <apex:form >
+        <c:samplecomponent identifier="CI1" />
+    </apex:form>
+</apex:page>

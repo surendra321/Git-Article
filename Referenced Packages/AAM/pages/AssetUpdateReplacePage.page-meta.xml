@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>26.0</apiVersion>
+    <description>This page provides the user with the UI to perform the action of replacing an existing component with a new one for an Account asset</description>
+    <label>AssetUpdateReplacePage</label>
+</ApexPage>

@@ -1,0 +1,6 @@
+<apex:page >
+<apex:form >
+  <c:comptest name="hari" Number="0001" />
+  <c:comptest name="hari" Number="0001" />
+</apex:form>  
+</apex:page>

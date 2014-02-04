@@ -1,0 +1,7 @@
+<apex:page >
+    <script>
+        window.onload=function(){
+        parent.document.location.href="/003?fcf=00B90000003fqco";
+        }
+    </script>
+</apex:page>

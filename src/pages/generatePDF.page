@@ -1,0 +1,336 @@
+<apex:page StandardController="Quote" extensions="generatePDFcls1" renderAs="pdf">
+
+<head>
+
+    <style type="text/css">
+        .calign
+        {
+            text-align: left;
+        }
+        
+        .halign
+        {
+            text-align: center;
+        }
+        
+        .theadl
+        {
+            text-align: center;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+        
+        .theadm
+        {
+            border-right: 1px solid black;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+        
+        .bodyl
+        {
+            text-align: center;
+            border-right: 1px solid black;
+            border-left: 1px solid black;
+        }
+        
+        .bodym
+        {
+            text-align: left;
+            border-right: 1px solid black;
+        }
+        
+        .bodymc
+        {
+            text-align: center;
+            border-right: 1px solid black;
+        }
+        
+        .footl
+        {
+            border-bottom: 1px solid black;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+        }
+        
+        .footm
+        {
+            border-bottom: 1px solid black;
+            border-right: 1px solid black;
+        }
+        
+        .body
+        {
+            font-family: Arial Unicode MS;
+        }
+        
+        .break
+        {
+            page-break-before: always;
+        }
+        
+        .fontsize1
+        {
+            font: 17px Arial;
+        }
+        
+        .fontsize2
+        {
+            font: 16px Arial;
+        }
+        .companyAddressFont
+        {
+            font-family: Arial Rounded MT Bold;
+            font-weight: bold;
+            font-size: 16px;
+            
+        }
+        .quoteHeaderLabel
+        {
+            font-family: Arial Rounded MT Bold;
+            background-color: #DCDCDC;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100px;
+
+        }
+        .quoteHeaderData
+        {
+            font-family: Arial Rounded MT Bold;
+            font-size: 16px;
+        }
+        .billShipAddress
+        {
+            font-family: Arial Rounded MT Bold;
+            border-style: solid;
+            border-width: 1px;
+            font-size: 16px;
+            margin-top: 5px;
+            margin-bottom: 30px;
+        }
+        
+        .billShipLabel
+        {
+            margin-top: 30px;
+            font-family: Arial Rounded MT Bold;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .quoteTableLabel
+        {
+            font-family: Arial Rounded MT Bold;
+            background-color: #DCDCDC;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .quoteTableData
+        {
+            font-family: Arial Rounded MT Bold;
+            font-size: 14px;
+        }
+        .quoteComment
+        {
+            font-family: Arial Rounded MT Bold;
+            font-size: 13px;
+        }
+
+@page
+  {
+
+    margin : .2in;
+    /* Landscape orientation 
+    size:landscape;*/
+
+    /* Put page numbers in the bottom right corner of each
+    page in the pdf document. */
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages)  ;
+    }
+  }
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <table border="0" width="100%">
+        <tr width="100%">
+            <td valign="top" align="left" width="100%">
+                <apex:image id="theImage2" value="{!$Resource.pdf}" width="800" height="100"/>
+            </td>
+         </tr>
+         <tr >
+            <td >
+               <div class="companyAddressFont">
+                    SteadFast Global, LLC<br />
+                    1110 Centre Pointe Curve,<br /> 
+                    Suite 100<br />
+                    Mendota Heights MN 55120<br />
+                </div>
+             </td>
+
+             <td >
+                <div style="float:right"> 
+                    <table cellspacing="0" border="1">
+                        <tr> 
+                            <th>
+                                 <div class="quoteHeaderLabel" >
+                                    Quote 
+                                 </div>
+                            </th>
+                            <td>
+                                <div class="quoteHeaderData">
+                                    {!QuoteName}
+                                </div>
+                            </td>
+                        </tr>
+                        <tr> 
+                            <th>
+                                 <div class="quoteHeaderLabel" >
+                                    Date
+                                 </div>
+                            </th> 
+                            <td>
+                                 <div class="quoteHeaderData">
+                                    <apex:outputText value=" {0,date,MM/dd/yyyy}">
+                                            <apex:param value="{!ExpirationDt}"/>
+                                     </apex:outputText> 
+                                 </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div> 
+             </td>
+        </tr>
+    </table>
+
+
+    <table cellspacing="0"  cellpadding="0" border="0" width="100%">
+        <tr>
+            <td>
+                <div class="billShipLabel">
+                    Bill To:
+                </div>
+            
+                 <div class="billShipAddress" style="margin-right:50px">
+                   <b>{!Accountname}</b><br/>
+                    {!BStreet}<br/>
+                    {!BCity}<br/>
+                    {!BState}<br/>
+                    {!BCountry}
+                 </div>
+               </td>
+              <!-- <td>
+               </td> -->
+               <td>
+            
+                  <div class="billShipLabel">
+                    Note:The Quote object represents a quote,<br/>
+                    which is a record showing proposed <br/>
+                    prices for products and services.
+                  </div>
+            
+              </td>
+         </tr>
+      </table>
+    
+    <table cellspacing="0" cellpadding="2" border="1" width="100%">
+        <tr>
+                <th> 
+                    <div class="quoteTableLabel">
+                        Customer ID 
+                    </div>
+                </th>
+                <th> 
+                    <div class="quoteTableLabel">
+                        Payment Terms 
+                    </div>
+                </th>
+       </tr>
+       <tr>
+            <td> 
+                <div class="quoteTableData">
+                    {!AccountID}
+                </div>
+            </td>
+            <td>
+                <div class="quoteTableData">
+                    Net 30 Days
+                </div>
+            </td>
+         </tr>
+         
+         <tr>
+                <th> 
+                    <div class="quoteTableLabel">
+                        Sales Representative ID
+                    </div>
+                </th>
+                <th> 
+                    <div class="quoteTableLabel">
+                        Quote Due Date 
+                    </div>
+                </th>
+       </tr>
+       <tr>
+            <td> 
+                <div class="quoteTableData">
+                    {!AccountID}
+                </div>
+            </td>
+            <td>
+                <div class="quoteTableData">
+                    {!ExpirationDt}
+                </div>
+            </td>
+         </tr>
+    </table>
+   <br/>
+   <table cellspacing="0" cellpadding="2" border="1" width="100%">
+        <tr>
+                <th> 
+                    <div class="quoteTableLabel">
+                        Quantity
+                    </div>
+                </th>
+                <th> 
+                    <div class="quoteTableLabel">
+                        Item Number
+                    </div>
+                </th>
+                <th> 
+                    <div class="quoteTableLabel">
+                        Description 
+                    </div>
+                </th>
+           </tr>
+         
+         <!--<apex:repeat value="{!ListQuotelineitems}" var="listitem"> 
+            <tr>
+                <td> 
+                    <div class="quoteTableData" align="center">
+                        {!listitem.o2bc__Quantity__c }
+                    </div>
+                </td>
+                <td>
+                    <div class="quoteTableData">
+    
+                        {!IF(listitem.o2bc__rented__c,itm_nam,listitem.o2bc__Item__r.Name)}
+                    </div>
+                </td>
+                <td> 
+                    <div class="quoteTableData">
+        
+                        {!IF(listitem.o2bc__rented__c,itm_desc,listitem.o2bc__Item__r.o2bc__Description__c)}
+                    </div>
+                </td>
+            </tr>-->
+                    
+      </table>          
+   
+    </body>
+</apex:page>

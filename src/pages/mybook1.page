@@ -1,0 +1,39 @@
+<apex:page controller="mybookclass" sidebar="false">
+  <apex:form >
+  Registration form
+  <apex:pageBlock >
+  <apex:panelGrid columns="3" >
+  <apex:outputText >bookname</apex:outputText>
+  <apex:inputtext value="{!name}" /><br/>
+  
+  <apex:outputText >bookprice</apex:outputText>
+  <apex:inputtext value="{!price}" /><br/>
+  </apex:panelGrid>
+  
+  <!--  <apex:commandButton action="{!next}" value="next"/>-->
+  <script type="text/javascript">
+function abortImage()
+{
+alert('Error: Loading of the image was aborted!')
+}
+</script>
+  
+  
+<apex:image value="{!$Resource.health2}" width="30" height="30" onclick="abortImage()"/>
+  
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>
+
+
+<!--
+<script type="text/javascript">
+function abortImage()
+{
+alert('Error: Loading of the image was aborted!')
+}
+</script>
+  
+  
+<apex:image value="{!$Resource.health2}" width="30" height="30" onclick="abortImage()"/>
+-->

@@ -1,0 +1,12 @@
+<apex:page id="thePage" controller="includetag1cls">
+    <apex:form >
+        <b><apex:outputText value="This is the Feed Back Page page."/></b><br/>
+        <!--<apex:include pageName="Sourcepage" />-->
+        <apex:include pageName="include"/> 
+        <apex:outputLabel ><b>How satisfied were you with:</b></apex:outputLabel><br/>
+        <apex:outputLabel >To what extent were the course objectives met: </apex:outputLabel>
+        <apex:inputText /><br/>
+        <apex:outputLabel >How useful was the presentation material: </apex:outputLabel>
+        <apex:inputText />
+    </apex:form>                     
+</apex:page>

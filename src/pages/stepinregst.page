@@ -1,0 +1,69 @@
+<apex:page controller="stepinregstcls" sidebar="false" showHeader="false">
+    <apex:composition template="stepintemplate">
+    <apex:define name="body">
+    <center>
+    
+    <script type="text/javascript">
+      var uname1='';
+      var fn1;
+      //alert(uname1);
+      function authenticate(){ 
+      //alert(uname1.value)1; 
+          if(fn1.value=='' || fn1.value==null)
+          {
+              alert('Enter First name');
+              fn1.focus();
+              return true;
+          }  
+          if(psw1.value=='' || psw1.value==null)
+          {
+              alert('Enter password');
+              psw1.focus();
+              return true;
+          }    
+          if(uname1.value== ''||uname1.value== null){
+              alert('Please Enter Username');
+              uname1.focus();
+             return true;
+          }
+          //authenticate1();
+      }
+    </script>
+    <apex:form >
+        <apex:outputText > <b>Create New User:</b> </apex:outputText><br/>
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="2">
+                First Name:
+                <apex:inputText value="{!fname}" id="fn"/>
+    <script>
+        fn1=document.getElementById("{!$Component.fn}");
+    </script>
+                Last Name:
+                <apex:inputText value="{!lname}"/>
+                Create your stepin Userid:
+                <apex:inputText id="un" value="{!uname}" /><br/>
+                Create your stepin Password:
+                <apex:inputsecret id="password" value="{!password}"/><br/>
+                Mobile:
+                <apex:inputText id="mobile" value="{!mobile}"/>
+                e-mail:
+                <apex:inputtext value="{!email}"/>
+                address:
+                <apex:inputTextarea value="{!adds}"/>
+                occupation:
+                <apex:inputtext value="{!occup}"/>
+                <center><apex:commandButton value="Submit" onclick="authenticate();" action="{!Submit}" /> </center>
+                 <b><apex:commandLink value="Go to Home Page" action="{!Home}" Style="Color:Green" /></b>    
+    <script>
+        uname1=document.getElementById("{!$Component.un}");
+        psw1=document.getElementById("{!$Component.password}");
+        
+    </script>
+<!--<apex:actionFunction name="authenticate1" action="{!Submit}"/>-->
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    </center>
+    </apex:define>
+    </apex:composition>
+</apex:page>

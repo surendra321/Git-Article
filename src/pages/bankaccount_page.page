@@ -1,0 +1,47 @@
+<apex:page showHeader="false" sidebar="false" controller="bankaccountclass" >
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+            <apex:panelGrid columns="2">
+               <apex:outputText >enter balence</apex:outputText>
+               <apex:pageBlockSectionItem >
+                  <apex:inputText value="{!current_bal}"/>
+               </apex:pageBlockSectionItem>
+  
+  <apex:outputText >how much you want </apex:outputText>
+  <apex:pageBlockSectionItem >
+  <apex:inputText value="{!amount1}"/>
+  </apex:pageBlockSectionItem>
+  
+   <apex:outputText >how much u pay </apex:outputText>
+  <apex:pageBlockSectionItem >
+  <apex:inputText value="{!amount2}"/>
+  </apex:pageBlockSectionItem>
+  
+  <apex:pageBlockSectionItem >
+  <apex:commandButton action="{!withdraw}" value="withdra"/>
+   </apex:pageBlockSectionItem><br/>
+  
+  <apex:outputText >after withdraw balence is</apex:outputText>
+  <apex:pageBlockSectionItem >
+  <apex:inputText value="{!withdraw_res}"/>
+  </apex:pageBlockSectionItem>
+  
+  
+  
+    <apex:pageBlockSectionItem >
+  <apex:commandButton action="{!deposit}" value="deposit"/>
+  </apex:pageBlockSectionItem><br/>
+  
+   
+  
+   <apex:outputText >after deposit balence is</apex:outputText>
+  <apex:pageBlockSectionItem >
+  <apex:inputText value="{!deposit_res}"/>
+  </apex:pageBlockSectionItem>
+  
+ </apex:panelGrid> 
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

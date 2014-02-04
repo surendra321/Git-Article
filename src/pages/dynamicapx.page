@@ -1,0 +1,9 @@
+<apex:page controller="dynamicapxcls">
+  <apex:form >
+      <apex:pageblock >
+         <apex:pageblocktable value="{!strobj}" var="s">
+              <apex:column value="{!s}"/>
+          </apex:pageblocktable>
+      </apex:pageblock>
+  </apex:form>
+</apex:page>

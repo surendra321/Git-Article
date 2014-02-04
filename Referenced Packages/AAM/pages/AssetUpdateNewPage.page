@@ -1,0 +1,56 @@
+<apex:page standardController="AAM2__Asset_Update__c" tabStyle="AAM2__Asset_Update__c" extensions="AAM2.AssetUpdate">
+    <apex:outputPanel >
+        <apex:sectionHeader title="New Asset Update" subtitle="Select Asset Update Record Type" help="{!$Resource.AAM2__AssetUpdateHelp}"/>
+            <apex:form id="form1">
+                <apex:pageBlock id="pb1" title="Select Asset Update Record Type">
+                    <apex:pageBlockSection id="pbs1" columns="2">
+                        <apex:pageBlockSectionItem id="pbsi1">
+                            <apex:outputLabel for="rt" value="Record Type of New Record"/>
+                            <apex:outputPanel >
+                                <apex:selectList id="rt" size="1" title="3" value="{!rectype}">
+                                    <apex:param assignTo="{!rectype}" name="rectype" id="rectype" value="{!items}"/>
+                                    <apex:selectOptions value="{!items}"/>
+                                </apex:selectList>
+                            </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockButtons location="bottom">
+                        <apex:commandButton value="Continue" action="{!cont}"/>
+                        <apex:commandButton value="Cancel" action="{!cancel}"/>
+                    </apex:pageBlockButtons>
+            </apex:pageBlock>
+        </apex:form>
+    </apex:outputPanel>
+    <apex:outputPanel >
+        <apex:form id="form2">
+            <h2> <b> Available Asset Update Record Types </b> </h2>
+            <br> </br>
+            <table border="1">
+                <tr>
+                    <th> <b> Record Type </b> </th>
+                    <th> <b> Description </b> </th>
+                </tr>
+                <tr>
+                    <th> Install </th>
+                    <th> To install a new component to an Asset </th>
+                </tr>
+                <tr>
+                    <th> Uninstall </th>
+                    <th> To delete an existing component from an Asset </th>
+                </tr>
+                <tr>
+                    <th> Repair </th>
+                    <th> To update any repairs made to an existing component in an Asset </th>
+                </tr>
+                <tr>
+                    <th> Replace </th>
+                    <th> To replace an existing Component with a new component for an Asset </th>
+                </tr>
+                <tr>
+                    <th> Upgrade </th>
+                    <th> To upgrade an existing Component with a new one in an Asset  </th>
+                </tr>
+            </table>
+        </apex:form>
+    </apex:outputPanel>
+</apex:page>

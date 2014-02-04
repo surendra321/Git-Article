@@ -1,0 +1,155 @@
+<!-- This page is the UI for creating new Account Asset Configuration. This uses
+    the class AssetConfiguration as Extension to the standard controller -->
+<apex:page standardController="AAM2__AccountAssetConfiguration__c" extensions="AAM2.AssetConfiguration" tabStyle="AAM2__AccountAssetConfiguration__c">
+    <apex:pagemessages />
+<!-- These next few lines are style sheets and scripts from Yahoo API that 
+    enables us to create a pop-up window to display the table of values -->
+    <!--<apex:stylesheet value="http://yui.yahooapis.com/2.6.0/build/assets/skins/sam/skin.css" /> 
+    <apex:includescript value="http://yui.yahooapis.com/2.6.0/build/yahoo-dom-event/yahoo-dom-event.js" />
+    <apex:includescript value="http://yui.yahooapis.com/2.6.0/build/dragdrop/dragdrop-min.js" />
+    <apex:includescript value="http://yui.yahooapis.com/2.6.0/build/container/container-min.js"/>
+    <apex:includescript value="http://yui.yahooapis.com/2.6.0/build/animation/animation-min.js"/>-->
+    
+    <apex:stylesheet value="{!URLFOR($Resource.AAM2__css,'aam/skin.css')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.AAM2__css,'aam/yahoo-dom-event.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.AAM2__css,'aam/dragdrop-min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.AAM2__css,'aam/container-min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.AAM2__css,'aam/animation-min.js')}"/>
+    
+<!-- This script section provides the necessary style function and determines
+    when to show the pop-up component or when to hide it -->
+    <script>
+        YAHOO.namespace("force.com");
+        YAHOO.force.com.showcomponent = function() {
+            document.getElementById("mycomponent").style.display = "block";
+            YAHOO.force.com.mycomp.show();
+        }
+        YAHOO.force.com.hidecomponent = function() {
+            YAHOO.force.com.mycomp.hide();
+        }
+        YAHOO.force.com.init = function() {
+            document.body.className = document.body.className + " yui-skin-sam";
+            YAHOO.force.com.mycomp = new YAHOO.widget.Panel (
+                "mycomponent",
+                {
+                    width           :   "550px",
+                    visible         :   false,
+                    height          :   "150px",
+                    xy              :  [350,50],
+                    draggable       :   true,
+                    close           :   true,
+                    modal           :   true,
+                    //fixedCenter     :   true,
+                    zindex          :   40,
+                    effect          :   {effect:YAHOO.widget.ContainerEffect.FADE,duration:0.35} 
+                }
+            );
+            YAHOO.force.com.mycomp.render(document.body);
+        }
+        YAHOO.util.Event.addListener(window, "load", YAHOO.force.com.init);
+    </script>
+<!-- This Part is the UI design and layout -->
+    <apex:sectionHeader title="Account Asset Configuration Edit" subtitle="New Account Asset Configuration" help="{!$Resource.AAM2__AssetConfigurationHelp}"/>
+    <apex:outputPanel >
+        <apex:form id="form1">
+            <apex:pageBlock id="pb1" title="Account Asset Configuration Edit">
+                <apex:pageBlockSection id="pbs1" title="Installation Information" columns="2">
+                    <apex:pageBlockSectionItem id="pbsi9">
+                        <apex:outputLabel for="asset" value="Asset Code"/>
+                        <apex:outputField id="asset" value="{!AAM2__AccountAssetConfiguration__c.AAM2__AccountAssetID__c}"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem id="pbsi2">
+                        <apex:outputLabel for="comp" value="Component"/>
+                        <apex:outputPanel >
+                            <div class = "requiredInput">
+                                <div class = "requiredBlock"/>
+                                <apex:inputText id="comp" disabled="true" value="{!ComponentName}"/>
+                                <apex:image styleClass="lookupIcon" id="compimage" onclick="YAHOO.force.com.showcomponent();" value="/s.gif"/>
+                            </div>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem id="pbsi3">
+                        <apex:outputLabel for="qty" value="Quantity"/>
+                        <apex:outputPanel >
+                            <div class = "requiredInput">
+                                <div class = "requiredBlock"/>
+                                <apex:inputText id="qty" value="{!ComponentQty}"/>
+                            </div>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem id="pbsi4">
+                        <apex:outputLabel for="date" value="Install Date"/>
+                        <apex:inputField id="date" value="{!AAM2__AccountAssetConfiguration__c.AAM2__InstallDate__c}"/>
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection id="pbs2" title="Manufacturer Information" columns="2">
+                    <apex:pageBlockSectionItem id="pbsi5">
+                        <apex:outputLabel for="mfr" value="Manufacturer"/>
+                        <apex:outputPanel >
+                            <apex:inputField id="mfr" value="{!AAM2__AccountAssetConfiguration__c.AAM2__Manufacturer__c}"/>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem id="pbsi6">
+                        <apex:outputLabel for="mfrsno" value="Serial Number"/>
+                        <apex:inputField id="mfrsno" value="{!AAM2__AccountAssetConfiguration__c.AAM2__MfrSerialnumber__c}"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem id="pbsi7">
+                        <apex:outputLabel for="mfrwsd" value="Warranty Start Date"/>
+                        <apex:inputField id="mfrwsd" value="{!AAM2__AccountAssetConfiguration__c.AAM2__MfrWarrantyStart__c}"/>
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+                <apex:pageBlockButtons id="pbb1">
+                    <apex:commandButton value="Save" action="{!save}"/>
+                    <apex:commandButton value="Cancel" action="{!cancel}"/>
+                </apex:pageBlockButtons>
+            </apex:pageBlock>
+        </apex:form>
+    </apex:outputPanel>
+<!-- This section determines the pop-up window and the table to be displayed 
+    in the pop-up window -->
+    <div id="mycomponent" style="display: none" >
+        <div class="hd">
+            <apex:outputText value="Components" />
+            <apex:form id="compform">
+                <apex:panelGrid columns="3">
+                    <apex:inputText value="{!SearchComponent}"/>
+                    <apex:commandButton reRender="form2" value="Search" action="{!SearchResult}"/>
+                </apex:panelGrid>
+            </apex:form>
+        </div> 
+        <div class="bd" style="overflow:auto; background-color:fff;padding:10px;" >     
+            <apex:form id="form2">
+                <apex:dataTable value="{!Components}" var="cl" cellPadding="4" border="1"  id="componenttable">
+                    <apex:column headervalue="Name" >
+                        <apex:commandLink oncomplete="YAHOO.force.com.hidecomponent();" rendered="true" reRender="comp, mfr, qty">
+                            {!cl.Component__r.Name}
+                            <apex:param name="compname" assignTo="{!ComponentName}" id="compname" value="{!cl.Component__r.name}"/>
+                            <apex:param name="compid" assignTo="{!ComponentId}" id="compid" value="{!cl.Component__r.Id}"/>
+                            <apex:param name="maxqty" assignTo="{!MaxQty}" id="maxqty" value="{!cl.Component__r.AAM2__MaxAssemblyQty__c}"/>
+                            <apex:param name="minqty" assignTo="{!MinQty}" id="minqty" value="{!cl.Component__r.AAM2__MinAssemblyQty__c}"/>
+                            <apex:param name="mfrwd" assignTo="{!MfrWarrantyDays}" id="mfrwd" value="{!cl.Component__r.AAM2__Mfrwarrantydays__c}"/>
+                            <apex:param name="pdtqty" assignTo="{!ComponentQty}" id="pdtqty" value="{!cl.AAM2__Qty__c}"/>
+                        </apex:commandLink>
+                    </apex:column>
+                    <apex:column headerValue="Code">
+                        {!cl.Component__r.ProductCode}
+                    </apex:column>
+                    <apex:column headerValue="Description">
+                        {!cl.Component__r.Description}
+                    </apex:column>
+                    <apex:column headerValue="Maximum Quantity">
+                        {!cl.Component__r.AAM2__MaxAssemblyQty__c}
+                    </apex:column>
+                    <apex:column headerValue="Minimum Quantity">
+                        {!cl.Component__r.AAM2__MinAssemblyQty__c}
+                    </apex:column>
+                    <apex:column headerValue="Installed Quantity">
+                        {!cl.AAM2__Qty__c}
+                    </apex:column>
+                </apex:dataTable>
+                <br> </br>
+                <apex:commandButton value="Cancel" immediate="true" oncomplete="YAHOO.force.com.hidecomponent();"/>
+            </apex:form>               
+        </div>   
+    </div>
+</apex:page>

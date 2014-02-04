@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>employee</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>employees</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- employees --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- employees --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- bank --></label>
+        <name>bank__c</name>
+        <relationshipLabel><!-- employees --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- department --></label>
+        <name>department__c</name>
+        <relationshipLabel><!-- employees --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- doj --></label>
+        <name>doj__c</name>
+    </fields>
+    <fields>
+        <label><!-- e.name --></label>
+        <name>e_name__c</name>
+    </fields>
+    <fields>
+        <label><!-- exp --></label>
+        <name>exp__c</name>
+    </fields>
+    <fields>
+        <label><!-- salary --></label>
+        <name>salary__c</name>
+    </fields>
+    <fields>
+        <label><!-- year --></label>
+        <name>year__c</name>
+    </fields>
+    <layouts>
+        <layout>EMPLOYEE</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- personal details --></label>
+            <section>personal details</section>
+        </sections>
+        <sections>
+            <label><!-- sal details --></label>
+            <section>sal details</section>
+        </sections>
+        <sections>
+            <label><!-- standerd fields --></label>
+            <section>standerd fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>emp Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- my --></label>
+        <name>my</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- my1 --></label>
+        <name>my1</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- e-name is in upper case write in lower case --></errorMessage>
+        <name>ename</name>
+    </validationRules>
+</CustomObjectTranslation>

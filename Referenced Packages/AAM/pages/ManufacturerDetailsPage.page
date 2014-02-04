@@ -1,0 +1,26 @@
+<apex:page standardController="AAM2__Manufacturer__c" tabStyle="AAM2__Manufacturer__c">
+    <apex:pageBlock title="Manufacturer Details">
+    <apex:sectionHeader title="Manufacturer" subtitle="{!AAM2__Manufacturer__c.Name}" help="{!$Resource.AAM2__Manufacturerhelp}"/>
+        <Apex:pageBlockButtons >
+            <apex:form >
+                <apex:commandButton value="Edit" action="{!Edit}"/>
+                <apex:commandButton value="Delete" action="{!Delete}"/>
+            </apex:form>
+        </Apex:pageBlockButtons>
+        <apex:pageBlockSection title="Manufacturer Information">
+            <apex:outputField value="{!AAM2__Manufacturer__c.Name}" />
+            <apex:outputField value="{!AAM2__Manufacturer__c.AAM2__Name__c}"/>
+            <apex:outputField value="{!AAM2__Manufacturer__c.AAM2__Address__c}"/>
+            <apex:outputField value="{!AAM2__Manufacturer__c.AAM2__Country__c}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="System Information">
+            <apex:outputField value="{!AAM2__Manufacturer__c.CreatedById}"/>
+            <apex:outputField value="{!AAM2__Manufacturer__c.CreatedDate}"/>
+            <apex:outputField value="{!AAM2__Manufacturer__c.LastModifiedById}"/>
+            <apex:outputField value="{!AAM2__Manufacturer__c.LastModifiedDate}"/>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    <apex:relatedList subject="{!AAM2__Manufacturer__c}" list="Products__r" title="Products/Components"/>
+    <apex:relatedList subject="{!AAM2__Manufacturer__c}" list="OpenActivities" title="Open Activities"/>
+    <apex:relatedList subject="{!AAM2__Manufacturer__c}" list="NotesandAttachments" title="Notes And Attachements"/>
+</apex:page>

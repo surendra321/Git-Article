@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>location</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>locations</value>
+    </caseValues>
+    <fields>
+        <label><!-- city --></label>
+        <name>city__c</name>
+        <picklistValues>
+            <masterLabel>banglor</masterLabel>
+            <translation><!-- banglor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>guntur</masterLabel>
+            <translation><!-- guntur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>hyderabad</masterLabel>
+            <translation><!-- hyderabad --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>jamika</masterLabel>
+            <translation><!-- jamika --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>kadapa</masterLabel>
+            <translation><!-- kadapa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>lards</masterLabel>
+            <translation><!-- lards --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>londen</masterLabel>
+            <translation><!-- londen --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>markapur</masterLabel>
+            <translation><!-- markapur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>melborn</masterLabel>
+            <translation><!-- melborn --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>mumbai</masterLabel>
+            <translation><!-- mumbai --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>pedth</masterLabel>
+            <translation><!-- pedth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>sidney</masterLabel>
+            <translation><!-- sidney --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>vijayawada</masterLabel>
+            <translation><!-- vijayawada --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- country --></label>
+        <name>country__c</name>
+        <picklistValues>
+            <masterLabel>austalia</masterLabel>
+            <translation><!-- austalia --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>england</masterLabel>
+            <translation><!-- england --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>india</masterLabel>
+            <translation><!-- india --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>westindis</masterLabel>
+            <translation><!-- westindis --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- location map --></label>
+        <name>location_map__c</name>
+    </fields>
+    <fields>
+        <label><!-- phone --></label>
+        <name>phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- postalcode --></label>
+        <name>postalcode__c</name>
+    </fields>
+    <fields>
+        <label><!-- state --></label>
+        <name>state__c</name>
+        <picklistValues>
+            <masterLabel>andrapradesh</masterLabel>
+            <translation><!-- andrapradesh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>austate1</masterLabel>
+            <translation><!-- austate1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>austate2</masterLabel>
+            <translation><!-- austate2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>engstate1</masterLabel>
+            <translation><!-- engstate1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>engstate2</masterLabel>
+            <translation><!-- engstate2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>karnataka</masterLabel>
+            <translation><!-- karnataka --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>maharastra</masterLabel>
+            <translation><!-- maharastra --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>tamilnadu</masterLabel>
+            <translation><!-- tamilnadu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>wstindstate1</masterLabel>
+            <translation><!-- wstindstate1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>wstindstate2</masterLabel>
+            <translation><!-- wstindstate2 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- street address --></label>
+        <name>street_address__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>26.0</apiVersion>
+    <description>This page creates the list view of all the Asset Updates and overrides the standard list view. It is set as the home page for the Asset Updates tab.</description>
+    <label>AssetUpdateListPage</label>
+</ApexPage>

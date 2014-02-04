@@ -1,0 +1,6 @@
+<apex:page standardController="AAM2__Asset_Update__c"  recordSetVar="a" tabStyle="AAM2__Asset_Update__c"> 
+<apex:sectionHeader title="Asset Updates" subtitle="Home" help="{!$Resource.AAM2__AssetUpdateHelp}"/>
+ 
+        <apex:ListViews type="AAM2__Asset_Update__c" />
+ 
+</apex:page>

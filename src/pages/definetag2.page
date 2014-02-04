@@ -1,0 +1,7 @@
+<apex:page >
+    <apex:composition template="definetag1" >
+        <apex:define name="header1">Surendra</apex:define>
+        <apex:define name="body1">P.surendra@steadfastglobal.com</apex:define>
+    </apex:composition>
+    
+</apex:page>

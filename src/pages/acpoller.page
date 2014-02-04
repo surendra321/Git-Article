@@ -1,0 +1,25 @@
+<apex:page controller="acpcls">
+  <apex:form >
+      <apex:outputLabel >{!name}</apex:outputLabel>
+         <apex:actionPoller interval="5"  rerender="ot" rendered="true">
+             <apex:image value="{!$Resource.loadingimg}" style="width:150px; height:150px; margin-left: 30%;margin-top: -5%;" />
+         </apex:actionpoller>   
+         
+          <apex:actionPoller action="{!unchangename}"  interval="10" rerender="ot" rendered="true">
+           <apex:image value="{!$Resource.loadingimg2}" style="width:150px; height:150px; margin-left: 30%;margin-top: -5%;" />
+          </apex:actionpoller>
+          
+          <apex:actionPoller action="{!rafi}" interval="15" rerender="ot" rendered="true">
+           <apex:image value="{!$Resource.health}" style="width:150px; height:150px; margin-left: 30%;margin-top: -5%;" />
+          </apex:actionpoller>
+          
+          <apex:actionPoller action="{!motaaaa}" interval="20" rerender="ot" rendered="false"/>
+          
+          <apex:actionPoller action="{!sanjeevareddy}" interval="25" rerender="ot" rendered="false"/>
+          
+          <apex:outputPanel id="ot">
+              <apex:outputLabel ><apex:image value="{!$Resource.loadingimg}" style="width:150px; height:150px; margin-left: 30%;margin-top: -5%;" /></apex:outputLabel>
+          </apex:outputPanel>
+      
+  </apex:form>
+</apex:page>

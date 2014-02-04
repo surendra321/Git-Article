@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- LGprice --></label>
+        <name>LGprice__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product1Price --></label>
+        <name>Product1Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product2Price --></label>
+        <name>Product2Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Samsungprice --></label>
+        <name>Samsungprice__c</name>
+    </fields>
+    <fields>
+        <name>Status</name>
+        <picklistValues>
+            <masterLabel>Activated</masterLabel>
+            <translation><!-- Activated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Approval Process</masterLabel>
+            <translation><!-- In Approval Process --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- acctotalamt --></label>
+        <name>acctotalamt__c</name>
+    </fields>
+    <fields>
+        <label><!-- pdfvalue --></label>
+        <name>pdfvalue__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Contract Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <webLinks>
+        <label><!-- ContractEmail --></label>
+        <name>ContractEmail</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- CopyPrice --></label>
+        <name>CopyPrice</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Email --></label>
+        <name>Email</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_with_DocuSign --></label>
+        <name>dsfs__Send_with_DocuSign</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- invoice --></label>
+        <name>invoice</name>
+    </webLinks>
+</CustomObjectTranslation>

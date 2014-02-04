@@ -1,0 +1,27 @@
+<apex:page standardController="Account" recordSetVar="accs"  showHeader="true">
+     <apex:Form >
+         <apex:pageblock id="pb">
+             <apex:pageblockTable value="{!accs}" var="a">
+                 <apex:column headerValue="Account Name">    
+                     <apex:commandLink value="{!a.name}" rerender="out" status="stat">
+                         <apex:param value="{!a.id}" name="p"/>
+                     </apex:commandLink>
+                 </apex:column>
+                 <apex:column value="{!a.phone}"/>
+                 <apex:column value="{!a.fax}"/>
+             </apex:pageblockTable>
+             <apex:commandLink value="Previous" action="{!previous}" rerender="pb"/> &nbsp;&nbsp;
+             <apex:commandLink value="Next" action="{!next}" rerender="pb"/>
+         </apex:pageblock>          
+         <apex:outputPanel id="out">
+             <Apex:actionStatus id="stat">
+                 <apex:facet name="start">
+                    <apex:image value="{!$Resource.loadingimg}" style="width:150px; height:150px;position: absolute;margin-left: 30%;margin-top: -40%;"/>         
+                 </apex:facet>
+                 <apex:facet name="stop">
+                     <apex:detail subject="{!$CurrentPage.parameters.p}" inlineEdit="true" relatedList="true" />                   
+                 </apex:facet>
+             </Apex:actionStatus>
+         </apex:outputPanel>    
+     </apex:Form>
+</apex:page>

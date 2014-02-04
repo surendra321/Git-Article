@@ -1,0 +1,22 @@
+<apex:page showHeader="false" >
+    <style>
+        h1{
+            color:blue;
+            font-size:medium;
+            font-style: normal;
+        }
+        .textcls{
+            color:Red;
+            font-size:medium;
+            font-style: normal;
+        }
+    </style>
+    <apex:form >
+      <h1> THis is a top header </h1><br/>
+      <h1> THis is a middle header  </h1><br/>
+      <h1> THis is a bottom header </h1><br/>
+      <apex:outputLabel styleClass="textcls"> this is !</apex:outputLabel>
+      
+      <!--<apex:commandButton value="save"/>-->
+  </apex:form>
+</apex:page>

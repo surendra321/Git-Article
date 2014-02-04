@@ -1,0 +1,31 @@
+<apex:page standardController="account" showHeader="false" recordSetVar="acc">
+    <apex:stylesheet value="{!$Resource.css1}"/>
+    <!--<style>
+     h1{
+            color:red;
+            
+            font-size:medium;
+            font-style: normal;            
+        }
+    </style>-->
+    <h1 class="format1">hello</h1>
+    <h1 >hello</h1>
+    <p> Testing </p>
+    <apex:form > <br/><br/><br/>
+      <apex:outputlabel value="THis is a Account table" styleclass="format1"/> <br/><br/><br/><br/>
+      <apex:dataTable value="{!acc}" var="a" border="1" headerClass="header" footerClass="footer" cellpadding="5" cellspacing="5" columnClasses="green,yellow,red">
+          <apex:column headerValue="account name" footerValue="end name">
+              <apex:outputField value="{!a.name}"/>
+          </apex:column>
+          <apex:column headerValue="account type" footerValue="end type">
+          <apex:outputField value="{!a.type}"/>
+          </apex:column>
+          <apex:column headerValue="account phone" footerValue="end phone">
+          <apex:outputField value="{!a.phone}"/>
+          </apex:column>
+      </apex:dataTable><br/><br/>
+      
+      <apex:outputText styleClass="format1" value="This is CSS style page, it contains all styles"></apex:outputText><br/><br/><br/><br/>
+      <apex:outputText styleClass="fomat2" value="This is CSS style page, it contains all styles"></apex:outputText><br/><br/>
+  </apex:form>
+</apex:page>

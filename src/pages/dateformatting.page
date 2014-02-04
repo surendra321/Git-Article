@@ -1,0 +1,22 @@
+<apex:page controller="DateFormattingController">
+    
+      date
+      -----   
+
+
+ <apex:sectionHeader title="Date Formatting"/>
+    
+    <apex:outputText value="Standard Output Format: {!myDateTime}"/>
+    
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!dateFormats}" var="dateFormat">
+            <apex:column headerValue="Date Format" value="{!dateFormat}"                                   width="50%"/>
+            <apex:column headerValue="Output" width="50%">
+                <apex:outputText value="{0,date,{!dateFormat}}">
+                    <apex:param value="{!myDateTime}" />
+                </apex:outputText>
+            </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    
+</apex:page>

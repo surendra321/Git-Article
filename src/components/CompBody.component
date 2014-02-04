@@ -1,0 +1,19 @@
+<apex:component controller="compbodycls" language="fr" selfClosing="false" >    
+    <apex:attribute name="var" type="String" description="The variable to represent
+                        a single account in the iteration." />
+    <apex:outputLabel style="font:10px">List of Account Address header</apex:outputLabel>
+    <apex:repeat var="componentAccount" value="{!accounts}">        
+        <apex:variable var="{!var}" value="{!componentAccount}"/>
+        <apex:componentBody >
+        <apex:outputLabel style="font:10px">List of Account Address header11111</apex:outputLabel>
+        </apex:componentBody> 
+             
+    </apex:repeat>
+    <apex:componentBody >
+        <apex:outputLabel style="font:10px">List of Account Address header111112121</apex:outputLabel>
+        </apex:componentBody>
+    <apex:componentBody >
+    <apex:outputLabel style="font:10px">List of Account Address header22222</apex:outputLabel>
+        </apex:componentBody>
+    <apex:outputLabel style="font:10px">List of Account Address Footer</apex:outputLabel>
+</apex:component>

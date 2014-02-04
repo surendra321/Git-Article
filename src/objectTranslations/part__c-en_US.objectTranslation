@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>part</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>parts</value>
+    </caseValues>
+    <fields>
+        <label><!-- city --></label>
+        <name>city__c</name>
+    </fields>
+    <fields>
+        <label><!-- color --></label>
+        <name>color__c</name>
+    </fields>
+    <fields>
+        <label><!-- part_number --></label>
+        <name>part_number__c</name>
+    </fields>
+    <fields>
+        <label><!-- weight --></label>
+        <name>weight__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

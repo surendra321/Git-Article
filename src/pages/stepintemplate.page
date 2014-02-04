@@ -1,0 +1,27 @@
+<apex:page showHeader="false" id="stepintemplate">
+  <!--<apex:stylesheet value="{!$Resource.stepincss}"/>-->
+  
+  <apex:insert name="header">
+    <c:stepinheader />
+    <hr/>
+  </apex:insert>
+  <table>
+  <tr>
+  <td>
+  <apex:insert name="body" />
+  </td>
+  <td>
+      <apex:insert name="header">
+        <c:stepinheader />
+          <hr/>
+      </apex:insert>
+  </td>
+  </tr>
+  </table>
+  <apex:insert name="footer">
+  <hr/>
+    <c:stepinfooter />
+    
+  </apex:insert>
+  
+</apex:page>

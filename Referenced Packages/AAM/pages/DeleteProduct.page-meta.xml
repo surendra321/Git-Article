@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>26.0</apiVersion>
+    <description>This visualforce page is created to provide a confirmation/warning message to user while trying to delete a Product.</description>
+    <label>DeleteProduct</label>
+</ApexPage>

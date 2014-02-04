@@ -1,0 +1,29 @@
+<apex:page >
+   <!--<style>
+        .colorcls{
+            
+            color:red;
+            }
+    </style>-->
+    
+   <script>
+      function red(c){
+          var x = 2;
+          console.log('x value is:'+ x);
+          c.style.color="red";
+          c.style.font-size=30;
+          }
+          
+      function black(c){
+          c.style.color="black";
+          }
+          
+      function green(c){
+          c.style.color="green";
+          }   
+          
+    </script> 
+    
+    <!--<apex:includeScript value="{!$Resource.javascript1}" id="js1"/>-->
+    <font ><apex:outputLabel onmouseover="red(this)" onmouseout="black(this)" onclick="green(this)">hello good morning</apex:outputLabel></font>
+</apex:page>

@@ -1,0 +1,55 @@
+<apex:page sidebar="false" showHeader="true" tabStyle="tax__c" >
+   BLOCK1
+  <apex:pageblock >
+  <apex:pageblocksection columns="4">
+  <apex:pageblocksectionItem >item1</apex:pageblocksectionItem>
+  <apex:pageblocksectionItem >item2</apex:pageblocksectionItem>
+  <apex:pageblocksectionItem >item3</apex:pageblocksectionItem>
+  <apex:pageblocksectionItem >item4</apex:pageblocksectionItem>
+  </apex:pageblocksection>
+  
+  <apex:pageblocksection >
+  This is your old Page
+  <apex:pageblocksectionItem >item1</apex:pageblocksectionItem>
+  <apex:pageblocksectionItem >item2</apex:pageblocksectionItem>
+  <apex:pageblocksectionItem >item3</apex:pageblocksectionItem>
+  </apex:pageblocksection>
+  
+  </apex:pageblock>
+  
+  BLOCK2
+  <apex:pageblock >
+  <apex:pageblocksection >
+  <apex:pageblocksectionItem >item1</apex:pageblocksectionItem>
+  <apex:pageblocksectionItem >item2</apex:pageblocksectionItem>
+  <apex:pageblocksectionItem >item3</apex:pageblocksectionItem>
+  </apex:pageblocksection>
+  
+  <apex:pageblocksection >
+  This is your old Page
+  
+  <apex:pageblocksectionItem >item1</apex:pageblocksectionItem>
+  <apex:pageblocksectionItem >item2</apex:pageblocksectionItem>
+  <apex:pageblocksectionItem >item3</apex:pageblocksectionItem>
+  </apex:pageblocksection>
+  
+  <apex:page >
+
+    <apex:panelBar >
+
+        <apex:panelBarItem label="class">class is blueprint of realworld</apex:panelBarItem>
+
+        <apex:panelBarItem label="object">obj is a memory space it is a instance of a class</apex:panelBarItem>
+
+        <apex:panelBarItem label="data member">it is property of the class</apex:panelBarItem>
+        
+        <apex:panelBarItem label="member method">it is behavior of the class</apex:panelBarItem>
+
+
+    </apex:panelBar>
+
+</apex:page>
+  
+  </apex:pageblock>
+ 
+</apex:page>

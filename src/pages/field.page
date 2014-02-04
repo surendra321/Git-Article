@@ -1,0 +1,11 @@
+<!-- Page: -->
+
+<apex:page controller="repeatCon1" id="thePage">
+
+    <apex:repeat value="{!integers}" var="integer" id="theRepeat">
+
+        <apex:outputText value="{!integer}" id="theValue"/><br/>
+
+    </apex:repeat>
+
+</apex:page>

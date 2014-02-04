@@ -1,0 +1,10 @@
+<apex:page sidebar="false">
+  <center><font color="blue" size="5">Registration form</font></center>
+  <apex:pageblock ><apex:form >
+  
+  
+  
+  
+  </apex:form>
+  </apex:pageblock>
+</apex:page>

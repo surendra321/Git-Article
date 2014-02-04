@@ -1,0 +1,10 @@
+<apex:page controller="dynamicapex2cls">
+  <apex:form >
+      <apex:pageblock >
+          <apex:selectList size="1">
+              <apex:selectOptions value="{!items}"></apex:selectOptions>
+          </apex:selectList>
+      </apex:pageblock>
+  </apex:form>
+  
+</apex:page>

@@ -1,0 +1,31 @@
+<apex:page id="p1">
+    <apex:form id="p2">
+    <script>
+        function show(){
+           var vname=document.getElementById('p1:p2:p3:p4').value
+           if(vname==''){
+               alert(' u must type uname');
+               }
+            }
+         
+        function hide(){
+            document.getElementById('p1:p2:p3:p4').style.display='none';
+            //alert('hi');
+            }                           
+     </script>
+  
+  <apex:includeScript value="{!$Resource.javascript1}" id="js1"/>
+      <apex:pageblock title="page" id="p3">
+       username:<apex:inputtext id="p4"/> 
+          <apex:pageblockSection >
+           
+          <apex:commandbutton value="validate" onclick="show()"/>
+          <apex:commandbutton value="hide" onclick="hide()"/>
+          </apex:pageblockSection>
+      
+      
+      </apex:pageblock>
+  
+  
+  </apex:form>
+</apex:page>

@@ -1,0 +1,24 @@
+<apex:page id="p">
+  <style>
+      .colorred{
+          color:red;
+          }
+      .colornormal{
+          color: ;
+          }
+  </style>
+  
+  <!--<script>
+      function colorred(){
+          document.getElementById('p:o').className="colorred";
+          }            
+      function colornormal(){
+          document.getElementById('p:o').className="colornormal";
+          }
+   </script>-->
+   
+   <apex:includeScript value="{!$Resource.surijs1}" /> 
+  <font size="15"> <apex:outputLabel id="o" onmouseover="colorred()" onmouseout="colornormal()">hello</apex:outputLabel>  </font>    
+ 
+          
+</apex:page>

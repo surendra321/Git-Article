@@ -1,0 +1,6 @@
+<apex:page renderAs="pdf" controller="acpcls1"> 
+    
+    <apex:variable var="name1" value="{!Name}"/> 
+    <apex:image url="{!URLFOR($Resource.coolimg,name1)}"/> 
+    
+</apex:page>

@@ -1,0 +1,313 @@
+<apex:page id="page" standardController="case"  extensions="AAM2.Cases">
+    <apex:pageMessages />
+    <!--<apex:stylesheet value="http://yui.yahooapis.com/2.6.0/build/assets/skins/sam/skin.css" /> 
+    <apex:includescript value="http://yui.yahooapis.com/2.6.0/build/yahoo-dom-event/yahoo-dom-event.js" />
+    <apex:includescript value="http://yui.yahooapis.com/2.6.0/build/dragdrop/dragdrop-min.js" />
+    <apex:includescript value="http://yui.yahooapis.com/2.6.0/build/container/container-min.js"/>
+    <apex:includescript value="http://yui.yahooapis.com/2.6.0/build/animation/animation-min.js"/>-->
+    
+    <apex:stylesheet value="{!URLFOR($Resource.AAM2__css,'aam/skin.css')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.AAM2__css,'aam/yahoo-dom-event.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.AAM2__css,'aam/dragdrop-min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.AAM2__css,'aam/container-min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.AAM2__css,'aam/animation-min.js')}"/>
+    
+    <script>
+        YAHOO.namespace("force.com");
+        YAHOO.force.com.showMe = function() {
+            document.getElementById("myPanel").style.display = "block";
+            YAHOO.force.com.myDialog.show();
+        }
+        YAHOO.force.com.showPdtmodal = function() {
+            document.getElementById("mypdtPanel").style.display = "block";
+            YAHOO.force.com.myDia.show();
+        }
+        YAHOO.force.com.showAssetmodal = function() {
+           
+            document.getElementById("myassetPanel").style.display = "block";
+            YAHOO.force.com.myDial.show();
+        }
+        YAHOO.force.com.hideMe = function() {
+            YAHOO.force.com.myDialog.hide();
+        }
+        YAHOO.force.com.hideMe1 = function() {
+            YAHOO.force.com.myDia.hide();
+        }
+        YAHOO.force.com.hideMe2 = function() {
+            YAHOO.force.com.myDial.hide();
+        }
+        YAHOO.force.com.init = function() {
+            document.body.className = document.body.className + " yui-skin-sam";
+            YAHOO.force.com.myDialog = new YAHOO.widget.Panel(
+                "myPanel",
+                { 
+                    width           :   "400px",
+                    visible         :   false,
+                    height          :   "150px",
+                    xy              :  [350,50],
+                    draggable       :   true,
+                    close           :   true,
+                    modal           :   true,
+                    // fixedCenter     :   true,
+                    zindex          :   40,
+                    effect          :   {effect:YAHOO.widget.ContainerEffect.FADE,duration:0.35} 
+                }
+            );
+            YAHOO.force.com.myDialog.render(document.body);
+            YAHOO.force.com.myDial = new YAHOO.widget.Panel(
+                "myassetPanel",
+                { 
+                    width           :   "400px",
+                    visible         :   false,
+                    height          :   "150px",
+                    xy              :  [350,50],
+                    draggable       :   true,
+                    close           :   true,
+                    modal           :   true,
+                    // fixedCenter     :   true,
+                    zindex          :   40,
+                    effect          :   {effect:YAHOO.widget.ContainerEffect.FADE,duration:0.35} 
+                }
+            );
+            YAHOO.force.com.myDial.render(document.body);
+            YAHOO.force.com.myDia = new YAHOO.widget.Panel(
+                "mypdtPanel",
+                { 
+                    width           :   "300px",
+                    visible         :   false,
+                    height          :   "150px",
+                    xy              :  [350,50],
+                    draggable       :   true,
+                    close           :   true,
+                    modal           :   true,
+                    // fixedCenter     :   true,
+                    zindex          :   40,
+                    effect          :   {effect:YAHOO.widget.ContainerEffect.FADE,duration:0.35} 
+                }
+            );
+            YAHOO.force.com.myDia.render(document.body);
+        }
+        YAHOO.util.Event.addListener(window, "load", YAHOO.force.com.init);
+    </script>
+    <apex:sectionHeader title="Case New" subtitle="New" help="{!$Resource.AAM2__CasenewHelp}"/>
+    <apex:outputPanel >
+        <apex:form id="openerform">
+            <apex:pageBlock id="a" title=" New Case" mode="edit">
+                <apex:pageBlockSection id="section" columns="2" title="Case Information">
+                    <apex:pageBlockSectionItem id="accsection" >
+                        <apex:outputLabel value="Account Name" for="acc" />                
+                        <apex:outputPanel id="accpanel">
+                            <div>
+                                <apex:inputText value="{!AccountName}" id="acc" >
+                                </apex:inputText>
+                                <apex:image styleclass="lookupIcon" id="theImage1" onclick="YAHOO.force.com.showMe();" value="/s.gif" />                                
+                            </div>                                                         
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem id="pdtsection" >
+                        <apex:outputLabel value="Product Name" for="pdt" />
+                        <apex:outputPanel >
+                            <div>
+                                <apex:inputText value="{!ProductName}"  id="pdt" />  
+                                <apex:image styleclass="lookupIcon" id="theImage1" onclick="YAHOO.force.com.showPdtmodal();" value="/s.gif" >
+                                </apex:image>    
+                            </div>                            
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>   
+                    <apex:pageBlockSectionItem id="assetsection">
+                        <apex:outputLabel value="Account Asset" for="asset" />
+                        <apex:outputPanel id="assetpanel">
+                            <div>
+                                <apex:inputText value="{!AssetName}" id="asset" />
+                                <apex:image styleclass="lookupIcon" id="theImage1"  onclick="YAHOO.force.com.showAssetmodal();" value="/s.gif">
+                                </apex:image> 
+                            </div>                            
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>  
+                     <apex:pageBlockSectionItem >
+                        <apex:outputLabel for="qty" value="Contact"/>
+                        <apex:outputPanel >
+                            <div>
+                                 <apex:inputField value="{!case.ContactId}"/>
+                            </div>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem> 
+                       <apex:pageBlockSectionItem >
+                        <apex:outputLabel for="qty" value="Status"/>
+                        <apex:outputPanel >
+                            <div class = "requiredInput">
+                                <div class = "requiredBlock"/>
+                                <apex:inputField value="{!case.status}"/>
+                            </div>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem> 
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel for="qty" value="Priority"/>
+                        <apex:outputPanel >
+                            <div>
+                                <apex:inputField id="case" value="{!case.priority}"/>
+                            </div>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem> 
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel for="qty" value="Case origin"/>
+                        <apex:outputPanel >
+                            <div class = "requiredInput">
+                                <div class = "requiredBlock"/>
+                                 <apex:inputField value="{!case.origin}"/>
+                            </div>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem> 
+                     <apex:pageBlockSectionItem >
+                        <apex:outputLabel for="qty" value="Type"/>
+                        <apex:outputPanel >
+                            <div>
+                                 <apex:inputField value="{!case.type}"/>
+                            </div>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem> 
+                     <apex:pageBlockSectionItem >
+                        <apex:outputLabel for="qty" value="Case reason"/>
+                        <apex:outputPanel >
+                            <div>
+                                  <apex:inputField value="{!case.reason}"/>
+                            </div>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem> 
+                </apex:pageBlockSection>
+                <apex:pageBlockSection title="Additional Infomation">
+                    <apex:inputField value="{!case.AAM2__PotentialLiability__c}"/>
+                    <apex:inputField value="{!case.AAM2__SLAViolation__c}"/>
+                    <apex:inputField id="no" value="{!case.AAM2__EngineeringReqNumber__c}"/>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection title="Description Information">
+                    <apex:inputField style="width:200%" value="{!case.subject}"/>
+                   <br/>
+                    <apex:inputField style="width:150%" value="{!case.description}"/>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection columns="1" title="Optional" collapsible="false" id="Options">
+                  <apex:outputPanel >
+                     <apex:pageBlockSectionItem id="Assignement">
+                        <apex:inputCheckbox value="{!ChkAssignment}" id="optAssignement" title="Assign rule" >
+                        </apex:inputCheckbox> 
+                        <apex:outputLabel for="optAssignement">Assign using active assignment rules</apex:outputLabel>
+                      </apex:pageBlockSectionItem><br/>
+                      <apex:pageBlockSectionItem id="OptioneMail">
+                        <apex:inputCheckbox value="{!ChkEmail}" id="optSendMail" title="Send eMail" >
+                        </apex:inputCheckbox> 
+                        <apex:outputLabel style="align:bottom" for="optSendMail">Send notification email to contact</apex:outputLabel>
+                      </apex:pageBlockSectionItem>  
+                  </apex:outputPanel>              
+                </apex:pageBlockSection>
+                <apex:pageBlockButtons >
+                    <apex:commandButton action="{!SaveCase}"   value="Save"/>
+                    <apex:commandButton action="{!Cancel}" value="Cancel"/>
+                </apex:pageBlockButtons>
+            </apex:pageBlock>
+        </apex:form>     
+    </apex:outputPanel>
+    <div id="myPanel" style="display: none" >
+        <div class="hd">
+            <apex:outputText value="Accounts" />
+            <apex:form >
+                <apex:panelGrid columns="3">
+                    <apex:inputText value="{!SearchAccount}"/> 
+                    <apex:commandButton reRender="accform" value="Search Account" action="{!SearchAccountResult}"/>
+                </apex:panelGrid>
+            </apex:form>
+        </div> 
+        <div class="bd" style="overflow:auto; background-color:fff;padding:10px;" >     
+            <apex:form id="accform" >
+                <apex:dataTable value="{!Accounts}" var="a" cellPadding="4" border="1">
+                    <apex:column headervalue="Account Name">
+                        <apex:commandLink oncomplete="YAHOO.force.com.hideMe();" action="{!ClearAsset}" rendered="true" reRender="acc,asset,no,assetpanel,testpanel,as,as1,assetform">
+                            {!a.Name}
+                            <apex:param name="id" assignTo="{!AccountId}" id="accid" value="{!a.Id}"/>
+                            <apex:param name="name" assignTo="{!AccountName}" id="name" value="{!a.Name}"/>
+                         </apex:commandLink>
+                    </apex:column>
+                     <apex:column headerValue="Account Number">
+                    {!a.AccountNumber}
+                    </apex:column>
+                    <apex:column headerValue="City">
+                    {!a.ShippingCity}
+                    </apex:column>
+                    <apex:column headerValue="Site">
+                    {!a.Site}
+                    </apex:column>
+                    <apex:column headerValue="SLA">
+                    {!a.AAM2__SLA__c}
+                    </apex:column>
+                </apex:dataTable><br/>
+                <apex:commandButton value="Cancel" immediate="true" oncomplete="YAHOO.force.com.hideMe();"/>
+            </apex:form>               
+        </div>   
+    </div>
+    <div id="mypdtPanel" style="display: none" >
+        <div class="hd">
+            <apex:outputText value="Products" />
+            <apex:form >
+                <apex:panelGrid columns="3">
+                    <apex:inputText value="{!SearchProduct}"/> 
+                    <apex:commandButton reRender="pdtform" value="Search Product" action="{!SearchProductResult}"/>
+                </apex:panelGrid>
+            </apex:form>
+        </div> 
+        <div class="bd" style="overflow:auto; background-color:fff;padding:10px;">
+            <apex:form id="pdtform">
+                <apex:dataTable value="{!Products}" var="a" cellPadding="4" border="1">
+                    <apex:column headervalue="Products">
+                        <apex:commandLink oncomplete="YAHOO.force.com.hideMe1();" rendered="true" action="{!ClearAsset}" reRender="pdt,asset,no,assetpanel,testpanel,as,as1,assetform" >
+                            {!a.Name}
+                            <apex:param name="name" assignTo="{!ProductName}" id="name" value="{!a.Name}"/>
+                            <apex:param name="id" assignTo="{!ProductId}" id="accid" value="{!a.Id}"/>
+                        </apex:commandLink>
+                    </apex:column>
+                     <apex:column headerValue="Code">
+                    {!a.ProductCode}
+                    </apex:column>
+                    <apex:column headerValue="Description">
+                    {!a.Description}
+                    </apex:column>
+                </apex:dataTable><br/>
+                <apex:commandButton value="Cancel" immediate="true" oncomplete="YAHOO.force.com.hideMe1();"/>
+            </apex:form>               
+        </div>   
+    </div>
+    <div id="myassetPanel"  style="display: none;" >
+        <div class="hd">
+            <apex:outputText value="Assets" />
+            <apex:form >
+                <apex:panelGrid columns="3">
+                   <apex:inputText value="{!SearchAsset}"/> 
+                   <apex:commandButton reRender="assetform" value="Search Assets" action="{!SearchAssetResult}"/>
+               </apex:panelGrid>
+            </apex:form>
+        </div> 
+        <div class="bd" style="overflow:auto; background-color:fff;padding:10px;" >
+            <apex:form id="assetform">
+                <apex:dataTable value="{!assets}" var="a" id="table" cellPadding="4" border="1">
+                    <apex:column headervalue="Assets">
+                        <apex:commandLink oncomplete="YAHOO.force.com.hideMe2();" rendered="true" reRender="testpanel,asset,pdt,accpanel,assetid,aidval,pidval,assetform,table" >
+                            {!a.Name}
+                            <apex:param name="asset" assignTo="{!AssetName}"  value="{!a.Name}"/>
+                            <apex:param name="assetid" assignTo="{!AssetId}" value="{!a.Id}"/>
+                            <apex:param name="pid" assignTo="{!ProductId}"  value="{!a.Product__r.id}"/>               
+                            <apex:param name="pdt" assignTo="{!ProductName}"  value="{!a.Product__r.name}"/>
+                            <apex:param name="aid" assignTo="{!AccountId}"  value="{!a.Account__r.id}"/>
+                            <apex:param name="acc" assignTo="{!AccountName}"  value="{!a.Account__r.name}"/>
+                        </apex:commandLink>
+                    </apex:column>
+                    <apex:column headerValue="Account Name">
+                    {!a.Account__r.name}
+                    </apex:column>
+                    <apex:column headerValue="Product Name">
+                    {!a.Product__r.name}
+                    </apex:column>
+                </apex:dataTable>
+               <br/>
+                <apex:commandButton value="Cancel" immediate="true" oncomplete="YAHOO.force.com.hideMe2();"/>
+            </apex:form>               
+        </div>  
+    </div>
+</apex:page>

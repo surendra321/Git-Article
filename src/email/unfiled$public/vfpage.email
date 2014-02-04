@@ -1,0 +1,9 @@
+<messaging:emailTemplate subject="this is vforecepage" recipientType="Contact" relatedToType="Opportunity">
+<apex:outputLabel ></apex:outputLabel>
+<messaging:plainTextEmailBody >
+Congratulations!
+dhgfhdfhfghdfgdhfgdhgfdhvhbn vjdhv gfdfej
+    
+This is your new Visualforce Email Template.
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

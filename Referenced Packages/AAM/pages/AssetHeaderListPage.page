@@ -1,0 +1,63 @@
+<!-- This page is the UI for displaying account assets and header details. This uses
+    the class AssetHeaderList as Extension to the standard controller 
+    -->
+<apex:page id="thepage" standardController="AAM2__AccountAssetHdrs__c"   extensions="AAM2.AssetHeaderList" tabStyle="assets__tab" action="{!Search}">
+    <apex:sectionHeader title="Account Assets" subtitle="Home" help="{!$Resource.AAM2__AccountAssetTabHelp}"/>  
+        <apex:form >
+           <h2>Enter keywords to find matching Account Assets. </h2><br/>  
+           <apex:panelGrid columns="3">
+                <apex:inputText value="{!SearchHeader}"/> 
+                <apex:commandButton reRender="a" value="Search Header" action="{!SearchHeaderResult}"/>
+            </apex:panelGrid>     
+           <apex:panelGrid columns="3">
+                <apex:inputText value="{!SearchAsset}"/> 
+                <apex:commandButton reRender="a" value="Search Asset" action="{!SearchAssetResult}"/>
+           </apex:panelGrid>
+       <apex:pageBlock id="a" >   
+           <apex:pageBlockSection collapsible="false" columns="1" title="Account Assets" id="b">
+             <b><apex:outputtext id="msg" rendered="{!NOT(ISNULL(AssetHeaders))}" value="Record(s) found: {!AssetHeaderList_Size}"/> </b>       
+            <apex:pageBlockTable width="100%" id="thetable" value="{!AssetHeaders}" var="a" >      
+                <apex:column id="column">
+                        <apex:pageBlockSection columns="1" id="theSection"   title="{!a.name}" >
+                            <apex:dataTable width="100%" title="Account Asssets" value="{!a.Account_Assets__r}" var="ab" bgcolor="#F3F3EC" styleClass="list" rowClasses="dataRow" onRowMouseOver="hiOn(this);" onRowMouseOut="hiOff(this);" rows="10">                        
+                                 <apex:column >
+                                    <apex:facet name="header" ><b>Header Code</b></apex:facet>
+                                   <apex:outputLink value="/{!a.id}" >
+                                    {!a.name}</apex:outputLink><br/>
+                                  </apex:column> 
+                                 <apex:column >
+                                    <apex:facet name="header" ><b>Account name</b></apex:facet>                                  
+                                    {!ab.Account_Asset_Hdr__r.Account__r.name}<br/>
+                                  </apex:column> 
+                                <apex:column >
+                                    <apex:facet name="header" ><b>Product name</b></apex:facet>                                  
+                                    {!ab.Account_Asset_Hdr__r.Product__r.name}<br/>
+                                </apex:column>                            
+                                 <apex:column >
+                                    <apex:facet name="header" ><b>Manufacturer</b></apex:facet>
+                                       <apex:outputLink value="/{!a.Manufacturer__r.id}" >
+                                    {!a.Manufacturer__r.name}</apex:outputLink><br/>
+                                </apex:column>          
+                                <apex:column >
+                                    <apex:facet name="header" ><b>Asset code</b></apex:facet>
+                                   <apex:outputLink value="/{!ab.id}" >
+                                    {!ab.name}</apex:outputLink><br/>
+                                </apex:column>                             
+                                <apex:column >
+                                    <apex:facet name="header" ><b>Serial number</b></apex:facet>                                  
+                                    {!ab.AAM2__MfrSerialnumber__c}<br/>
+                                </apex:column>              
+                            </apex:dataTable>
+                        </apex:pageBlockSection>
+                    </apex:column>                     
+            </apex:pageBlockTable> 
+            <apex:actionStatus startText="Requesting..." id="GetStatus"/>
+                <apex:commandButton value="Prev" action="{!Prev}" rendered="{!showprev}" status="GetStatus" rerender="a"/>
+                <apex:commandButton value="Next" action="{!Next}" rendered="{!shownext}" status="GetStatus" rerender="a"/>      
+             </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!URLFOR($Action.AccountAssetHdrs__c.New)}"  value="New Account Asset Header"/>
+            </apex:pageBlockButtons> 
+      </apex:pageBlock>
+ </apex:form>     
+</apex:page>

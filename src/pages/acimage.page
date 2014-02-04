@@ -1,0 +1,24 @@
+<apex:page controller="acimgcls">
+    
+    <script>
+        function increase(m){
+           m.style.height="300px";
+           m.style.width="400px";
+        }
+        
+        function decrease(m){
+            m.style.height="100px";
+           m.style.width="100px";
+        
+        }
+    </script>
+    <apex:form >     
+       <!-- <apex:outputPanel id="ot" onmouseover="increase(this)">-->
+           <!-- <apex:variable var="image" value="{!imgname}"/>    
+            <apex:image onmouseover="increase(this)" onmouseout="decrease(this)" url="{!URLFOR($Resource.img1,image)}" style="width:100px;height:100px"/>
+            <apex:actionPoller action="{!change}" interval="5" rerender="ot"/>-->
+             <apex:image value="{!$Resource.health}"  onmouseover="increase(this)" onmouseout="decrease(this)" style="height:50px;width:50px"/>
+       <!-- </apex:outputPanel>-->
+          
+    </apex:form>
+</apex:page>

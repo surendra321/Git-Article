@@ -1,0 +1,24 @@
+<apex:page >
+    
+  
+    <apex:tabPanel switchType="client" >   
+    <apex:tab label="jntu" title="webjntu">
+    <apex:iframe src="http://www.jntu.ac.in/" scrolling="true" height="500"/>
+    </apex:tab>
+    
+    <apex:tab label="Ou" title="webou">
+    <apex:iframe src="http://www.osmania.ac.in/" scrolling="true" />
+    </apex:tab>
+    
+    <apex:tab label="Au" title="webAu">
+    <!--<apex:iframe src="http://www.andhrauniversity.info/" scrolling="true" />-->
+     <apex:enhancedList type="Account" height="500" />
+    </apex:tab>
+    
+    
+    
+    </apex:tabPanel>
+  
+     <!-- <apex:enhancedList type="Lead" height="300" rowsPerPage="25"
+        id="LeadList"  />  -->
+</apex:page>

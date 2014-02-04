@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>nposition</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>nposition</value>
+    </caseValues>
+    <fields>
+        <help><!-- add --></help>
+        <label><!-- Close Date --></label>
+        <name>Close_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- sdf --></help>
+        <label><!-- Edu. Qual --></label>
+        <name>Edu_Qual__c</name>
+        <picklistValues>
+            <masterLabel>bca</masterLabel>
+            <translation><!-- bca --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>btech</masterLabel>
+            <translation><!-- btech --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>diplama</masterLabel>
+            <translation><!-- diplama --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>mba</masterLabel>
+            <translation><!-- mba --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>mca</masterLabel>
+            <translation><!-- mca --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Hire By --></label>
+        <name>Hire_By__c</name>
+    </fields>
+    <fields>
+        <help><!-- asf --></help>
+        <label><!-- Job Description --></label>
+        <name>Job_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- ad --></help>
+        <label><!-- Max Sal --></label>
+        <name>Max_Sal__c</name>
+    </fields>
+    <fields>
+        <help><!-- asfd --></help>
+        <label><!-- Min Sal --></label>
+        <name>Min_Sal__c</name>
+    </fields>
+    <fields>
+        <help><!-- asfd --></help>
+        <label><!-- Open Date --></label>
+        <name>Open_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- aaadssa --></help>
+        <label><!-- Position Title --></label>
+        <name>Position_Title__c</name>
+    </fields>
+    <fields>
+        <help><!-- asf --></help>
+        <label><!-- Responsibilities --></label>
+        <name>Responsibilities__c</name>
+    </fields>
+    <fields>
+        <help><!-- asff --></help>
+        <label><!-- Skills Required --></label>
+        <name>Skills_Required__c</name>
+        <picklistValues>
+            <masterLabel>.net</masterLabel>
+            <translation><!-- .net --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>c</masterLabel>
+            <translation><!-- c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>c++</masterLabel>
+            <translation><!-- c++ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>java</masterLabel>
+            <translation><!-- java --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>sfdc</masterLabel>
+            <translation><!-- sfdc --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- add --></help>
+        <label><!-- Travel Req --></label>
+        <name>Travel_Req__c</name>
+    </fields>
+    <layouts>
+        <layout>po layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Edu qualifications --></label>
+            <section>Edu qualifications</section>
+        </sections>
+        <sections>
+            <label><!-- Emp details --></label>
+            <section>Emp details</section>
+        </sections>
+        <sections>
+            <label><!-- Sal details --></label>
+            <section>Sal details</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

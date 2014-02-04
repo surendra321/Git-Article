@@ -1,0 +1,15 @@
+<apex:page standardController="employees__c" >
+<apex:outputPanel style="padding-left: 1em;">
+    <div class="menuButton" id="Actions"><apex:outputPanel layout="none">
+        <div class="menuButtonButton" id="ActionsButton"><span class="menuButtonLabel" id="ActionsLabel">SelectPDF</span></div>
+ 
+        <div class="menuButtonMenu" id="ActionsMenu"><apex:outputPanel layout="none">
+            <apex:outputLink target="_blank" value="/apex/pdf1">PDF1</apex:outputLink>
+            <apex:outputLink target="_blank" value="/apex/pdf2">PDF2</apex:outputLink>
+            <apex:outputLink target="_blank" value="/apex/pdf3">PDF3</apex:outputLink>
+        </apex:outputPanel></div>
+    </apex:outputPanel></div>
+</apex:outputPanel>
+
+<script type="text/javascript">new MenuButton('Actions', false);</script>
+</apex:page>

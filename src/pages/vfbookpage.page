@@ -1,0 +1,23 @@
+<apex:page standardController="book__c" sidebar="false" extensions="nextclass">
+  <apex:form >
+  
+  <apex:outputtext ><h1> book Edit</h1></apex:outputtext><br/>
+  <apex:outputText ><font size="5">New Book</font></apex:outputText>s
+  
+  <apex:pageblock >
+  
+  <apex:panelGrid columns="2" >
+  <apex:outputText >bookname</apex:outputText>
+  <apex:inputfield value="{!book__c.name}"/>
+   <apex:outputText >bookedition</apex:outputText>
+  <apex:inputfield value="{!book__c.edition__c}"/>
+   <apex:outputText >bookprice</apex:outputText>
+  <apex:inputfield value="{!book__c.price__c}"/>
+   <apex:outputText >bookauthor</apex:outputText>
+  <apex:inputfield value="{!book__c.author__c}"/>
+  </apex:panelGrid>
+  <apex:commandbutton action="{!next}" value="next"/>
+  
+  </apex:pageblock>
+  </apex:form>
+</apex:page>

@@ -1,0 +1,123 @@
+<!--This is the UI that users see when creating a new ProductComponent. This
+    uses the class ProductComponent as extension to the standard controller-->
+<apex:page standardController="AAM2__Product_Component__c" extensions="AAM2.ProductComponent" tabStyle="AAM2__Product_Component__c">
+    <apex:pageMessages />
+    <apex:sectionHeader title="ProductComponent Edit" subtitle="New ProductComponent" help="{!$Resource.AAM2__ProductComponentHelp}"/>
+<!--This section provides the stylesheets and the scripts from Yahoo api that is
+    used in the pop-up window display-->
+    <!--<apex:stylesheet value="http://yui.yahooapis.com/2.6.0/build/assets/skins/sam/skin.css" />
+    <apex:includescript value="http://yui.yahooapis.com/2.6.0/build/yahoo-dom-event/yahoo-dom-event.js" />
+    <apex:includescript value="http://yui.yahooapis.com/2.6.0/build/dragdrop/dragdrop-min.js" />
+    <apex:includescript value="http://yui.yahooapis.com/2.6.0/build/container/container-min.js"/>
+    <apex:includescript value="http://yui.yahooapis.com/2.6.0/build/animation/animation-min.js"/>-->
+    
+    <apex:stylesheet value="{!URLFOR($Resource.AAM2__css,'aam/skin.css')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.AAM2__css,'aam/yahoo-dom-event.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.AAM2__css,'aam/dragdrop-min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.AAM2__css,'aam/container-min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.AAM2__css,'aam/animation-min.js')}"/>
+    
+<!--This script calls the functions that displays the pop-up window and datatable
+    inside it-->
+    <script>
+        YAHOO.namespace("force.com");
+        YAHOO.force.com.showcomponent = function() {
+            document.getElementById("mycomponent").style.display = "block";
+            YAHOO.force.com.myc.show();
+        }
+        YAHOO.force.com.hidecomponent = function() {
+            YAHOO.force.com.myc.hide();
+        }
+        YAHOO.force.com.init = function() {
+            document.body.className = document.body.className + " yui-skin-sam";
+            YAHOO.force.com.myc = new YAHOO.widget.Panel (
+                "mycomponent",
+                {
+                    width           :   "450px",
+                    visible         :   false,
+                    height          :   "150px",
+                    xy              :  [350,50],
+                    draggable       :   true,
+                    close           :   true,
+                    modal           :   true,
+                    //fixedCenter     :   true,
+                    zindex          :   40,
+                    effect          :   {effect:YAHOO.widget.ContainerEffect.FADE,duration:0.35} 
+                }
+            );
+            YAHOO.force.com.myc.render(document.body);
+        }
+        YAHOO.util.Event.addListener(window, "load", YAHOO.force.com.init);
+    </script>
+<!--This section is where the UI page layout is designed-->
+    <apex:outputPanel >
+        <apex:form id="form1">
+            <apex:pageBlock title="Product Component Edit" id="pb1" mode="edit">
+                <apex:pageBlockSection id="pbs1" columns="1">
+                    <apex:pageBlockSectionItem id="pbsi1">
+                        <apex:outputLabel for="proval" value="Product Name"/>
+                        <apex:outputField id="proval" value="{!AAM2__Product_Component__c.AAM2__Product__c}"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem id="pbsi2">
+                        <apex:outputLabel for="compval" value="Component Name"/>
+                        <apex:outputPanel >
+                            <div class = "requiredInput">
+                                <div class = "requiredBlock"/>
+                                <apex:inputText id="compval" disabled="true" value="{!ComponentName}" required="true"/>
+                                <apex:image styleclass="lookupIcon" id="compoentimage" onclick="YAHOO.force.com.showcomponent();" value="/s.gif"/>
+                            </div>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:inputField value="{!AAM2__Product_Component__c.AAM2__Qty__c}"/>
+                    <apex:inputField value="{!AAM2__Product_Component__c.AAM2__Mandatory__c}"/>
+                </apex:pageBlockSection>
+                <apex:pageBlockButtons id="pbb1">
+                    <apex:commandButton value="Save" action="{!save}"/>
+                    <apex:commandButton value="Cancel" action="{!cancel}"/>
+                </apex:pageBlockButtons>
+            </apex:pageBlock>
+        </apex:form>
+    </apex:outputPanel>
+<!--This section is the function which determines what is shown inside the 
+    pop-up window-->
+    <div id="mycomponent" style="display: none" >
+        <div class="hd">
+            <apex:outputText value="Components" />
+            <apex:form id="searchform">
+                <apex:panelGrid columns="3">
+                    <apex:inputText value="{!SearchComponent}"/>
+                    <apex:commandButton reRender="form3" value="Search" action="{!SearchResult}"/>
+                </apex:panelGrid>
+            </apex:form>
+        </div> 
+        <div class="bd" style="overflow:auto; background-color:fff;padding:10px;" >     
+            <apex:form id="form3">
+                <apex:dataTable value="{!Components}" var="cl" cellPadding="4" border="1" id="componenttable">
+                    <apex:column headervalue="Name">
+                        <apex:commandLink oncomplete="YAHOO.force.com.hidecomponent();" rendered="true" reRender="compval">
+                            {!cl.Name}
+                            <apex:param name="name" assignTo="{!ComponentName}" id="cname" value="{!cl.Name}"/>
+                            <apex:param name="id" assignTo="{!ComponentId}" id="cid" value="{!cl.Id}"/>
+                            <apex:param name="maxqty" assignTo="{!MaxQty}" id="mqty" value="{!cl.AAM2__MaxAssemblyQty__c}"/>
+                            <apex:param name="minqty" assignTo="{!MinQty}" id="mnqty" value="{!cl.AAM2__MinAssemblyQty__c}"/>
+                        </apex:commandLink>
+                    </apex:column>
+                    <apex:column headerValue="Code">
+                        {!cl.ProductCode}
+                    </apex:column>
+                    <apex:column headerValue="Description">
+                        {!cl.Description}
+                    </apex:column>
+                    <apex:column headerValue="Maximum Quantity">
+                        {!cl.AAM2__MaxAssemblyQty__c}
+                    </apex:column>
+                    <apex:column headerValue="Minimum Quantity">
+                        {!cl.AAM2__MinAssemblyQty__c}
+                    </apex:column>
+                </apex:dataTable>
+                <br> </br>
+                <apex:commandButton value="Cancel" immediate="true" oncomplete="YAHOO.force.com.hidecomponent();"/>
+            </apex:form>               
+        </div>   
+    </div>
+</apex:page>

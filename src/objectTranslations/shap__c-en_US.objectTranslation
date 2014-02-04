@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>shap</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>shaps</value>
+    </caseValues>
+    <fields>
+        <label><!-- Accountname --></label>
+        <name>Accountname__c</name>
+        <relationshipLabel><!-- shaps --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- area --></label>
+        <name>area__c</name>
+    </fields>
+    <fields>
+        <label><!-- diameter --></label>
+        <name>diameter__c</name>
+    </fields>
+    <fields>
+        <label><!-- length --></label>
+        <name>length__c</name>
+    </fields>
+    <fields>
+        <label><!-- radius --></label>
+        <name>radius__c</name>
+    </fields>
+    <fields>
+        <label><!-- shap-id --></label>
+        <name>shap_id__c</name>
+    </fields>
+    <fields>
+        <label><!-- shape-location --></label>
+        <name>shape_location__c</name>
+        <picklistValues>
+            <masterLabel>bang</masterLabel>
+            <translation><!-- bang --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>delhi</masterLabel>
+            <translation><!-- delhi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>hyd</masterLabel>
+            <translation><!-- hyd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>mumbai</masterLabel>
+            <translation><!-- mumbai --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- width --></label>
+        <name>width__c</name>
+    </fields>
+    <layouts>
+        <layout>shap for rectangle</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>shape for circle</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- circle --></label>
+        <name>circle</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- rectangle --></label>
+        <name>rectangle</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

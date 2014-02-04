@@ -1,0 +1,10 @@
+<apex:page controller="accountcontacls">
+  <apex:pageBlock >
+      
+      <apex:pageBlockTable value="{!wraperlst}" var="w">
+         <apex:column headerValue="Account Name" value="{!w.act.name}"/>
+         <apex:column value="{!w.act.type}"/>
+          <apex:column headerValue="Contact Name" value="{!w.cont.name}"/>      
+      </apex:pageBlockTable> 
+  </apex:pageBlock>
+</apex:page>

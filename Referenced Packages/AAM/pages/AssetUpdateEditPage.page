@@ -1,0 +1,9 @@
+<apex:page standardController="AAM2__Asset_Update__c">
+<h1> Cannot edit this record</h1><br/>
+
+<apex:form >
+<p>
+<apex:commandButton value="OK" action="{!cancel}" />
+</p>
+</apex:form>
+</apex:page>

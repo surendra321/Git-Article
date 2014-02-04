@@ -1,0 +1,10 @@
+<apex:page standardController="employees__c" extensions="sample6cls">
+    <apex:form >
+        <apex:pageBlock >   
+            <apex:actionFunction action="{!somemethod}" name="somemethod"/>              
+           <apex:inputField value="{!emp.Account__c}" onchange="somemethod()" />              
+           
+           <apex:inputField required="false" value="{!objacc.name}"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

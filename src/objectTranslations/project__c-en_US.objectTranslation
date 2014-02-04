@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>project</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>projects</value>
+    </caseValues>
+    <fields>
+        <label><!-- book --></label>
+        <name>book__c</name>
+        <relationshipLabel><!-- projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- city --></label>
+        <name>city__c</name>
+        <picklistValues>
+            <masterLabel>MARKAPUR</masterLabel>
+            <translation><!-- MARKAPUR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>aus10</masterLabel>
+            <translation><!-- aus10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>guntur</masterLabel>
+            <translation><!-- guntur --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>hp1</masterLabel>
+            <translation><!-- hp1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>hyd</masterLabel>
+            <translation><!-- hyd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>mp1</masterLabel>
+            <translation><!-- mp1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>pak10</masterLabel>
+            <translation><!-- pak10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>up1</masterLabel>
+            <translation><!-- up1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>us10</masterLabel>
+            <translation><!-- us10 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- country --></label>
+        <name>country__c</name>
+        <picklistValues>
+            <masterLabel>aus</masterLabel>
+            <translation><!-- aus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>india</masterLabel>
+            <translation><!-- india --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>pack</masterLabel>
+            <translation><!-- pack --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>usa</masterLabel>
+            <translation><!-- usa --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- department --></label>
+        <name>department__c</name>
+        <relationshipLabel><!-- projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- employee --></label>
+        <name>employee101__c</name>
+        <relationshipLabel><!-- projects --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- p-duration --></label>
+        <name>p_duration__c</name>
+    </fields>
+    <fields>
+        <label><!-- p-location --></label>
+        <name>p_location__c</name>
+    </fields>
+    <fields>
+        <label><!-- state --></label>
+        <name>state__c</name>
+        <picklistValues>
+            <masterLabel>ap</masterLabel>
+            <translation><!-- ap --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>aus1</masterLabel>
+            <translation><!-- aus1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>aus2</masterLabel>
+            <translation><!-- aus2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>aus3</masterLabel>
+            <translation><!-- aus3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>hp</masterLabel>
+            <translation><!-- hp --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>mp</masterLabel>
+            <translation><!-- mp --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>pak1</masterLabel>
+            <translation><!-- pak1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>pak2</masterLabel>
+            <translation><!-- pak2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>pak3</masterLabel>
+            <translation><!-- pak3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>up</masterLabel>
+            <translation><!-- up --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>us1</masterLabel>
+            <translation><!-- us1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>us2</masterLabel>
+            <translation><!-- us2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>us3</masterLabel>
+            <translation><!-- us3 --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>myprojectlayout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- proj  Section --></label>
+            <section>proj  Section</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

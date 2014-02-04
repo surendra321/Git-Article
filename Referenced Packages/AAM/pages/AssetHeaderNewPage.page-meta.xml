@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>26.0</apiVersion>
+    <description>This page is created as an UI which overrides the standard new page for Asset Headers. This enables the users to create new Asset Headers</description>
+    <label>AssetHeaderNewPage</label>
+</ApexPage>

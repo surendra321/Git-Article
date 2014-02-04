@@ -1,0 +1,15 @@
+<apex:page standardController="Product2" extensions="AAM2.DeleteProduct" tabStyle="Product2">
+    <apex:form >
+    <apex:pageBlock >
+        <b>Note :</b> You are attempting to delete a Product/Component. Deleting this Product/Component record will delete all related Product Components, Account Asset Header, Account Asset Configuration and Asset Update records.
+        <br/><br/>
+        Do u want to continue? Click Yes to Delete or No to Cancel.
+        <p>
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Yes" action="{!DeleteItem}" />
+                <apex:commandButton value="No" action="{!cancel}" />
+            </apex:pageBlockButtons>
+        </p>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

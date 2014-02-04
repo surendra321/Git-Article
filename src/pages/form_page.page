@@ -1,0 +1,28 @@
+<apex:page >
+
+<font color="green"><marquee> welcom mr {! $user.firstname} {! $user.lastname}</marquee></font>
+
+  <apex:form >  
+   <apex:outputLink value="https://www.salesforce.com" ><font color="blue">salesforce.com</font></apex:outputLink>
+   <h1> <font color="red" bgcolor="green"><center>registration form</center></font></h1><br/><br/> 
+  firstname &nbsp; &nbsp;<apex:inputText /><br/><br/>
+  lastname &nbsp; &nbsp;<apex:inputText /><br/><br/>
+  location &nbsp; &nbsp; &nbsp;<apex:inputText /><br/><br/>
+  email &nbsp; &nbsp; &nbsp; &nbsp;<apex:inputText /><br/><br/>
+  pswd &nbsp; &nbsp; &nbsp; &nbsp;<apex:inputsecret /><br/><br/>
+  enter gender:: &nbsp; male<apex:inputCheckbox />
+  female<apex:inputCheckbox /><br/>
+ <center> <apex:commandButton value="submit" /> 
+ select prefered area:<select name="area"><option>SELECT</option>
+ <option>DELHI</option>
+ <option>PUNE</option>
+ <option>GUNTUR</option>
+ <option>MARKAPUR</option>
+ </select>
+ <apex:commandButton value="cancle"/> 
+ <apex:commandButton value="next"/> </center>
+ <img id="theImage" src="C:\Documents and Settings\user5\Desktop.gif" width="220" height="55"/>
+  
+  </apex:form>
+  
+</apex:page>

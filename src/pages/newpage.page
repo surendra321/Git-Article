@@ -1,0 +1,48 @@
+<apex:page showHeader="false" sidebar="false" controller="demo12" extensions="adition,substraction,multiplication" >
+
+<apex:form >
+
+<apex:pageBlock >
+
+<apex:pageBlockSection >
+
+
+<apex:outputText >entervalue1</apex:outputText>
+<apex:pageblockSectionItem >
+<apex:inputText value="{!value1}"/><br/>
+</apex:pageblockSectionItem>
+
+<apex:outputText >entervalue2</apex:outputText>
+<apex:pageblockSectionItem >
+<apex:inputText value="{!value2}"/><br/>
+</apex:pageblockSectionItem>
+
+<apex:pageblockSectionItem >
+<apex:commandButton action="{!sum}" value="add"/>
+</apex:pageblockSectionItem>
+
+<apex:pageblockSectionItem >
+<apex:inputText value="{!res1}"/>
+</apex:pageblockSectionItem>
+
+<apex:pageblockSectionItem >
+<apex:commandButton action="{!product}" value="multi"/>
+</apex:pageblockSectionItem>
+
+<apex:pageblockSectionItem >
+<apex:inputText value="{!res2}"/>
+</apex:pageblockSectionItem>
+
+<apex:pageblockSectionItem >
+<apex:commandButton action="{!sub}" value="diff"/>
+</apex:pageblockSectionItem>
+
+<apex:pageblockSectionItem >
+<apex:inputText value="{!res3}"/>
+</apex:pageblockSectionItem>
+
+
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>    
+</apex:page>

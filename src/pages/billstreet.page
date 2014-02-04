@@ -1,0 +1,13 @@
+<apex:page standardController="contact" recordSetVar="acct">
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!acct}" var="a">
+            <apex:column >
+     <apex:outputField value="{!a.mailingstreet}"/><br/>
+     <apex:outputField value="{!a.mailingcity}"/>
+     <apex:outputField value="{!a.mailingstate}"/>
+     <apex:outputField value="{!a.mailingPostalcode}"/>
+</apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+  
+</apex:page>

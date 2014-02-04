@@ -1,0 +1,6 @@
+<apex:page >
+    <b><apex:outputText value="User Name : "/></b>
+    <apex:insert name="header1"/><br/>
+    <b><apex:outputText value="Email : "/></b>
+    <apex:insert name="body1"/>
+</apex:page>

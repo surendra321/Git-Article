@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>26.0</apiVersion>
+    <description>This page provides user with an UI to capture repair details of a component of an Account Asset</description>
+    <label>AssetUpdateRepairPage</label>
+</ApexPage>

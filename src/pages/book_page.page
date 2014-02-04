@@ -1,0 +1,34 @@
+<apex:page sidebar="false" showHeader="false" tabStyle="book__c" standardController="book__c">
+ <apex:form >
+ 
+ <apex:pageblock >
+
+    <apex:pageBlockButtons >
+        <apex:commandButton action="{!save}" value="save"/>
+        <apex:commandButton action="{!cancel}" value="cancel" style="margin-left:10px"/>
+    </apex:pageBlockButtons>
+
+    <apex:pageBlockSection >
+        <apex:pageBlockSectionItem >
+            Enter Bookname:<apex:inputField value="{!book__c.name}" style="margin-left:0px"/>
+        </apex:pageBlockSectionItem>
+
+    <apex:pageBlockSectionItem >
+        Enter BookEdition:<apex:inputField value="{!book__c.edition__c}" />
+    </apex:pageBlockSectionItem>
+
+    <apex:pageBlockSectionItem >
+        Enter BookAuthor:<apex:inputField value="{!book__c.author__c}"/>
+    </apex:pageBlockSectionItem>
+
+
+    <apex:pageBlockSectionItem >
+        Enter BookPrice:<apex:inputField value="{!book__c.price__c}"/>
+    </apex:pageBlockSectionItem>
+    </apex:pageBlockSection>
+
+</apex:pageblock>  
+</apex:form>
+
+
+</apex:page>

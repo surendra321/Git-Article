@@ -1,0 +1,23 @@
+<apex:page standardController="Account" sidebar="false" showheader="false">
+   <apex:form > 
+   <apex:pageblock title="{!Account.name}" >
+       
+   
+       <apex:pageblockSection >
+           <apex:commandlink rerender="contactDetails">
+               {!account.name}
+               
+               <apex:param value="{!account.id}" name="aid"/>
+               
+           </apex:commandlink>
+        </apex:pageblockSection>
+        
+    </apex:pageblock>
+    <apex:pageBlock title="{!account.name}">
+<apex:outputPanel id="contactDetails">
+<apex:detail subject="{!$CurrentPage.parameters.aid}" relatedList="false" title="false"/>
+</apex:outputPanel>
+</apex:pageBlock>
+    </apex:form>
+
+</apex:page>

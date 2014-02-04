@@ -1,0 +1,98 @@
+<!-- This page is the UI for editing Account Asset Header. This uses
+    the class AssetConfiguration as Extension to the standard controller -->
+<apex:page standardController="AAM2__AccountAssetHdrs__c"  extensions="AAM2.AssetHeader" >
+<!-- This Part is the UI design and layout .This is the page that we want to display to the user -->
+<apex:sectionHeader title="Account Asset Edit" subtitle="{!AAM2__AccountAssetHdrs__c.name}" help="{!$Resource.AAM2__AccountAssetTabHelp}"/>
+<apex:outputPanel > 
+<apex:form id="openerform">
+    <apex:pageBlock id="a" title="Account Asset Header" mode="edit">
+        <apex:pageBlockSection id="b" columns="2" title="Basic Information">
+            <apex:pageBlockSectionItem id="e" >
+                <apex:outputLabel value="Account Name" for="acc" />                
+                <apex:outputPanel >
+                        <div>
+                            <div />    
+                            <apex:outputLabel value="{!AccountName}"></apex:outputLabel>                         
+                        </div> 
+                </apex:outputPanel>             
+
+            </apex:pageBlockSectionItem>
+                          
+            <apex:pageBlockSectionItem id="c" >                         
+                 <apex:outputLabel value="Product Name" for="pdt" />
+                    <apex:outputPanel >
+                        <div>
+                            <div/>
+                             <apex:outputLabel value="{!ProductName}"></apex:outputLabel>                                                                                 
+                        </div> 
+                    </apex:outputPanel>
+             </apex:pageBlockSectionItem>                   
+            <apex:inputField id="contact" value="{!AAM2__AccountAssetHdrs__c.AAM2__Contact__c}"/>
+            <apex:inputField id="manufacturer" value="{!AAM2__AccountAssetHdrs__c.AAM2__Manufacturer__c}"/>
+            <apex:pageBlockSectionItem >
+                 <apex:outputLabel value="Quantity"></apex:outputLabel> 
+                 <apex:outputLabel value="{!AAM2__AccountAssetHdrs__c.AAM2__Quantity__c}"></apex:outputLabel>                         
+            </apex:pageBlockSectionItem>
+            <apex:inputField id="salesref" value="{!AAM2__AccountAssetHdrs__c.AAM2__SalesRef__c}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection id="installsec" title="Installation Information">
+            <apex:inputField id="case" value="{!AAM2__AccountAssetHdrs__c.AAM2__Case__c}"/>
+            <apex:inputField id="installationdate" value="{!AAM2__AccountAssetHdrs__c.AAM2__InstallationDate__c}"/>
+            <apex:pageBlockSectionItem id="installsecitem1">
+                 <apex:outputLabel value="Installation Street" for="street" />
+                    <apex:outputPanel id="str" >
+                        <div>                                               
+                          <apex:inputText value="{!StreetName}"  id="street" />                   
+                        </div> 
+                    </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem id="installsecitem2">
+                 <apex:outputLabel value="Installation City" for="city" />
+                    <apex:outputPanel id="cit" >
+                        <div>                                                     
+                             <apex:inputText value="{!CityName}" id="city" />                          
+                        </div> 
+                    </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem id="installsecitem3">
+                <apex:outputLabel value="Installation State" for="state" />
+                    <apex:outputPanel id="stat">
+                        <div>
+                            <div class="requiredBlock" />                             
+                             <apex:inputText value="{!StateName}" id="state" />
+                           
+                        </div> 
+                    </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem id="installsecitem4" >
+                 <apex:outputLabel value="Installation Country" for="country" />
+                    <apex:outputPanel id="coun">
+                        <div>
+                            <div class="requiredBlock" />                             
+                             <apex:inputText value="{!CountryName}"  id="country" />
+                           
+                        </div> 
+                    </apex:outputPanel>
+             </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem id="installsecitem5">
+                 <apex:outputLabel value="Installation PostalCode" for="postalcode" />
+                  <apex:outputPanel id="code">
+                        <div>
+                            <div class="requiredBlock" />                             
+                             <apex:inputText value="{!PostalCode}"  id="postalcode" />                           
+                        </div> 
+                    </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection id="notes" title="Additional Information">
+            <apex:inputField style="width:200%" id="notes" value="{!AAM2__AccountAssetHdrs__c.AAM2__SupportNotes__c}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockButtons >
+            <apex:commandButton action="{!EditSaveHeader}" value="Save"/>
+            <apex:commandButton immediate="true" action="{!Cancel}" value="Cancel"/>
+        </apex:pageBlockButtons>
+
+    </apex:pageBlock>
+</apex:form> 
+</apex:outputPanel>
+</apex:page>

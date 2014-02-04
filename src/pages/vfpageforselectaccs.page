@@ -1,0 +1,22 @@
+<apex:page standardController="account" recordSetVar="a" sidebar="false" showHeader="false" extensions="selectaccext">
+   <apex:form >
+    <apex:pageBlock >
+    
+        <apex:pageBlockTable value="{!selected}" var="acc">
+            <apex:column value="{!acc.name}"/>
+            <apex:column value="{!acc.type}"/>
+            <apex:column value="{!acc.id}"/>           
+        </apex:pageBlockTable>
+        
+        <apex:commandButton action="{!sentrec}" value="sent" rerender="it"/>
+        <apex:outputPanel id="it">
+        <apex:pageBlockTable value="{!acclst}" var="ac">
+            <apex:column value="{!ac.name}"/>
+            <apex:column value="{!ac.type}"/>
+            
+        </apex:pageBlockTable></apex:outputPanel>        
+        
+       
+    </apex:pageBlock>
+ </apex:form>
+</apex:page>

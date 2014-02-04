@@ -1,0 +1,9 @@
+<apex:page controller="pollercsl1"> 
+    <apex:form >
+        <apex:outputpanel id="out">
+            <apex:variable var="imageVar" value="{!imageName}"/> 
+            <apex:image url="{!URLFOR($Resource.images, imageVar)}" style="width:250px;height:250px"/> 
+            <apex:actionPoller action="{!change}" rerender="out" interval="5"/>
+        </apex:outputpanel>
+    </apex:form>
+</apex:page>

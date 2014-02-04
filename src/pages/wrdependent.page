@@ -1,0 +1,16 @@
+<apex:page controller="wrdepcls">
+  <apex:form >
+  
+      <apex:actionFunction action="{!show}" name="show" rerender="ot"/>
+      
+      <apex:outputpanel id="ot">
+          <apex:selectList value="{!accid}" onchange="show()" size="1">
+              <apex:selectOptions value="{!accitem}"></apex:selectOptions>
+          </apex:selectList>
+      
+           <apex:selectList size="1" disabled="{!bool}">
+              <apex:selectOptions value="{!conitem}"></apex:selectOptions>
+          </apex:selectList>
+      </apex:outputpanel>    
+  </apex:form>
+</apex:page>

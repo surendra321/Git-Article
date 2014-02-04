@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>authentication</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>authentications</value>
+    </caseValues>
+    <fields>
+        <label><!-- address --></label>
+        <name>address__c</name>
+    </fields>
+    <fields>
+        <label><!-- email --></label>
+        <name>email__c</name>
+    </fields>
+    <fields>
+        <label><!-- firstname --></label>
+        <name>firstname__c</name>
+    </fields>
+    <fields>
+        <label><!-- lastname --></label>
+        <name>lastname__c</name>
+    </fields>
+    <fields>
+        <label><!-- occupation --></label>
+        <name>occupation__c</name>
+    </fields>
+    <fields>
+        <label><!-- password --></label>
+        <name>password__c</name>
+    </fields>
+    <fields>
+        <label><!-- phone_no --></label>
+        <name>phone_no__c</name>
+    </fields>
+    <fields>
+        <label><!-- username --></label>
+        <name>username__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

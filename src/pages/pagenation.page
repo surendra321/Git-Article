@@ -1,0 +1,15 @@
+<apex:page controller="pagenationcls">
+    <apex:Form >
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!Accounts}" var="acc" rows="5">
+                <apex:column value="{!acc.Name}"/>
+                <apex:column value="{!acc.phone}"/>
+            </apex:pageBlockTable>
+            <apex:commandButton value="Prev"/>
+            <apex:commandButton value="Firstpage"/>
+            <apex:commandButton />
+            <apex:commandButton value="lastpage"/>
+            <apex:commandButton value="Next"/>
+        </apex:pageBlock>
+    </apex:Form>
+</apex:page>

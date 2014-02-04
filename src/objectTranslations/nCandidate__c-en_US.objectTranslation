@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>nCandidate</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>nCandidates</value>
+    </caseValues>
+    <fields>
+        <label><!-- Current Employer --></label>
+        <name>Current_Employer__c</name>
+    </fields>
+    <fields>
+        <label><!-- E Mail --></label>
+        <name>E_Mail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Education --></label>
+        <name>Education__c</name>
+        <picklistValues>
+            <masterLabel>degree</masterLabel>
+            <translation><!-- degree --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>diplama</masterLabel>
+            <translation><!-- diplama --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>pg</masterLabel>
+            <translation><!-- pg --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ug</masterLabel>
+            <translation><!-- ug --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- F Name --></label>
+        <name>F_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- L Name --></label>
+        <name>L_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mobile --></label>
+        <name>Mobile__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- doj --></label>
+        <name>doj__c</name>
+    </fields>
+    <fields>
+        <label><!-- exp --></label>
+        <name>exp__c</name>
+    </fields>
+    <fields>
+        <label><!-- state --></label>
+        <name>states__c</name>
+        <picklistValues>
+            <masterLabel>Ap</masterLabel>
+            <translation><!-- Ap --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ch1</masterLabel>
+            <translation><!-- Ch1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ch2</masterLabel>
+            <translation><!-- Ch2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ch3</masterLabel>
+            <translation><!-- Ch3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ch4</masterLabel>
+            <translation><!-- Ch4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jp1</masterLabel>
+            <translation><!-- Jp1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jp2</masterLabel>
+            <translation><!-- Jp2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jp3</masterLabel>
+            <translation><!-- Jp3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jp4</masterLabel>
+            <translation><!-- Jp4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ln1</masterLabel>
+            <translation><!-- Ln1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ln2</masterLabel>
+            <translation><!-- Ln2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ln3</masterLabel>
+            <translation><!-- Ln3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ln4</masterLabel>
+            <translation><!-- Ln4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mp</masterLabel>
+            <translation><!-- Mp --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tml</masterLabel>
+            <translation><!-- Tml --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Up</masterLabel>
+            <translation><!-- Up --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Usa1</masterLabel>
+            <translation><!-- Usa1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Usa2</masterLabel>
+            <translation><!-- Usa2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Usa3</masterLabel>
+            <translation><!-- Usa3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Usa4</masterLabel>
+            <translation><!-- Usa4 --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>my layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Emp details --></label>
+            <section>Emp details</section>
+        </sections>
+        <sections>
+            <label><!-- Mailing Details --></label>
+            <section>Mailing Details</section>
+        </sections>
+        <sections>
+            <label><!-- Personal Details --></label>
+            <section>Personal Details</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- you can not enter future date as doj --></errorMessage>
+        <name>DojRule</name>
+    </validationRules>
+</CustomObjectTranslation>

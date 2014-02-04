@@ -1,0 +1,30 @@
+<!--This UI uses the ProductComponentClass as extension for the standard
+    controller-->
+<apex:page standardController="AAM2__Product_Component__c" extensions="AAM2.ProductComponent" tabStyle="AAM2__Product_Component__c">
+    <apex:pageMessages />
+    <apex:sectionHeader title="ProductComponent Edit" subtitle="Edit ProductComponent" help="{!$Resource.AAM2__ProductComponentHelp}"/>
+    <apex:form >
+        <apex:outputPanel >
+            <apex:pageBlock title="Product Component Edit" id="pb1" mode="edit">
+                <apex:pageBlockTable var="a" value="{!ProductComponents}" id="thetable">
+                    <apex:column headerValue="Product">
+                        <apex:outputLabel value="{!a.Product__r.name}"> </apex:outputLabel>
+                    </apex:column>
+                    <apex:column headerValue="Component">
+                        <apex:outputLabel value="{!a.Component__r.name}"> </apex:outputLabel>
+                    </apex:column>
+                    <apex:column headerValue="Quantity">
+                        <apex:inputField value="{!a.AAM2__Qty__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Mandatory">
+                        <apex:inputField value="{!a.AAM2__Mandatory__c}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+                <apex:pageBlockButtons id="pbb1">
+                    <apex:commandButton value="Save" action="{!MultiSave}"/>
+                    <apex:commandButton immediate="true" value="Cancel" action="{!MultiCancel}"/>
+                </apex:pageBlockButtons>
+            </apex:pageBlock>
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>

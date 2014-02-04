@@ -1,0 +1,10 @@
+<apex:component id="stepinComponent1">
+  <apex:panelGrid cellpadding="0" cellspacing="0" width="100%" border="0" style="text-align: right;" columns="1" id="thestepintop">
+    <apex:panelGroup id="poweredBy">
+      <!--<apex:outputText style="font-size: smaller" value="{!$Label.site.powered_by}"/>-->
+      
+      <apex:outputText >{!$User.FirstName} {!$User.LastName}</apex:outputtext>
+      <apex:outputLink value="https://ap1.salesforce.com/apex/stepinhome"><apex:image value="{!$Resource.stepinlogo1}" style="height:35px;width:150px" styleClass="poweredByImage"/></apex:outputLink>
+    </apex:panelGroup>
+   </apex:panelGrid>
+</apex:component>

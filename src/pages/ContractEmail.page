@@ -1,0 +1,32 @@
+<apex:page standardController="Contract" extensions="InvoiceEmailController" showHeader="false" >
+<apex:form >
+<apex:pageBlock >
+    <table border="0" width="100%">
+        <tr width="100%">
+            <td valign="top" align="left" width="100%">
+                <!--<apex:image id="theImage2" value="{!$Resource.whishpirlogo}" width="150" height="150"/>-->
+            </td>
+         </tr>
+   </table>
+   
+   <apex:outputPanel layout="block">
+      <apex:pageMessages id="error"/>
+      <apex:panelGrid columns="2" style="margin-top:1em;">
+        <apex:outputLabel value="To" for="To"/>
+        <apex:inputText id="To" value="{!To}"/>
+        <apex:outputLabel value="CC" for="CC"/>
+        <apex:inputText id="CC" value="{!CC}"/>
+        <apex:outputLabel value="Subject" for="Subject"/>
+        <apex:inputText id="Subject" value="{!MailSubject}"/>
+        <apex:outputLabel value="Body" for="Body"/>
+        <apex:inputtextarea cols="50" rows="7" id="Body" value="{!MailBody}"/>
+        <apex:outputText value=""/>
+        <apex:commandButton action="{!sendPdf}" value="Send Email" id="loginButton"/>
+        <apex:outputText value=""/>
+        <apex:outputText value=""/>
+        <apex:outputText value=""/>
+        </apex:panelGrid>
+    </apex:outputPanel>
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

@@ -1,0 +1,7 @@
+<apex:component controller="comptestcls">
+<apex:attribute name="Name" description="This is the Field Label Name" type="String"   assignTo="{!TextName}"/>        
+<apex:attribute name="Number" description="This is the name, in which he saved his Query"  type="string" assignTo="{!TextNameId}"/>
+<apex:inputText id="text1" value="{!TextName}" style="vertical-align :bottom; width: 20%"/> &nbsp; 
+<apex:inputText id="text2" value="{!TextNameId}" /> 
+
+</apex:component>

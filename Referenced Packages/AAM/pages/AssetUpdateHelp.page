@@ -1,0 +1,159 @@
+<apex:page sidebar="false" showHeader="false">
+<!--<!DOCTYPE html 
+
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<html lang="en-us" xml:lang="en-us"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+<meta name="copyright" content="(C) Copyright 2000-2009 Steadfast Global, inc. All rights reserved."/> 
+<meta name="DC.rights.owner" content="(C) Copyright 2000-2009 Steadfast Global, inc. All rights reserved."/>
+<meta name="DC.Type" content="topic"/> 
+<meta name="DC.Title" content="About Asset Updates"/> 
+<meta name="DC.subject" content="Account Asset, home page, quick create"/> 
+<meta name="keywords" content=" Account Assets, home page, quick create"/> 
+<meta name="DC.Format" content="XHTML"/> 
+<meta name="DC.Identifier" content=" Account Assets_overview"/> 
+<link rel="stylesheet" type="text/css" href="help.css"/> 
+<link rel="stylesheet" type="text/css" href="/sCSS/Theme2/default/help.css"/> 
+<title> Account Assets Home</title> 
+<script type="text/javascript" language="JavaScript" src="/js/functions.js"> </script> 
+</head> 
+<body onLoad="highlightToc(&#34 Account Assets&#34;, &#34; Account Assets_overview&#34;);" id=" Account Assets_overview"><a name=" Account Assets_overview"><!-- --></a> 
+<a name="top"><!-- --></a> 
+<h1 class="helpHead1"><a name="d15785e5"><!-- --></a><span id="topic-title"><a name="topic-title"><!-- --></a> About Asset Updates</span></h1> 
+<div> 
+<table border="0" cellpadding="0" cellspacing="0" summary="Salesforce editions needed for the documented functionality" width="100%" class="editionTable"> 
+<tbody> 
+</tbody> 
+</table><br/> 
+<table class="permTable" cellpadding="0" cellspacing="0" summary="Permissions needed for the documented functionality" width="100%" border="0"> 
+<thead align="left"> 
+<tr> 
+<th class="permTableHeader" colspan="2" id="d15785e56">User Permissions Needed</th> 
+</tr> 
+</thead> 
+<tbody> 
+<tr> 
+<td class="permRowLeft" headers="d15785e56 ">To view Asset Updates tab:</td> 
+<td class="permRowRight" headers="d15785e56 ">"Read" on Asset Updates</td> 
+</tr> 
+<tr> 
+<td class="permRowLeft" headers="d15785e56 ">To view Asset Updates:</td> 
+<td class="permRowRight" headers="d15785e56 ">"Read" on Asset Updates</td> 
+</tr> 
+<tr> 
+<td class="permRowLeft" headers="d15785e56 ">To create Asset Updates:</td> 
+<td class="permRowRight" headers="d15785e56 ">"Create" on Asset Updates</td> 
+</tr> 
+</tbody> 
+</table> 
+<p> 
+Clicking on the Asset Updates tab takes you to the Asset Update home page. The home page provides you with a List of all Asset Updates that are created. The button New Asset Updates provides with an option of creating a new Asset Update. Asset Updates have 5 different record types to choose from.</p> 
+</div> 
+<br/><h1 class="helpHead1"><a name="d15352e7"><!-- --></a><span id="topic-title"><a name="topic-title"><!-- --></a>What is an Asset Update?</span></h1> 
+<div> 
+<table border="0" cellpadding="0" cellspacing="0" summary="Salesforce editions needed for the documented functionality" width="100%" class="editionTable"> 
+<tbody> 
+</tbody> 
+</table> 
+<p> 
+Asset Updates are individual items created to keep track of changes being made to the Components of an Asset. Thus they will provide a history of all configuration changes that happen to an Account asset. It provides five different actions for the user to choose from in the form of Record Type. </p> 
+<p>Install – Select if you want to add a new component to an Account Asset.</p> 
+<p>Uninstall – Select if you want to remove/delete an existing component in an Account Asset.</p> 
+<p>Repair – Select if you want to perform any repair activity on existing components of an Account Asset.</p> 
+<p>Replace – Select if you want to partially or fully replace an existing component with a new one for an Account Asset.</p> 
+<p>Upgrade – Select if you want to partially or fully upgrade an existing component with a new one for an Account Asset.</p> 
+</div> 
+<br/><h1 class="helpHead1"><a name="d15156e8"><!-- --></a><span id="topic-title"><a name="topic-title"><!-- --></a>Creating Asset Updates</span></h1> 
+<div> 
+<table border="0" cellpadding="0" cellspacing="0" summary="Salesforce editions needed for the documented functionality" width="100%" class="editionTable"> 
+<tbody> 
+</tbody> 
+</table><br/> 
+<table class="permTable" cellpadding="0" cellspacing="0" summary="Permissions needed for the documented functionality" width="100%" border="0"> 
+<thead align="left"> 
+<tr> 
+<th class="permTableHeader" colspan="2" id="d15156e60">User Permissions Needed</th> 
+</tr> 
+</thead> 
+<tbody> 
+<tr> 
+<td class="permRowLeft" headers="d15156e60 ">To view Asset Updates:</td> 
+<td class="permRowRight" headers="d15156e60 ">"Read" on Asset Updates</td> 
+</tr> 
+<tr> 
+<td class="permRowLeft" headers="d15156e60 ">To create Asset Updates:</td> 
+<td class="permRowRight" headers="d15156e60 ">"Create" on Asset Updates</td> 
+</tr> 
+</tbody> 
+</table> 
+<p id="ToAccount"><a name="ToAccount"><!-- --></a> 
+<p>To create an Asset Update</p> 
+<li>    Select Asset Update from the Create new drop-down list in the sidebar, or click on New Asset Update in the Asset Update home page. You may also click on New Asset Update button in the related lists of Case or Account Assets. </li> 
+<li>    Select the record type from Install, Uninstall, Repair, Replace and Upgrade depending on the action that you want to perform on the Account Asset.</li> 
+<li>    Select and enter values for fields that are required along with other details</li> 
+<li>    Click on save when you are finished.</li> 
+</p></div> 
+<h1 class="helpHead1"><a name="d15156e8"><!-- --></a><span id="topic-title"><a name="topic-title"><!-- --></a>Displaying and Editing Asset Updates</span></h1> 
+<div> 
+<table border="0" cellpadding="0" cellspacing="0" summary="Salesforce editions needed for the documented functionality" width="100%" class="editionTable"> 
+<tbody> 
+</tbody> 
+</table><br/> 
+<table class="permTable" cellpadding="0" cellspacing="0" summary="Permissions needed for the documented functionality" width="100%" border="0"> 
+<thead align="left"> 
+<tr> 
+<th class="permTableHeader" colspan="2" id="d15156e60">User Permissions Needed</th> 
+</tr> 
+</thead> 
+<tbody> 
+<tr> 
+<td class="permRowLeft" headers="d15156e60 ">To view Asset Updates:</td> 
+<td class="permRowRight" headers="d15156e60 ">"Read" on Asset Updates</td> 
+</tr> 
+<tr> 
+<td class="permRowLeft" headers="d15156e60 ">To edit Asset Updates:</td> 
+<td class="permRowRight" headers="d15156e60 ">"Edit" on Asset Updates</td> 
+</tr> 
+</tbody> 
+</table> 
+<p id="ToAccount"><a name="ToAccount"><!-- --></a> 
+<p><b>Displaying Asset Updates</b></p> 
+<p> 
+You can locate an Asset Update from the list in the Asset Update home page or from the related lists in Account Assets or Cases. Once you have located an Asset Update list page or related list, click the Asset Update Number to display detailed information. </p> 
+<p><b>Editing Asset Updates</b></p> 
+<p> 
+Asset Update cannot be edited. When user chooses Edit they will be redirected to a page providing information on Editing.</p> 
+<p><b>Asset Update Related Lists</b></p> 
+<p> 
+Asset Updates does not have any specific related lists. Standard related lists such as Open Activities and Notes and Attachments are part of Asset Updates.</p> 
+</p></div>
+<h1 class="helpHead1"><a name="d15156e8"><!-- --></a><span id="topic-title"><a name="topic-title"><!-- --></a>Deleting Asset Updates</span></h1> 
+<div> 
+<table border="0" cellpadding="0" cellspacing="0" summary="Salesforce editions needed for the documented functionality" width="100%" class="editionTable"> 
+<tbody> 
+</tbody> 
+</table><br/> 
+<table class="permTable" cellpadding="0" cellspacing="0" summary="Permissions needed for the documented functionality" width="100%" border="0"> 
+<thead align="left"> 
+<tr> 
+<th class="permTableHeader" colspan="2" id="d15156e60">User Permissions Needed</th> 
+</tr> 
+</thead> 
+<tbody> 
+<tr> 
+<td class="permRowLeft" headers="d15156e60 ">To delete Asset Updates:</td> 
+<td class="permRowRight" headers="d15156e60 ">"Delete" on Asset Updates</td> 
+</tr> 
+</tbody> 
+</table> 
+<p id="ToAccount"><a name="ToAccount"><!-- --></a> 
+<p> 
+To delete an Asset Update, click on the Delete button in the detail page of an Asset Update. Optionally you may also click on the Del link against an Asset Update in the related lists of Account Assets or Cases.</p> 
+<p> 
+Deleting Asset Update will not make changes to any other related object.</p> 
+</p></div> 
+<div class="helpPageFooter">� Copyright 2000-2009 Steadfast Global, inc. All rights reserved.<br/>Various trademarks held by their respective owners.</div> 
+</body> 
+</html>
+</apex:page>

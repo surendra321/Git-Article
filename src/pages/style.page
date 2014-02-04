@@ -1,0 +1,18 @@
+<apex:page >
+    <style>
+        .stylecls{
+              color:red;
+              font-size:24px;
+              font-family:imact;
+              }
+    </style>
+
+  <apex:outputLabel style="color:blue;font-size:18px;font-family:impact">hello1</apex:outputLabel>
+  <br/>
+  
+  <apex:outputLabel styleClass="stylecls">hello2</apex:outputLabel>
+  <br/>
+  
+  <apex:stylesheet value="{!$Resource.suri}"/>
+  <apex:outputLabel styleClass="stylecls1">hello3</apex:outputLabel>
+</apex:page>

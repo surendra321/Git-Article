@@ -1,0 +1,29 @@
+<apex:page id="j1">
+
+<script>
+    
+    window.onload = function(){
+        //alert('Page is loading..')
+        document.getElementById('j1:j2:j3').style.display='none';
+    }   
+    function show(){
+        document.getElementById('j1:j2:j3').style.display='block';
+        return false;
+        }
+    function hide(){
+        document.getElementById('j1:j2:j3').style.display='none';
+        return false;
+        }
+</script>    
+   
+    <apex:form id="j2">
+        <apex:commandButton value="show" onclick="return show()"/>
+        <apex:commandButton value="hide" onclick="return hide()"/>
+        
+        <apex:pageblock title="jscript" id="j3">
+            <apex:inputText label="username"/>
+            <apex:inputSecret label="password"/>
+            
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

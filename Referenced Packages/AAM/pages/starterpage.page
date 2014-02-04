@@ -1,0 +1,101 @@
+<apex:page >
+
+    <style type="text/css">
+    p {font-family: Calibri;font-size: medium;font-weight: 100;}
+    h1 {
+        font-family: Calibri;
+        font-weight: bold;
+        font-size: xx-large;
+        font-style: normal;
+    }
+    h2 {
+        font-family: Calibri;
+        font-size: large;
+        font-style: normal;
+    }
+    h3 {
+        font-family: Calibri;
+        font-size: small;
+        font-style: normal;
+        font-weight: bold;
+    }
+    ul {
+        font-family: Calibri;
+        font-size: medium;
+        font-style: normal;
+    }
+    ol {
+        font-family: Calibri;
+        font-size: medium;
+        font-style: normal;
+    }
+    /*td {
+        font-family: Calibri;
+        font-size: medium;
+        font-style: normal;
+    }*/
+    </style>
+  <div style="margin-bottom:1.5%"></div>
+  <h1>Account Asset Management</h1> <br /><br />
+  <h2>About</h2>  
+  <p>Account Asset Management allows the Salesforce.com users to keep track of Assets installed in their customer sites. It has the option to create assets, manage their configuration and also maintain the asset configuration over a period of time so as to maintain the changes in the asset configuration due to support/upgrades etc.</p>
+ 
+ <h2>Post Installation Steps</h2>
+   <p>Please follow the below steps to successfully complete the installation of AAM.</p>
+   <ol>
+       <li>Overriding New button for Cases.</li>
+       <ul type="square">           
+          <li>Click on Setup – Customize – Cases – Button and Links.</li>
+          <li>Click on edit next to New.</li>          
+          <li>Select Content Type as Visualforce Page.</li>
+          <li>Select CaseNewPage as Content Name.</li>
+          <li>Click on Save.</li>          
+       </ul>
+       
+       <li>Override the Delete button for Product Object with the Visualforce page name as 'DeleteProduct'. (Optional)</li>
+       <li>Rename the Product tab as Products/Components. (Optional)</li>
+       <li>Add 'Account Asset Header ' in the Account related list. (Optional)</li>
+       <li>Add 'Account Asset Header ' in Contact related list. (Optional)</li>
+       
+   </ol>   
+ 
+  <h2>Features of AAM</h2>
+  <ol>
+      <li>Extends the use of standard Salesforce.com objects and functionality.</li>
+      <li>Manage manufacturers of products and components.</li>
+      <li>Manage products and components.</li>
+      <li>Define and manage components for each product (i.e. initial product configuration).</li>
+      <li>Manage assets or products created based on a single transaction in asset headers (e.g. sales invoice number).</li>
+      <li>Track assets under asset headers using unique asset ids.</li>
+      <li>Capture the initial configuration of each asset separately.</li>
+      <li>Track the changes that happen to the configuration of an asset over a period of time (e.g. install, uninstall, repair, replace).</li>
+      <li>Create and track cases for each asset.</li>
+      <li>See reports on assets installed in an account, cases for assets, and cases by components etc.</li>
+  </ol>
+  <h2>Business benefits for Sellers/Service providers of products</h2>
+  <ul>
+      <li>Leverage information on assets owned by customer for sales and marketing.</li>
+      <ul type="square">
+          <li>Cross sell opportunities to sell related products.</li>
+          <li>Up sell opportunities to sell upgrades.</li>
+          <li>Understand customer profile better to improve marketing and sales.</li>
+      </ul>      
+      <li>Leverage information on assets owned by customer for support.</li>
+      <ul type="square">
+          <li>Provide accurate and effective service.</li>
+          <li>Effective utilization of engineers.</li>
+          <li>Save cost/time with knowledge and configuration, last services done, tools/components required etc.</li>
+          <li>Manage each assets configuration separately.</li>
+          <li>Have complete history of cases/configuration changes.</li>
+      </ul> 
+      <li>Leverage Manufacturer information on parts.</li>
+      <ul type="square">
+          <li>Save money by utilizing OEM warranties for product and components.</li>
+          <li>Provide better service with insights to the components available with the customer and being ready with the required components.</li>          
+      </ul> 
+      
+  </ul>
+ 
+   
+
+</apex:page>

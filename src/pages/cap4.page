@@ -1,0 +1,16 @@
+<apex:page Controller="cap4cls" tabStyle="Account" >
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageblockSection >
+                <apex:inputField value="{!account.name}"/>
+                <apex:inputField value="{!account.type}"/>
+                <apex:inputField value="{!account.phone}"/>
+                <apex:inputField value="{!account.BillingCity}"/>
+            </apex:pageblockSection>
+            
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!saveacc}" value="save the Account"  />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

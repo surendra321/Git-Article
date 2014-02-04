@@ -1,0 +1,60 @@
+<apex:page sidebar="false" title="{!$Label.site.site_under_construction}" showHeader="false" controller="stepinhomecls">
+    <apex:composition template="stepintemplate">
+    <apex:define name="body">
+    <center>
+   <!--<apex:iframe width="120" height="205" src="http://www.youtube.com/v/rHtVc1asWCc&autoplay=1" frameborder="0" />-->
+    
+    <!--<iframe width="120" height="115" src="http://www.youtube.com/embed/rHtVc1asWCc" frameborder="0" ></iframe>-->
+    <!--<apex:image value="{!$Resource.stepinlogo}"  style="height:50px;width:50px"/>-->
+    <!--<font color="green" ><b><marquee> welcom mr {!$User.FirstName} {!$User.LastName}</marquee></b></font>-->
+    
+    
+    <font color="green" ><b><marquee> welcom to our onlineshopping {!$User.firstName}</marquee></b></font>
+    <apex:form >
+        <apex:pageMessages />
+        <apex:pageblock >
+            <apex:pageBlockSection columns="4">
+                
+            <apex:pageBlockSectionItem >
+            <apex:panelGrid columns="2">
+            <apex:outputText >username</apex:outputText>
+            <apex:inputtext value="{!uname}"/>
+            
+            <apex:outputText >password</apex:outputText>
+            <apex:inputSecret value="{!psw}"/>
+            
+            <apex:commandButton value="login" action="{!login}"/>
+            <apex:commandLink value="newUser" action="{!newusr}"/>
+            <apex:commandLink value="forgotpassword" action="{!forgotpsw}"/>
+            </apex:panelGrid>
+            
+            </apex:pageBlockSectionItem>
+            
+           <!-- <apex:image value="{!$Resource.phone}" style="height: 150px;width: 150px;"/>
+            <apex:image value="{!$Resource.dress}" style="height: 150px;width: 150px;"/>-->
+            
+            <apex:pageblockSectionItem >
+            <apex:actionPoller action="{!change}" interval="5" reRender="im"/>
+            <apex:outputPanel id="im">
+                <apex:variable var="imgvar" value="{!imgname}"/>
+                <!--<apex:image url="{!URLFOR($Resource.stepinimg,imgvar)}" style="height: 150px;width: 420px;"/>-->
+            </apex:outputPanel>
+            </apex:pageblockSectionItem>
+            
+            </apex:pageBlockSection>
+            
+            <apex:inputText style="height: 25px;width: 200px;" /><apex:commandButton style="background-color: pink;" value="search"/>
+            
+            <apex:tabPanel switchType="client" >
+                <apex:tab label="laptops" labelWidth="100px"  rendered="true" style="background-color: pink;"></apex:tab>
+                <apex:tab label="cell-phones" labelWidth="100px" ></apex:tab>
+                <apex:tab label="tablets" labelWidth="100px" ></apex:tab>
+                
+            </apex:tabPanel>
+            
+        </apex:pageblock>    
+    </apex:form>
+    </center>
+    </apex:define>
+   </apex:composition>
+</apex:page>

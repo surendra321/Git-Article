@@ -1,0 +1,26 @@
+<apex:page controller="stepinforgotpswcls" showHeader="false" sidebar="false">
+
+  <apex:composition template="stepintemplate">
+    <apex:define name="body">
+    <center>
+    
+
+<apex:pageMessages ></apex:pageMessages>
+<Apex:messages />
+ <Apex:form >
+     <apex:panelGrid columns="3">
+     <apex:outputLabel >Please give your registered email address</apex:outputLabel>
+     <apex:inputText value="{!email}"/><br/>
+     
+     <apex:outputLabel >Please give your registered username</apex:outputLabel>
+     <apex:inputText value="{!uname}"/>
+     
+     
+     <apex:commandButton value="Submit" action="{!submit}"/>
+     </apex:panelGrid>
+ </Apex:form>
+ 
+ </center>
+    </apex:define>
+    </apex:composition>
+</apex:page>

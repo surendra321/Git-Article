@@ -1,0 +1,34 @@
+<apex:page standardController="account" showHeader="false" recordSetVar="acc">
+    <style>
+        h1{
+            color:blue;
+            font-size:medium;
+            font-style: normal;
+        }
+        .green{
+            background-color:green;
+        }
+        .yellow{
+            background-color:yellow;
+        }
+        .red{
+            background-color:red;
+       
+        }
+    </style>
+    <apex:form >
+      <h1> THis is a Account table</h1><br/>
+      <apex:dataTable value="{!acc}" var="a" border="1" cellpadding="5" cellspacing="5" columnClasses="green,yellow,red">
+          <apex:column headerValue="account name">
+              <apex:outputField value="{!a.name}"/>
+          </apex:column>
+          <apex:column headerValue="account type">
+          <apex:outputField value="{!a.type}"/>
+          </apex:column>
+          <apex:column headerValue="account phone">
+          <apex:outputField value="{!a.phone}"/>
+          </apex:column>
+      </apex:dataTable>
+      <!--<apex:commandButton value="save"/>-->
+  </apex:form>
+</apex:page>

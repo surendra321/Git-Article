@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Manufacturer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Manufacturer</label>
+        <referenceTo>Manufacturer__c</referenceTo>
+        <relationshipLabel>Products</relationshipLabel>
+        <relationshipName>Products</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>MaxAssemblyQty__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Max Assembly Qty</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mfrwarrantydays__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Mfr Warranty Days</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MinAssemblyQty__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Min Assembly Qty</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Model_Year__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Model Year</label>
+        <length>20</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Modelname__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Model Name</label>
+        <length>20</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Modelnumber__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Model Number</label>
+        <length>20</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Serviceable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Serviceable</label>
+        <type>Checkbox</type>
+    </fields>
+    <recordTypes>
+        <fullName>Component</fullName>
+        <active>true</active>
+        <description>Use this Record Type to create a new  Component and its details</description>
+        <label>Component</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Product</fullName>
+        <active>true</active>
+        <label>Product</label>
+        <picklistValues>
+            <picklist>Family</picklist>
+            <values>
+                <fullName>Electrical Items</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <validationRules>
+        <fullName>Manufacturer_Warranty_days</fullName>
+        <active>true</active>
+        <errorConditionFormula>Mfrwarrantydays__c  &lt; 0</errorConditionFormula>
+        <errorDisplayField>Mfrwarrantydays__c</errorDisplayField>
+        <errorMessage>Mfr Warranty days should be greater than 0</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Min_and_Max_Assembly_Qty</fullName>
+        <active>true</active>
+        <description>To ensure that the minimum assembly quantity should always be lesser than maximum assembly quantity</description>
+        <errorConditionFormula>MinAssemblyQty__c  &gt; MaxAssemblyQty__c  ||  MaxAssemblyQty__c  &lt;  MinAssemblyQty__c</errorConditionFormula>
+        <errorMessage>Please ensure that your Maximum Assembly Qty is greater than the Minimum assembly qty</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Negative_Qty</fullName>
+        <active>true</active>
+        <description>To check if a proper positive quantity is entered</description>
+        <errorConditionFormula>MinAssemblyQty__c  &lt; 0  ||  MaxAssemblyQty__c  &lt; 0</errorConditionFormula>
+        <errorMessage>Assembly Quantity cannot be negative please enter value again</errorMessage>
+    </validationRules>
+</CustomObject>

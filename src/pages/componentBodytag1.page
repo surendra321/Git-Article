@@ -1,0 +1,26 @@
+<apex:page sidebar="false" showheader="false">
+    <c:CompBody var="a">
+        <apex:panelGrid columns="2" border="1" lang="polish">            
+            <apex:outputText value="{!a.name}"/>
+            <apex:panelGroup >
+                <apex:panelGrid columns="1">
+                    <apex:outputText value="{!a.billingstreet}"/>
+                    <apex:panelGroup >
+                        <apex:outputText value="{!a.billingCity}, 
+                            {!a.billingState} {!a.billingpostalcode}"/>
+                    </apex:panelGroup>
+                </apex:panelGrid>
+            </apex:panelGroup>
+        </apex:panelGrid>
+    </c:CompBody><br/>
+    
+    <apex:image value="{!$Resource.dress}"/>
+     <apex:flash src="{!$Resource.dress}" height="100" width="40%" play="true" loop="true"/><br/><br/>     
+     <apex:flash src="{!$Resource.flashswf}" 
+     height="300" width="40%" play="false"/>
+
+     <apex:image value="{!$Resource.flashswf}"/>
+     <apex:flash src="{!$Resource.Flashswf2}" 
+     height="200" width="40%" />
+     <iframe height="600px" id="theIframe" name="theIframe" src="http://www.salesforce.com" width="100%"></iframe>
+</apex:page>

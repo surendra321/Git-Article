@@ -1,0 +1,69 @@
+<apex:page controller="reccls" >
+    <apex:tabPanel switchType="client" >
+        
+        <apex:tab label="Account" title="Account record info">
+        <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!alist}" var="a">
+                <apex:column >
+                    <apex:commandLink value="edit" action="/{!a.id}/e"/>&nbsp;&nbsp;
+                    <apex:commandLink value="view" action="/{!a.id}"/>&nbsp;&nbsp;
+                    <apex:commandLink value="delete" action="{!delrecord}" >
+                        <apex:param value="{!a.id}" assignTo="{!recid}" name="s"/>
+                    </apex:commandLink>
+                </apex:column>
+            
+                <apex:column value="{!a.name}"/>
+                <apex:column value="{!a.phone}"/>
+               
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        </apex:form>
+        </apex:tab>
+
+        
+        
+        <apex:tab label="Book" title="book1 record info">
+        <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!blist}" var="b">
+                <apex:column >
+                    <apex:commandLink value="edit" action="/{!b.id}/e"/>&nbsp;&nbsp;
+                    <apex:commandLink value="view" action="/{!b.id}"/>&nbsp;&nbsp;
+                    <apex:commandLink value="delete" />
+                </apex:column>
+            
+                <apex:column value="{!b.name}"/>
+                <apex:column value="{!b.price__c}"/>
+                <apex:column value="{!b.edition__c}"/>
+                <apex:column value="{!b.author__c}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        </apex:form>
+        </apex:tab>
+        
+                
+        
+        <apex:tab label="Contact" title="contact record info">
+        <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!clist}" var="c">
+                <apex:column >
+                    <apex:commandLink value="edit" action="/{!c.id}/e"/>&nbsp;&nbsp;
+                    <apex:commandLink value="view" action="/{!c.id}"/>&nbsp;&nbsp;
+                    <apex:commandLink value="delete" />
+                </apex:column>
+            
+                <apex:column value="{!c.name}"/>
+                <apex:column value="{!c.mobilephone}"/>
+               
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        </apex:form>
+        </apex:tab>
+        
+        
+    </apex:tabPanel>
+        
+    
+</apex:page>

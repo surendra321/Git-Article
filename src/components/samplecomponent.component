@@ -1,0 +1,26 @@
+<apex:component controller="samplecomponentcls" selfClosing="true" id="samplecomp">
+  <apex:attribute name="identifier" description="this is for understanding" required="true" type="string" />
+  <apex:outputPanel id="tex">
+  <apex:inputText id="text1" value="{!firstval}"/>
+  <apex:inputText id="text2" value="{!secondval}"/>
+  <apex:inputText id="text3" value="{!thirdval}"/>
+  </apex:outputPanel>
+  <apex:commandButton value="click" action="{!click}" reRender="pb"/>
+      <apex:pageBlock id="pb">
+          <apex:outputPanel rendered="{!display}">
+              <apex:dataTable value="{!acclst1}" var="acc" >
+                  <apex:column >
+                  <apex:commandLink rerender="tex" > 
+                      <apex:outputText value="{!acc['name']}" />                                    
+                          <apex:param name="l1" value="{!acc['name']}" assignTo="{!firstval}"/>
+                          <apex:param name="l2" value="{!acc['phone']}" assignTo="{!secondval}"/>                                    
+                          <apex:param name="l3" value="{!acc['id']}" assignTo="{!thirdval}"  />                                   
+                  </apex:commandLink>
+                  </apex:column>
+                  <apex:column value="{!acc['phone']}"/>                  
+              </apex:dataTable>
+              <apex:commandButton value="close" action="{!close}" reRender="pb"/>
+          </apex:outputPanel>
+      </apex:pageBlock>
+  
+</apex:component>

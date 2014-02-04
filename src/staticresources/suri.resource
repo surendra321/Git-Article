@@ -1,0 +1,5 @@
+.stylecls1{
+              color:green;
+              font-size:30px;
+              font-family:imact;
+}

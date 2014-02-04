@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>marchandise</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>marchandise</value>
+    </caseValues>
+    <fields>
+        <label><!-- Total Inventory --></label>
+        <name>Total_Inventory__c</name>
+    </fields>
+    <fields>
+        <label><!-- description --></label>
+        <name>description__c</name>
+    </fields>
+    <fields>
+        <label><!-- price --></label>
+        <name>price__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

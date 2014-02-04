@@ -1,0 +1,53 @@
+<apex:page sidebar="false">
+
+    <script type="text/javascript">    
+         var uname1='';        
+         var fn1;
+         //fn1=document.getElementById("{!$Component.fn}").value;        
+                
+         function authenticate(){         
+                  
+         if(fn1.value=='' || fn1.value==null)        
+         {        
+         alert('Enter First name');        
+         fn1.focus();        
+         return false;        
+         }         
+         if(uname1.value== ''||uname1.value== null){        
+         alert('Please Enter Username');        
+         uname1.focus();        
+         return false;        
+         }        
+         //authenticate1();        
+         }    
+    </script>    
+    <apex:form >    
+        <apex:outputText ><b> Create New User: </b></apex:outputText><br/>    
+        <apex:pageBlock >    
+            <apex:panelGrid columns="2" >    
+                First Name:    
+                <apex:inputText id="fn"/>    
+                <script>    
+                    fn1=document.getElementById("{!$Component.fn}");    
+                </script>  
+                Last Name:    
+                <apex:inputText />    
+                UserName:    
+                <apex:inputText id="uname" /><br/>    
+                Password:    
+                <apex:inputsecret id="password" /><br/>    
+                Mobile:    
+                <apex:inputText id="mobile" />    
+                <center><apex:commandButton value="Submit" onclick="authenticate();"     
+                action="{!Submit}" /> </center>    
+                 <b><apex:commandLink value="Go to Home Page"     
+                Style="Color:Green" /></b>     
+                <script>    
+                uname1=document.getElementById("{!$Component.uname}");    
+                </script>    
+            <!--<apex:actionFunction name="authenticate1" action="{!Submit}"/>-->    
+            </apex:panelGrid>   
+        </apex:pageBlock>    
+    </apex:form>
+
+</apex:page>

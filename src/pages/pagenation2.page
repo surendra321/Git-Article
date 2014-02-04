@@ -1,0 +1,48 @@
+<apex:page title="Salesforce SOQL Offset Example Using Visualforce" tabStyle="contact" controller="dynamic_visualforce_with_soql_offset" showHeader="false" sidebar="false" readOnly="true" cache="false" >
+<apex:sectionHeader subtitle="All Accounts are Display with phone no's" title="Account table"/>
+<!-- for pagenation -->   
+<apex:form >
+<apex:pageBlock >   
+    
+    <apex:actionFunction action="{!refreshGrid}" name="queryByPage" reRender="myPanel,myButtons" >
+        <apex:param name="firstParam" assignTo="{!selectedPage}" value="" />
+    </apex:actionFunction>
+    
+    <apex:dynamicComponent componentValue="{!myCommandButtons}"/>        
+    
+    <apex:pageBlockSection title="Accounts and their phone no's (Total List Size: {!total_size})" columns="2" collapsible="false">
+    <apex:pageBlockSectionItem >
+    <apex:outputPanel id="myPanel">
+    <apex:pageMessages id="theMessages" />
+    <apex:pageBlockTable value="{!Accounts}" var="a" align="center">
+        
+        <apex:column title="Account">
+            <apex:commandLink value="{!a.Name}" status="stat" reRender="out">
+                <apex:param name="p" value="{!a.id}"/>
+            </apex:commandLink>
+        </apex:column>
+        <apex:column value="{!a.phone}" />
+        <apex:column value="{!a.Type}" />
+        <apex:facet name="footer">Showing Page # {!pageNumber} of {!totalPages}</apex:facet>
+    </apex:pageBlockTable>
+    </apex:outputPanel>
+    </apex:pageBlockSectionItem>
+        
+    <apex:pageBlockSectionItem >
+        <apex:outputPanel id="out">
+             <Apex:actionStatus id="stat">
+                 <apex:facet name="start">
+                    <apex:image value="{!$Resource.loadingimg2}" style="width:150px; height:150px;position: absolute;margin-left: 30%;margin-top: -40%;"/>         
+                 </apex:facet>
+                 <apex:facet name="stop">
+                     <apex:detail subject="{!$CurrentPage.parameters.p}" inlineEdit="true" relatedList="false"/>                 
+                 </apex:facet>
+             </Apex:actionStatus>
+
+         </apex:outputPanel> 
+    </apex:pageBlockSectionItem>
+    
+    </apex:pageBlockSection>   
+</apex:pageBlock>
+</apex:form>
+</apex:page>

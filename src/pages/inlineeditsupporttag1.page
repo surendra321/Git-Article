@@ -1,0 +1,37 @@
+<apex:page standardController="Contact" extensions="inlineeditsupporttag1cls" >
+    <apex:sectionheader subtitle="{!contact.firstname} {!contact.lastname}"></apex:sectionheader>  
+    <apex:form >
+        <apex:pageBlock mode="inlineedit" title="Contact Detail">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!edit}" id="editButton" value="Edit"  />
+                <apex:commandButton action="{!save}" id="saveButton" value="Save" style="display: none;" />
+                <!--<apex:commandButton id="saveButton1" value="Save1"  />-->
+                <apex:commandButton id="cancelButton" value="Cancel"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection >
+                <apex:outputField value="{!contact.firstname}"/>
+                <apex:outputField value="{!contact.lastname}">
+                    <apex:inlineEditSupport showOnEdit="saveButton, cancelButton" 
+                        hideOnEdit="editButton" event="ondblclick" changedStyleClass="myBoldClass" resetFunction="resetInlineEdit"/>
+                </apex:outputField>
+                <apex:outputField value="{!contact.accountId}">
+                    <apex:inlineEditSupport showOnEdit="saveButton, cancelButton" 
+                        hideOnEdit="editButton " event="ondblclick" disabled="true" />   
+                </apex:outputField>
+                <!--<apex:inlineEditSupport showOnEdit="saveButton,saveButton1, cancelButton" 
+                        hideOnEdit="editButton" event="ondblclick" />-->
+                <apex:outputField value="{!contact.phone}"/>
+                <apex:outputField value="{!contact.HomePhone}"/>
+                <apex:outputField value="{!contact.MobilePhone}"/>
+                <apex:outputField value="{!contact.OtherPhone}"/>              
+                <apex:outputField value="{!contact.Department}"/>
+                <apex:outputField value="{!contact.Birthdate}"/>
+                <apex:outputField value="{!contact.AssistantName}"/>
+                <apex:outputField value="{!contact.Fax}"/>
+                <apex:outputField value="{!contact.Email}"/>                                       
+                <apex:outputField value="{!contact.LeadSource}"/>              
+                <apex:outputField value="{!contact.AssistantPhone}"/>                               
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

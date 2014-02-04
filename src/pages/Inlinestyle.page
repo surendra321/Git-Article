@@ -1,0 +1,9 @@
+<apex:page showHeader="false" sidebar="false">
+  <apex:form >
+      <h1 style="text-align:right ;color:blue;font-size: medium;
+        font-style: normal;" > hello friends </h1>
+        <apex:outputLabel style="text-align:center ;color:blue;font-size: medium;
+        font-style: normal;" >This is page</apex:outputLabel>
+      <!--<apex:commandButton value="save"/>-->
+  </apex:form>
+</apex:page>

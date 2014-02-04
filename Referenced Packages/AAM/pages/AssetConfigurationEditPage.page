@@ -1,0 +1,53 @@
+<!--This UI provides the user with the option of editing an Account Asset
+    configuration. This uses the class AssetConfiguration as extension to 
+    the standard controller-->
+<apex:page standardController="AAM2__AccountAssetConfiguration__c" extensions="AAM2.AssetConfiguration" tabStyle="AAM2__AccountAssetConfiguration__c">
+    <apex:pageMessages />
+    <apex:sectionHeader title="Account Asset Configuration Edit" subtitle="{!AAM2__AccountAssetConfiguration__c.Name}" help="{!$Resource.AAM2__AssetConfigurationHelp}"/>
+    <apex:outputPanel >
+        <apex:form id="form1">
+            <apex:pageBlock title="Account Asset Configuration Edit" id="pb1" mode="edit">
+                <apex:pageBlockSection title="Installtion Information" id="pbs1" columns="2">
+                    <apex:pageBlockSectionItem id="pbsi1">
+                        <apex:outputLabel for="config" value="Account Asset Configuration Code"/>
+                        <apex:outputField id="config" value="{!AAM2__AccountAssetConfiguration__c.Name}"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem id="pbsi2">
+                        <apex:outputLabel for="asset" value="Asset Code"/>
+                        <apex:outputField id="asset" value="{!AAM2__AccountAssetConfiguration__c.AAM2__AccountAssetID__c}"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem id="pbsi3">
+                        <apex:outputLabel for="comp" value="Component"/>
+                        <apex:outputField id="comp" value="{!AAM2__AccountAssetConfiguration__c.AAM2__ComponentId__c}"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem id="pbsi4">
+                        <apex:outputLabel for="qty" value="Quantity"/>
+                        <apex:outputField id="qty" value="{!AAM2__AccountAssetConfiguration__c.AAM2__Quantity__c}"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem id="pbsi5">
+                        <apex:outputLabel for="idate" value="Installation Date"/>
+                        <apex:inputField id="idate" value="{!AAM2__AccountAssetConfiguration__c.AAM2__InstallDate__c}"/>
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection title="Manufacturer Information" id="pbs2">
+                    <apex:pageBlockSectionItem id="pbsi6">
+                        <apex:outputLabel for="mfr" value="Manufacturer"/>
+                        <apex:inputField id="mfr" value="{!AAM2__AccountAssetConfiguration__c.AAM2__Manufacturer__c}"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem id="pbsi7">
+                        <apex:outputLabel for="sno" value="Serial Number"/>
+                        <apex:inputField id="sno" value="{!AAM2__AccountAssetConfiguration__c.AAM2__MfrSerialnumber__c}"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem id="pbsi8">
+                        <apex:outputLabel for="sdate" value="Warranty Start Date"/>
+                        <apex:inputField id="sdate" value="{!AAM2__AccountAssetConfiguration__c.AAM2__MfrWarrantyStart__c}"/>
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+                <apex:pageBlockButtons >
+                    <apex:commandButton value="Save" action="{!EditSave}"/>
+                    <apex:commandButton immediate="true" value="Cancel" action="{!EditCancel}"/>
+                </apex:pageBlockButtons>
+            </apex:pageBlock>
+        </apex:form>
+    </apex:outputPanel>
+</apex:page>

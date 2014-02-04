@@ -1,0 +1,6 @@
+<apex:page controller="dataListCon">
+    <apex:datalist value="{!accounts}" var="account" dir="ltr" first="0" lang="" rows="0" type="circle">        
+        <apex:outputText value="{!account.Name}"/>,        
+        <apex:outputText value="{!account.phone}"/>        
+    </apex:datalist>
+</apex:page>

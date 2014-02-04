@@ -1,0 +1,158 @@
+<apex:page sidebar="false" showHeader="false" >
+<!--<!DOCTYPE html 
+
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<html lang="en-us" xml:lang="en-us"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+<meta name="copyright" content="(C) Copyright 2000-2009 Steadfast Global, inc. All rights reserved."/> 
+<meta name="DC.rights.owner" content="(C) Copyright 2000-2009 Steadfast Global, inc. All rights reserved."/>
+<meta name="DC.Type" content="topic"/> 
+<meta name="DC.Title" content="About ProductComponents"/> 
+<meta name="DC.subject" content="Account Asset, home page, quick create"/> 
+<meta name="keywords" content=" Account Assets, home page, quick create"/> 
+<meta name="DC.Format" content="XHTML"/> 
+<meta name="DC.Identifier" content=" Account Assets_overview"/> 
+<link rel="stylesheet" type="text/css" href="help.css"/> 
+<link rel="stylesheet" type="text/css" href="/sCSS/Theme2/default/help.css"/> 
+<title> Account Assets Home</title> 
+<script type="text/javascript" language="JavaScript" src="/js/functions.js"> </script> 
+</head> 
+<body onLoad="highlightToc(&#34 Account Assets&#34;, &#34; Account Assets_overview&#34;);" id=" Account Assets_overview"><a name=" Account Assets_overview"><!-- --></a> 
+<a name="top"><!-- --></a> 
+<h1 class="helpHead1"><a name="d15785e5"><!-- --></a><span id="topic-title"><a name="topic-title"><!-- --></a> About ProductComponents</span></h1> 
+<div> 
+<table border="0" cellpadding="0" cellspacing="0" summary="Salesforce editions needed for the documented functionality" width="100%" class="editionTable"> 
+<tbody> 
+</tbody> 
+</table><br/> 
+<table class="permTable" cellpadding="0" cellspacing="0" summary="Permissions needed for the documented functionality" width="100%" border="0"> 
+<thead align="left"> 
+<tr> 
+<th class="permTableHeader" colspan="2" id="d15785e56">User Permissions Needed</th> 
+</tr> 
+</thead> 
+<tbody> 
+<tr> 
+<td class="permRowLeft" headers="d15785e56 ">To view Product components tab:</td> 
+<td class="permRowRight" headers="d15785e56 ">"Read" on Product components</td> 
+</tr> 
+<tr> 
+<td class="permRowLeft" headers="d15785e56 ">To view Product components:</td> 
+<td class="permRowRight" headers="d15785e56 ">"Read" on Product components</td> 
+</tr> 
+<tr> 
+<td class="permRowLeft" headers="d15785e56 ">To create Product components:</td> 
+<td class="permRowRight" headers="d15785e56 ">"Create" on Product components</td> 
+</tr> 
+</tbody> 
+</table> 
+<p> 
+ProductComponents object does not have a home page. To view ProductComponent list select a Product. You will find the ProductComponents related List as part of Product detail page</p> 
+</div> 
+<br/><h1 class="helpHead1"><a name="d15352e7"><!-- --></a><span id="topic-title"><a name="topic-title"><!-- --></a>What is a ProductComponent?</span></h1> 
+<div> 
+<table border="0" cellpadding="0" cellspacing="0" summary="Salesforce editions needed for the documented functionality" width="100%" class="editionTable"> 
+<tbody> 
+</tbody> 
+</table> 
+<p> 
+ProductComponent are individual items that you create to relate a Product and Component. This acts as link to relate many Products with many Components. This holds the details of all the Components that form the Product. </p> 
+<p> 
+The ProductComponent related list of a Product lists the Components for that Product. Use this related list to create new ProductComponent for a Product or edit an existing one.</p> 
+</div> 
+<br/><h1 class="helpHead1"><a name="d15156e8"><!-- --></a><span id="topic-title"><a name="topic-title"><!-- --></a>Creating Product components</span></h1> 
+<div> 
+<table border="0" cellpadding="0" cellspacing="0" summary="Salesforce editions needed for the documented functionality" width="100%" class="editionTable"> 
+<tbody> 
+</tbody> 
+</table><br/> 
+<table class="permTable" cellpadding="0" cellspacing="0" summary="Permissions needed for the documented functionality" width="100%" border="0"> 
+<thead align="left"> 
+<tr> 
+<th class="permTableHeader" colspan="2" id="d15156e60">User Permissions Needed</th> 
+</tr> 
+</thead> 
+<tbody> 
+<tr> 
+<td class="permRowLeft" headers="d15156e60 ">To view Product components:</td> 
+<td class="permRowRight" headers="d15156e60 ">"Read" on Product components</td> 
+</tr> 
+<tr> 
+<td class="permRowLeft" headers="d15156e60 ">To create Product components:</td> 
+<td class="permRowRight" headers="d15156e60 ">"Create" on Product components</td> 
+</tr> 
+</tbody> 
+</table> 
+<p id="ToAccount"><a name="ToAccount"><!-- --></a> 
+<p> To create a New ProductComponent </p> 
+<li>    Select a Product, in the Product detail page click on <b>New ProductComponent</b>.</li> 
+<li>    Select a Component from the pop-up list.</li> 
+<li>    Enter a value for Quantity (the value should be within the range of Maximum Assembly Quantity and Minimum Assembly Quantity of the component). Enter other information.</li> 
+<li>    Click save when you are finished.</li> 
+</p></div> 
+<h1 class="helpHead1"><a name="d15156e8"><!-- --></a><span id="topic-title"><a name="topic-title"><!-- --></a>Displaying and Editing Product components</span></h1> 
+<div> 
+<table border="0" cellpadding="0" cellspacing="0" summary="Salesforce editions needed for the documented functionality" width="100%" class="editionTable"> 
+<tbody> 
+</tbody> 
+</table><br/> 
+<table class="permTable" cellpadding="0" cellspacing="0" summary="Permissions needed for the documented functionality" width="100%" border="0"> 
+<thead align="left"> 
+<tr> 
+<th class="permTableHeader" colspan="2" id="d15156e60">User Permissions Needed</th> 
+</tr> 
+</thead> 
+<tbody> 
+<tr> 
+<td class="permRowLeft" headers="d15156e60 ">To view Product components:</td> 
+<td class="permRowRight" headers="d15156e60 ">"Read" on Product components</td> 
+</tr> 
+<tr> 
+<td class="permRowLeft" headers="d15156e60 ">To edit Product components:</td> 
+<td class="permRowRight" headers="d15156e60 ">"Edit" on Product components</td> 
+</tr> 
+</tbody> 
+</table> 
+<p id="ToAccount"><a name="ToAccount"><!-- --></a> 
+<p><b> Displaying Product components</b></p> 
+<p> 
+<font color="red">Product components are displayed as related list in the product detail page. </font>Click the Code to display detailed information about the ProductComponent. </p> 
+<p><b>Editing Product components</b></p> 
+<p> 
+There are two ways to update ProductComponents, you can either edit one ProductComponent at a time or you can also perform a multi line edit for all the ProductComponents of a Product.</p> 
+<p> 
+To edit one ProductComponent, click on the Edit link next to the ProductComponent in the related list or you can click the Edit button on the ProductComponent detail page. Click on save when you are finished.</p> 
+<p> 
+To edit ProductComponents of a Product, click on the Edit button in the related list next to the New ProductComponent button. Click on save when you are finished.</p> 
+<p><b>Product component Related Lists</b></p> 
+<p> 
+There are no specific related lists for a ProductComponent. The default related lists can be found below the ProductComponent detail.</p> 
+</p></div> 
+<h1 class="helpHead1"><a name="d15156e8"><!-- --></a><span id="topic-title"><a name="topic-title"><!-- --></a>Deleting Product components</span></h1> 
+<div> 
+<table border="0" cellpadding="0" cellspacing="0" summary="Salesforce editions needed for the documented functionality" width="100%" class="editionTable"> 
+<tbody> 
+</tbody> 
+</table><br/> 
+<table class="permTable" cellpadding="0" cellspacing="0" summary="Permissions needed for the documented functionality" width="100%" border="0"> 
+<thead align="left"> 
+<tr> 
+<th class="permTableHeader" colspan="2" id="d15156e60">User Permissions Needed</th> 
+</tr> 
+</thead> 
+<tbody> 
+<tr> 
+<td class="permRowLeft" headers="d15156e60 ">To delete Product components:</td> 
+<td class="permRowRight" headers="d15156e60 ">"Delete" on Product components</td> 
+</tr> 
+</tbody> 
+</table> 
+<p id="ToAccount"><a name="ToAccount"><!-- --></a> 
+<p> 
+To delete a ProductComponent, click the Del link next to the ProductComponent in the related list of a Product. You can also delete a ProductComponent by clicking on the Delete button on the ProductComponent detail page.</p> 
+</p></div> 
+<div class="helpPageFooter">� Copyright 2000-2009 Steadfast Global, inc. All rights reserved.<br/>Various trademarks held by their respective owners.</div> 
+</body> 
+</html>
+</apex:page>

@@ -1,0 +1,32 @@
+<apex:page controller="searchcls" id="page">
+<script>
+    function check(){
+        
+        var txt = document.getElementById('page:form:txt').value;
+        if(txt == '')
+            alert('Please eneter some text to search');
+            
+        else
+            search1();
+
+            return false;
+        
+    }
+</script>
+<apex:pageMessages />
+
+    <apex:form id="form">
+    <apex:actionFunction name="search"  rerender="pb"/>
+        <apex:outputLabel > Enter a keyword to search</apex:outputLabel>
+        <apex:inputText id="txt" value="{!searchtext}"/>
+        <apex:commandbutton value="Search"  action="{!search}" />    
+        
+        <apex:pageblock id="pb">
+            <apex:pageblocktable value="{!lst}" var="a">
+                <apex:column value="{!a.name}"/>
+                <apex:column value="{!a.phone}"/>
+            </apex:pageblocktable>
+        </apex:pageblock>
+        
+    </apex:form>  
+</apex:page>

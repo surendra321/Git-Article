@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCategoryGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <label>kashmeer</label>
+                <name>kashmeer</name>
+            </dataCategory>
+            <label>North India</label>
+            <name>North_India</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>Markapur</label>
+                        <name>Markapur</name>
+                    </dataCategory>
+                    <label>Prakasam</label>
+                    <name>Prakasam</name>
+                </dataCategory>
+                <label>Andra Pradesh</label>
+                <name>Andra_Pradesh</name>
+            </dataCategory>
+            <label>South India</label>
+            <name>South_India</name>
+        </dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <label>Gujarath</label>
+                <name>Gujarath</name>
+            </dataCategory>
+            <label>West India</label>
+            <name>West_India</name>
+        </dataCategory>
+        <dataCategory>
+            <label>East India</label>
+            <name>East_India</name>
+        </dataCategory>
+        <label>All Areas</label>
+        <name>All</name>
+    </dataCategory>
+    <label>Locations</label>
+    <objectUsage>
+        <object>KnowledgeArticleVersion</object>
+    </objectUsage>
+</DataCategoryGroup>

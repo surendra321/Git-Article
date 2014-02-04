@@ -1,0 +1,9 @@
+<apex:page controller="picklist1cls">
+
+ <apex:form >
+ <apex:pageBlock title="list of contacts" >
+ <apex:selectcheckboxes layout="pagedirection">
+     <Apex:selectOptions value="{!items}"/>
+ </apex:selectcheckboxes></apex:pageBlock>
+ </apex:form>
+</apex:page>

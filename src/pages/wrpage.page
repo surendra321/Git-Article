@@ -1,0 +1,19 @@
+<apex:page controller="wrapcls">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageblock >
+               <apex:pageblocktable value="{!lstcon}" var="c">
+                   <apex:column >
+                       <apex:inputCheckbox value="{!c.check}"/>
+                   </apex:column>
+                   
+                   <apex:column value="{!c.con.name}"/>
+                   <apex:column value="{!c.con.email}"/>
+               </apex:pageblocktable>
+               
+               <apex:commandButton value="delete" action="{!deleterec}"/>
+               <apex:commandButton value="selectall" action="{!allselect}"/>
+            </apex:pageblock>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

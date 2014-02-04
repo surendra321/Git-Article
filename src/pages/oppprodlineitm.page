@@ -1,0 +1,19 @@
+<apex:page standardController="OpportunityLineItem">
+    <!--<apex:detail />-->
+    <apex:form >
+        <apex:sectionHeader title="Opportunity Product" />
+        <apex:pageBlock >
+            <apex:pageblockSection >
+                <!--<apex:sectionHeader title="Opportunity Product" />-->
+                <apex:outputField value="{!OpportunityLineItem.OpportunityId}" />
+                <apex:outputField value="{!OpportunityLineItem.ServiceDate}" />
+                <apex:outputField value="{!OpportunityLineItem.OpportunityId}" />
+                <apex:outputField value="{!OpportunityLineItem.OpportunityId}" />
+                <apex:outputField value="{!OpportunityLineItem.OpportunityId}" />
+                <apex:outputField value="{!OpportunityLineItem.OpportunityId}" />
+                <apex:outputField value="{!OpportunityLineItem.OpportunityId}" />
+                <apex:outputField value="{!OpportunityLineItem.OpportunityId}" />
+            </apex:pageblockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

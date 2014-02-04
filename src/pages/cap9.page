@@ -1,0 +1,11 @@
+<apex:page controller="tablelist" >
+    <apex:form >
+        <apex:pageblock title="Account table">
+            <apex:pageblocktable value="{!acclst}" var="a">
+                <apex:column value="{!a.name}"/>
+                <apex:column value="{!a.phone}"/>
+                <apex:column value="{!a.BillingCity}"/>
+            </apex:pageblocktable>
+</apex:pageblock>
+    </apex:form>
+</apex:page>

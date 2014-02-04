@@ -1,0 +1,12 @@
+<apex:page controller="demo12">
+<apex:form >
+<apex:pageBlock >
+<apex:pageBlockSection >
+result:
+<apex:pageblockSectionItem >
+<apex:inputText value="{!res3}"/><br/>
+</apex:pageblockSectionItem>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+ </apex:page>

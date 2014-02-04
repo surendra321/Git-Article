@@ -1,0 +1,292 @@
+<apex:page standardController="AAM2__AccountAssetHdrs__c"  extensions="AAM2.AssetHeader">
+ <apex:pageMessages />
+ <apex:sectionHeader help="{!$Resource.AAM2__AccountAssetTabHelp}"/>
+<!--<apex:stylesheet value="http://yui.yahooapis.com/2.6.0/build/assets/skins/sam/skin.css" />
+ 
+<apex:includescript value="http://yui.yahooapis.com/2.6.0/build/yahoo-dom-event/yahoo-dom-event.js" />
+<apex:includescript value="http://yui.yahooapis.com/2.6.0/build/dragdrop/dragdrop-min.js" />
+<apex:includescript value="http://yui.yahooapis.com/2.6.0/build/container/container-min.js"/>
+<apex:includescript value="http://yui.yahooapis.com/2.6.0/build/animation/animation-min.js"/>-->
+
+<apex:stylesheet value="{!URLFOR($Resource.AAM2__css,'aam/skin.css')}"/>
+<apex:includeScript value="{!URLFOR($Resource.AAM2__css,'aam/yahoo-dom-event.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.AAM2__css,'aam/dragdrop-min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.AAM2__css,'aam/container-min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.AAM2__css,'aam/animation-min.js')}"/>
+ 
+<script>
+    
+    // Create a namespace for our custom functions
+    YAHOO.namespace("force.com");
+
+    // Function called when we want to show the dialog
+    YAHOO.force.com.showMe = function() {
+   
+        document.getElementById("myPanel").style.display = "block";
+        YAHOO.force.com.myDialog.show();
+    }
+    //added newly 
+    YAHOO.force.com.showPdtmodal = function() {
+   
+        document.getElementById("mypdtPanel").style.display = "block";
+       
+        YAHOO.force.com.myDia.show();
+       
+    }
+    
+   //end
+   
+   // Function called when we want to hide the dialog
+    YAHOO.force.com.hideMe = function() {
+        YAHOO.force.com.myDialog.hide();
+    }
+    
+     YAHOO.force.com.hideMe1 = function() {
+        YAHOO.force.com.myDia.hide();
+    }
+
+    // Function called when the DOM is ready to create the dialog,
+    // render the dialog into the document body, add our dialog skin
+    // css to the body tag, and wire up the buttons on our dialog    
+    YAHOO.force.com.init = function() {
+        document.body.className = document.body.className + " yui-skin-sam";
+        YAHOO.force.com.myDialog = new YAHOO.widget.Panel(
+            "myPanel",  // The id of our dialog container
+            { 
+                    width           :   "400px",    // You can play with this until it's right
+                    height          :   "150px",
+                  //  y               :   "20px",
+                     xy              :  [350,50],
+                    visible         :   false,  // Should be invisible when rendered
+                    draggable       :   true,   // Make the dialog draggable
+                    close           :   true,  // Don't include a close title button
+                    modal           :   true,   // Make it modal
+                  //  fixedCenter     :   true,   // Keep centered if window is scrolled
+                    zindex          :   40,     // Make sure it's on top of everything
+                   
+
+                    
+                    // This line adds the appear/disapper fade effect
+                    effect          :   {effect:YAHOO.widget.ContainerEffect.FADE,duration:0.35} 
+            }
+         );
+        
+        // Render the dialog to the document.body level of the DOM
+        YAHOO.force.com.myDialog.render(document.body);
+        
+        //newly added
+         YAHOO.force.com.myDia = new YAHOO.widget.Panel(
+            "mypdtPanel",  // The id of our dialog container
+            { 
+                    width           :   "300px",    // You can play with this until it's right
+                    height          :   "150px",
+                     xy              :  [350,50],
+                    visible         :   false,  // Should be invisible when rendered
+                    draggable       :   true,   // Make the dialog draggable
+                    close           :   true,  // Don't include a close title button
+                    modal           :   true,   // Make it modal
+                   // fixedCenter   :   true,   // Keep centered if window is scrolled
+                    zindex          :   40,     // Make sure it's on top of everything
+                    
+                    // This line adds the appear/disapper fade effect
+                    effect          :   {effect:YAHOO.widget.ContainerEffect.FADE,duration:0.35} 
+            }
+         );
+        
+        // Render the dialog to the document.body level of the DOM
+        YAHOO.force.com.myDia.render(document.body);
+        
+        
+    }
+    
+    // Add the init method to the window.load event
+    YAHOO.util.Event.addListener(window, "load", YAHOO.force.com.init);
+</script>
+
+<!-- This is the page that we want to display to the user -->
+<apex:outputPanel > 
+    <apex:form id="openerform">
+        <apex:pageBlock id="a" title="Account Asset Header" mode="edit">
+            <apex:pageBlockSection id="b" columns="2" title="Basic Information">
+                <apex:pageBlockSectionItem id="e" >
+                    <apex:outputLabel value="Account Name" for="acc" />                
+                     <apex:outputPanel >
+                        <div class="requiredInput">
+                            <div class="requiredBlock" />                             
+                             <apex:inputText value="{!AccountName}" required="true" disabled="true" id="acc" />
+                            <apex:image styleclass="lookupIcon" id="theImage1" onclick="YAHOO.force.com.showMe('acc');" value="/s.gif" />
+                        </div> 
+                    </apex:outputPanel>           
+               </apex:pageBlockSectionItem>
+              
+                <apex:pageBlockSectionItem id="c" >                         
+                   <apex:outputLabel value="Product Name" for="pdt" />
+                    <apex:outputPanel >
+                        <div class="requiredInput">
+                            <div class="requiredBlock" />                             
+                            <apex:inputText value="{!ProductName}" disabled="true" required="true" id="pdt" />
+                            <apex:image styleclass="lookupIcon" id="theImage1" onclick="YAHOO.force.com.showPdtmodal();" value="/s.gif" />
+                        </div> 
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>                
+                <apex:inputField id="contact" value="{!AAM2__AccountAssetHdrs__c.AAM2__Contact__c}"/>
+                <apex:inputField id="manufacturer" value="{!AAM2__AccountAssetHdrs__c.AAM2__Manufacturer__c}"/>
+                <apex:inputField id="Quantity" value="{!AAM2__AccountAssetHdrs__c.AAM2__Quantity__c}"/>
+                <apex:inputField id="salesref" value="{!AAM2__AccountAssetHdrs__c.AAM2__SalesRef__c}"/>
+        </apex:pageBlockSection>
+            <apex:pageBlockSection id="installsec" title="Installation Information">
+                <apex:inputField id="case" value="{!AAM2__AccountAssetHdrs__c.AAM2__Case__c}"/>
+                <apex:inputField id="installationdate" value="{!AAM2__AccountAssetHdrs__c.AAM2__InstallationDate__c}"/>
+                <apex:pageBlockSectionItem id="installsecitem1">
+                     <apex:outputLabel value="Installation Street" for="street" />
+                        <apex:outputPanel id="str" >
+                        <div>
+                           <apex:inputText value="{!StreetName}"  id="street" />
+                        </div> 
+                        </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem id="installsecitem2">
+                 <apex:outputLabel value="Installation City" for="city" />
+                    <apex:outputPanel id="cit" >
+                        <div>
+                             <apex:inputText value="{!CityName}" id="city" />                          
+                        </div> 
+                    </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem id="installsecitem3">
+                <apex:outputLabel value="Installation State" for="state" />
+                    <apex:outputPanel id="stat">
+                        <div>
+                            <div class="requiredBlock" />                             
+                             <apex:inputText value="{!StateName}" id="state" />
+                        </div> 
+                    </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem id="installsecitem4" >
+                 <apex:outputLabel value="Installation Country" for="country" />
+                    <apex:outputPanel id="coun">
+                        <div>
+                            <div class="requiredBlock" />                             
+                             <apex:inputText value="{!CountryName}"  id="country" />
+                        </div> 
+                    </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem id="installsecitem5">
+                   <apex:outputLabel value="Installation PostalCode" for="postalcode" />
+                    <apex:outputPanel id="code">
+                        <div>
+                            <div class="requiredBlock" />                             
+                             <apex:inputText value="{!PostalCode}"  id="postalcode" />                           
+                        </div> 
+                    </apex:outputPanel>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection id="notes" title="Additional Information">
+            <apex:inputField style="width:200%" id="notes" value="{!AAM2__AccountAssetHdrs__c.AAM2__SupportNotes__c}"/>
+        </apex:pageBlockSection>
+        <apex:pageBlockButtons >
+            <apex:commandButton action="{!Saveheader}" value="Save"/>
+            <apex:commandButton action="{!Cancel}" value="Cancel"/>
+        </apex:pageBlockButtons>
+       </apex:pageBlock>
+    </apex:form> 
+</apex:outputPanel>
+
+<!--<apex:relatedList list="AAM__Product_Component__c.AAM__Mandatory__c" rendered="{true}"/>-->
+
+<!-- This is the content of the  Account modal dialog -->
+<div id="myPanel" style="display: none" >
+    <div class="hd">
+        <apex:outputText value="Accounts" />
+         <apex:form >
+         <apex:panelGrid columns="3">
+           <apex:inputText value="{!SearchAccount}"/> 
+            <apex:commandButton reRender="accform" value="Search Account" action="{!SearchAccountresult}"/>
+           </apex:panelGrid>
+        </apex:form>
+    </div> 
+   
+        <div class="bd" style="overflow:auto; background-color:fff;padding:10px;" >
+      
+        <apex:form id="accform">
+        
+               <apex:dataTable value="{!Accounts}" var="a" cellPadding="4" border="1">
+                    <apex:column headervalue="Account Name">
+                        <apex:commandLink oncomplete="YAHOO.force.com.hideMe();" rendered="true" reRender="acc,str,stat,cit,coun,code" >
+                        {!a.Name}
+                            <apex:param name="id" assignTo="{!AccountId}" id="accid" value="{!a.Id}"/>
+
+                            <apex:param name="name" assignTo="{!AccountName}" id="name" value="{!a.Name}"/>
+                            <apex:param name="street" assignTo="{!StreetName}" id="street" value="{!a.ShippingStreet}"/>
+                            <apex:param name="city" assignTo="{!CityName}"  id="city" value="{!a.ShippingCity}"/>
+                            <apex:param name="state" assignTo="{!StateName}" id="state" value="{!a.ShippingCity}"/>
+                            <apex:param name="country" assignTo="{!CountryName}" id="country" value="{!a.ShippingCountry}"/>
+                            <apex:param name="postalcode" assignTo="{!PostalCode}" id="postalcode" value="{!a.ShippingPostalcode}"/>
+                        </apex:commandLink></apex:column>
+                           <apex:column headerValue="Account Number">
+                            {!a.AccountNumber}
+                        </apex:column>
+                        <apex:column headerValue="City">
+                        {!a.ShippingCity}
+                        </apex:column>
+                        <apex:column headerValue="Site">
+                        {!a.Site}
+                        </apex:column>
+                        <apex:column headerValue="SLA">
+                        {!a.AAM2__SLA__c}
+                        </apex:column>
+        </apex:dataTable><br/>
+
+        <apex:commandButton value="Cancel" immediate="true" 
+              oncomplete="YAHOO.force.com.hideMe();"/>
+
+
+    </apex:form>               
+    
+       
+    </div>   
+    
+</div>
+
+
+<!-- This is the content of the Product modal dialog -->
+<div id="mypdtPanel" style="display: none" >
+    <div class="hd">
+        <apex:outputText value="Products" />
+        <apex:form >
+         <apex:panelGrid columns="3">
+           <apex:inputText value="{!SearchProduct}"/> 
+            <apex:commandButton reRender="pdtform" value="Search Product" action="{!SearchProductResult}"/>
+           </apex:panelGrid>
+        </apex:form>
+
+    </div> 
+   
+       <div class="bd" style="overflow:auto; background-color:fff;padding:10px;" >
+      
+        <apex:form id="pdtform" >
+        
+           <apex:dataTable value="{!Products}" var="a" cellPadding="4" border="1">
+                <apex:column headervalue="Products">
+                    <apex:commandLink oncomplete="YAHOO.force.com.hideMe1();" rendered="true" reRender="pdt" >
+                        {!a.Name}<apex:param name="name" assignTo="{!ProductName}" id="name" value="{!a.Name}"/>
+                        <apex:param name="id" assignTo="{!ProductId}" id="accid" value="{!a.Id}"/>
+                    </apex:commandLink></apex:column>
+                      <apex:column headerValue="Code">
+                    {!a.ProductCode}
+                    </apex:column>
+                    <apex:column headerValue="Description">
+                    {!a.Description}
+                    </apex:column>
+            </apex:dataTable><br/>
+ 
+<apex:commandButton value="Cancel" immediate="true" 
+              oncomplete="YAHOO.force.com.hideMe1();"/>
+</apex:form>               
+    
+       
+    </div>   
+    
+</div>
+
+</apex:page>

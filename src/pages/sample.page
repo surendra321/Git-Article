@@ -1,0 +1,81 @@
+<apex:page >
+<apex:stylesheet value="{!$Resource.format}"/>
+<apex:stylesheet value="{!URLFOR($Resource.coraid, 'coraid/css/s.css')}"/>
+
+<apex:stylesheet value="{!URLFOR($Resource.format, 'format/format1.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.format, 'format/format2.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.format, 'format/format3.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.format, 'format/format4.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.format, 'format/format5.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.format, 'format/format6.css')}"/>
+
+<apex:includeScript value="{!URLFOR($Resource.Coraidscript,'scripts/coraid-min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.Coraidscript,'scripts/modernizr-2.0.6.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.Coraidscript,'scripts/jquery-ui.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.Coraidscript,'scripts/SfdcCore.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.Coraidscript,'scripts/VFState.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.Coraidscript,'scripts/addthis_widget.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.Coraidscript,'scripts/core028.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.Coraidscript,'scripts/ga.js')}"/>
+
+<aside class="col width6"> 
+                    <ul class="promoBlock"> 
+                        <li class="illustration" style="margin-bottom:0px"><a href="mailto:support@coraid.com">
+                        <!--<apex:image url="{!URLFOR($Resource.CoraidImg,'images/cap_support.png')}" style="width:193px"/> --> </a></li> 
+                        <!--<li style="background-image:url('{!URLFOR($Resource.CoraidImg, 'images/capBG_support.png')}');padding:10px;width:173px;margin-bottom:0px"/>-->
+                        <li class="content support" style="margin-bottom:0px;width:163px"> 
+                         
+                            <ul class="simpleList"> 
+                            <ul class="navcontainer" style="padding:0px">
+                            <li style="list-style-type: none;padding-left:1px;padding-right:1px;padding-bottom: 1px; font-weight: bold">Home</li> 
+                            <li style="list-style-type: none;padding-left:1px;padding-right:1px;padding-bottom: 1px; font-weight: bold">My Support cases</li>
+                            <li style="list-style-type: none;padding-left:1px;padding-right:1px;padding-bottom: 1px; font-weight: bold">Resources / Downloads</li>
+                            <li style="list-style-type: none;padding-left:1px;padding-right:1px;padding-bottom: 1px; font-weight: bold">FAQ's</li>
+                            <li style="list-style-type: none;padding-left:1px;padding-right:1px;padding-bottom: 1px;background-color: gainsboro;width: 140px; font-weight: bold">Update Profile</li>
+                            <li style="list-style-type: none;padding-left:1px;padding-right:1px;padding-bottom: 1px; font-weight: bold">Logout</li>
+                            </ul>
+                            </ul> 
+                        </li> 
+                    </ul>
+                </aside>
+                
+                <div class="promoblock">
+    <div class="promoinfo">
+        <h2>Promotitle</h2> 
+        <p>Promocontent</p>
+        <a href="#bla">Promolink</a>
+    </div>
+</div>
+
+
+<apex:outputText >efgh
+</apex:outputText>
+                                    
+
+<apex:outputText >a
+</apex:outputText>
+                                 
+
+<apex:outputText >a
+</apex:outputText>
+                                                                                                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</apex:page>

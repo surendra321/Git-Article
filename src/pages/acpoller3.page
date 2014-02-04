@@ -1,0 +1,11 @@
+<apex:page sidebar="false" controller="wrcls1"  >
+  <apex:form >
+     <apex:pageblock >
+         <apex:pageblocktable value="{!elst}" var="w" >
+             <apex:column value="{!w.eno}"/>
+             <apex:column value="{!w.ename}"/>
+         
+         </apex:pageblocktable>
+     </apex:pageblock>
+  </apex:form>
+</apex:page>

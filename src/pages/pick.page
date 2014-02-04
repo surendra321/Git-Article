@@ -1,0 +1,22 @@
+<apex:page controller="chooseColor">
+    <apex:form >
+    <script type="text/javascript">
+        function display(){
+            alert("Hello sunny");
+            }
+            </script>
+        <apex:selectList value="{!string}" size="1">
+            <apex:selectOption itemvalue="red" />
+            <apex:selectOption itemvalue="green" />
+            <apex:selectOption itemvalue="blue" />
+            
+            <apex:selectOption itemvalue="yellow" onclick="display()"/>
+            <apex:selectOption itemvalue="none" />
+            
+        </apex:selectList> 
+        <apex:commandButton onclick="display()" value="hel"/>
+        <apex:selectList size="1">
+            <apex:selectOption value="{!Entries}"  />            
+        </apex:selectList> 
+    </apex:form>
+</apex:page>

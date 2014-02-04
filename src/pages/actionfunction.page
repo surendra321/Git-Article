@@ -1,0 +1,9 @@
+<apex:page controller="accfuncls">
+  <apex:form >
+      <apex:pageBlock >
+          <apex:actionFunction name="change" action="{!changerec}" reRender="out"/>
+          <apex:actionFunction name="unchange" action="{!unchangerec}" reRender="out"/>
+          <apex:outputLabel onmouseover="change()" onmouseout="unchange()" id="out">{!name}</apex:outputLabel>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

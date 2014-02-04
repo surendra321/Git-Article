@@ -1,0 +1,30 @@
+<apex:page standardController="Account" sidebar="true" showHeader="true" >    
+    <style>
+        .activeTab{background-color:#FFFF00;color:black;background-image:none}
+        .inactiveTab{background-color:#00FFFF;color:black;background-image:none}
+    </style>
+    
+    <apex:tabPanel switchType="client" selectedTab="tabdetails" inactiveTabClass="inactiveTab" activeTabClass="activeTab" rerender="tabaccount,tabcontact,tabOpportunities">
+        <apex:tab label="Account"  id="tabaccount">
+            <apex:detail relatedList="false" inlineEdit="true"/>
+        </apex:tab>
+        
+        <apex:tab label="Contact" name="Contacts" id="tabcontact">
+            <apex:relatedList list="Contacts">
+                <apex:facet name="footer">List of Contacts</apex:facet>
+            </apex:relatedList>
+        </apex:tab>
+        
+        <apex:tab label="Opportunities" name="Opportunities" id="tabOpportunities">
+            <apex:relatedList subject="{!account}" list="Opportunities" pageSize="50"/>
+        </apex:tab>
+        
+        <apex:tab label="Openactivities" name="openactivities" id="tabopenact">
+            <apex:relatedList subject="{!account}" list="openActivities"/>
+        </apex:tab>
+        
+        <apex:tab label="notes and attachments" name="notesandattachments" id="tabnoteatt">
+            <apex:relatedList subject="{!account}" list="notesandattachments"/>
+        </apex:tab>
+    </apex:tabPanel>
+</apex:page>

@@ -1,0 +1,33 @@
+<apex:page showHeader="true" sidebar="false" controller="authenticaion_class">
+<center><font color="yellow" size="30">health care</font></center>
+<apex:form ><apex:pageMessages />
+<apex:pageBlock >
+
+<center><apex:image value="{!$Resource.health2}" width="120" height="120"/></center>
+<table>
+
+<tr>
+<td>username</td>
+<td><apex:inputText value="{!uname}"/></td>
+</tr>
+<tr>
+<td>password</td>
+<td><apex:inputSecret value="{!psw}"/></td>
+</tr>
+<tr>
+<td><apex:commandButton action="{!login}" value="login"/></td>
+
+<td><apex:commandLink action="{!newuser}" value="create new user"/></td></tr>
+</table>
+<apex:actionPoller interval="10" action="{!poller}" reRender="form"/>
+
+
+
+
+
+
+
+
+</apex:pageBlock>
+</apex:form>  
+</apex:page>

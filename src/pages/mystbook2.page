@@ -1,0 +1,19 @@
+<apex:page standardController="book__c" sidebar="false" extensions="mystbookex1">
+<apex:form >
+registration page step2
+<apex:pageBlock >
+<apex:panelGrid columns="3" >
+  <apex:outputText >bookAuthor</apex:outputText>
+  <apex:inputfield value="{!book__c.author__c}" /><br/>
+  
+  <apex:outputText >bookEditon</apex:outputText>
+  <apex:inputField value="{!book__c.edition__c}" /><br/>
+  </apex:panelGrid>
+
+<apex:commandButton action="{!save}" value="save"/>
+<apex:commandButton action="{!quicksave}" value="save&new"/>
+<apex:commandButton action="{!cancel}" value="cancel"/>
+
+</apex:pageBlock>
+</apex:form>  
+</apex:page>

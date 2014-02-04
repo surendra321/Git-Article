@@ -1,0 +1,9 @@
+<apex:page standardController="contract" >
+    <apex:form >
+        <apex:outputLink value="apex/pdf1">1</apex:outputLink><br/>
+        <apex:outputLink value="apex/pdf2">2</apex:outputLink><br/>
+        <apex:outputLink value="apex/pdf3">3</apex:outputLink><br/>
+        <apex:outputLink value="apex/pdf4">4</apex:outputLink><br/>
+        <apex:outputLink value="apex/pdf5">5</apex:outputLink><br/>
+    </apex:form>
+</apex:page>

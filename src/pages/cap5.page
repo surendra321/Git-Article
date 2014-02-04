@@ -1,0 +1,27 @@
+<apex:page standardController="account" recordSetVar="acc" showHeader="false" sidebar="false">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!acc}" var="a">
+                <apex:column >
+                    <apex:commandLink reRender="out" status="st">
+                        {!a.name}
+                        <apex:param value="{!a.id}" name="p"/>
+                    </apex:commandLink>
+                </apex:column>
+                <apex:column value="{!a.type}"/>
+                <apex:column value="{!a.phone}"/>
+            </apex:pageBlockTable>
+            
+            <apex:outputPanel id="out">
+                <apex:actionStatus id="st">
+                    <apex:facet name="start">
+                        <apex:image url="{!$Resource.loadingimg}"/>
+                    </apex:facet>
+                    <apex:facet name="stop">
+                        <apex:detail subject="{!$CurrentPage.parameters.p}"/>
+                    </apex:facet>
+                </apex:actionStatus>
+            </apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

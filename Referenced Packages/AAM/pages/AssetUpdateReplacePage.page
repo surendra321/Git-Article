@@ -1,0 +1,343 @@
+<apex:page standardController="AAM2__Asset_Update__c" extensions="AAM2.AssetUpdate" tabStyle="AAM2__Asset_Update__c">
+    <apex:pageMessages />
+    <!--<apex:stylesheet value="http://yui.yahooapis.com/2.6.0/build/assets/skins/sam/skin.css" /> 
+    <apex:includescript value="http://yui.yahooapis.com/2.6.0/build/yahoo-dom-event/yahoo-dom-event.js" />
+    <apex:includescript value="http://yui.yahooapis.com/2.6.0/build/dragdrop/dragdrop-min.js" />
+    <apex:includescript value="http://yui.yahooapis.com/2.6.0/build/container/container-min.js"/>
+    <apex:includescript value="http://yui.yahooapis.com/2.6.0/build/animation/animation-min.js"/>-->
+    
+    <apex:stylesheet value="{!URLFOR($Resource.AAM2__css,'aam/skin.css')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.AAM2__css,'aam/yahoo-dom-event.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.AAM2__css,'aam/dragdrop-min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.AAM2__css,'aam/container-min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.AAM2__css,'aam/animation-min.js')}"/>
+    
+    <script>
+        YAHOO.namespace("force.com");
+        YAHOO.force.com.showaccountasset = function() {
+            document.getElementById("myaccountasset").style.display = "block";
+            YAHOO.force.com.myaac.show();
+        }
+        YAHOO.force.com.showcase = function() {
+            document.getElementById("mycase").style.display = "block";
+            YAHOO.force.com.mycc.show();
+        }
+        YAHOO.force.com.showassetconfig = function() {
+            document.getElementById("myassetconfig").style.display = "block";
+            YAHOO.force.com.myaacc.show();
+        }
+        YAHOO.force.com.showproductcomponent = function() {
+            document.getElementById("myproductcomponent").style.display = "block";
+            YAHOO.force.com.mypcc.show();
+        }
+        YAHOO.force.com.hideaccountasset = function() {
+            YAHOO.force.com.myaac.hide();
+        }
+        YAHOO.force.com.hidecase = function() {
+            YAHOO.force.com.mycc.hide();
+        }
+        YAHOO.force.com.hideproductcomponent = function() {
+            YAHOO.force.com.mypcc.hide();
+        }
+        YAHOO.force.com.hideassetconfig = function() {
+            YAHOO.force.com.myaacc.hide();
+        }
+        YAHOO.force.com.init = function() {
+            document.body.className = document.body.className + " yui-skin-sam";
+            YAHOO.force.com.myaac = new YAHOO.widget.Panel (
+                "myaccountasset",
+                {
+                    width           :   "450px",
+                    visible         :   false,
+                    height          :   "150px",
+                    xy              :  [350,50],
+                    draggable       :   true,
+                    close           :   true,
+                    modal           :   true,
+                    //fixedCenter     :   true,
+                    zindex          :   40,
+                    effect          :   {effect:YAHOO.widget.ContainerEffect.FADE,duration:0.35} 
+                }
+            );
+            YAHOO.force.com.myaac.render(document.body);
+            YAHOO.force.com.mycc = new YAHOO.widget.Panel (
+                "mycase",
+                {
+                    width           :   "450px",
+                    visible         :   false,
+                    height          :   "150px",
+                    xy              :  [350,50],
+                    draggable       :   true,
+                    close           :   true,
+                    modal           :   true,
+                    //fixedCenter     :   true,
+                    zindex          :   40,
+                    effect          :   {effect:YAHOO.widget.ContainerEffect.FADE,duration:0.35} 
+                }
+            );
+            YAHOO.force.com.mycc.render(document.body);
+            YAHOO.force.com.myaacc = new YAHOO.widget.Panel (
+                "myassetconfig",
+                {
+                    width           :   "450px",
+                    visible         :   false,
+                    height          :   "150px",
+                    xy              :  [350,50],
+                    draggable       :   true,
+                    close           :   true,
+                    modal           :   true,
+                    //fixedCenter     :   true,
+                    zindex          :   40,
+                    effect          :   {effect:YAHOO.widget.ContainerEffect.FADE,duration:0.35} 
+                }
+            );
+            YAHOO.force.com.myaacc.render(document.body);
+            YAHOO.force.com.mypcc = new YAHOO.widget.Panel (
+                "myproductcomponent",
+                {
+                    width           :   "450px",
+                    visible         :   false,
+                    height          :   "150px",
+                    xy              :  [350,50],
+                    draggable       :   true,
+                    close           :   true,
+                    modal           :   true,
+                    //fixedCenter     :   true,
+                    zindex          :   40,
+                    effect          :   {effect:YAHOO.widget.ContainerEffect.FADE,duration:0.35} 
+                }
+            );
+            YAHOO.force.com.mypcc.render(document.body);
+        }
+        YAHOO.util.Event.addListener(window, "load", YAHOO.force.com.init);
+    </script>
+    <apex:sectionHeader title="Asset Update Edit" subtitle="New Asset Update" help="{!$Resource.AAM2__AssetUpdateHelp}"/>
+    <apex:outputPanel >
+        <apex:form id="form1">
+            <apex:pageBlock id="pb1" title="Asset Update - Replace Component" mode="edit">
+                <apex:pageBlockSection title="Account Asset Information" id="pbs1" columns="2">
+                    <apex:pageBlockSectionItem id="pbsi1">
+                        <apex:outputLabel for="aaval" value="Asset Code"/>
+                        <apex:outputPanel >
+                            <div class = "requiredInput">
+                                <div class = "requiredBlock"/>
+                                <apex:inputText value="{!AccountAssetName}" disabled="true" id="aaval" onchange="{!Cases}, {!Components}" />
+                                <apex:image styleclass="lookupIcon" id="assetimage" onclick="YAHOO.force.com.showaccountasset('aaval');" value="/s.gif"/>
+                            </div>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem id="pbsi2">
+                        <apex:outputLabel for="assetcase" value="Case"/>
+                        <apex:outputPanel >
+                            <apex:inputText value="{!CaseNumber}" disabled="true" id="cval"/>
+                            <apex:image styleclass="lookupIcon" id="caseimage" onclick="YAHOO.force.com.showcase();" value="/s.gif" />
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection title="Replaced Component Information" columns="2" id="pbs2">
+                    <apex:pageBlockSectionItem id="pbsi3">
+                        <apex:outputLabel for="assetconfig" value="Component"/>
+                        <apex:outputPanel >
+                            <div class = "requiredInput">
+                                <div class = "requiredBlock"/>
+                                <apex:inputText value="{!ComponentName1}" disabled="true" id="assetconfig"/>
+                                <apex:image styleclass="lookupIcon" id="configimage" onclick="YAHOO.force.com.showassetconfig();" value="/s.gif"/>
+                            </div>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem id="pbsi5">
+                        <apex:outputLabel for="installqty" value="Installed Quantity"/>
+                        <apex:outputText id="installqty" value="{!ComponentQty1}"/>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem id="pbsi6">
+                        <apex:outputLabel for="replqty" value="Quantity"/>
+                        <apex:outputPanel >
+                            <div class = "requiredInput">
+                                <div class = "requiredBlock"/>
+                                <apex:inputText id="replqty" value="{!ReplaceQty}"/>
+                            </div>
+                        </apex:outputPanel>                        
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection title="Replacing Component Information" id="pbs3" columns="2">
+                    <apex:pageBlockSectionItem id="pbsi4">
+                        <apex:outputLabel for="compval" value="Component"/>
+                        <apex:outputPanel >
+                            <div class = "requiredInput">
+                                <div class = "requiredBlock"/>
+                                <apex:inputText value="{!ComponentName}" disabled="true" id="compval"/>
+                                <apex:image styleclass="lookupIcon" id="caseimage" onclick="YAHOO.force.com.showproductcomponent();" value="/s.gif"/>
+                            </div>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem id="pbsi6">
+                        <apex:outputLabel for="nqty" value="Quantity"/>
+                        <apex:outputPanel >
+                            <div class = "requiredInput">
+                                <div class = "requiredBlock"/>
+                                <apex:inputText id="nqty" value="{!Qty}"/>
+                            </div>
+                        </apex:outputPanel>
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+                <apex:pageBlockButtons >
+                    <apex:commandButton value="Save" action="{!ReplaceSave}"/>
+                    <apex:commandButton value="Cancel" action="{!Cancel}"/>
+                </apex:pageBlockButtons>
+            </apex:pageBlock>
+        </apex:form>
+    </apex:outputPanel>
+    <div id="myaccountasset" style="display: none" >
+        <div class="hd">
+            <apex:outputText value="Account Assets" />
+            <apex:form id="assetsearch">
+                <apex:panelGrid columns="3">
+                    <apex:inputText value="{!SearchAccountAsset}"/>
+                    <apex:commandButton reRender="form2" value="Search" action="{!AccountAssetResult}"/>
+                </apex:panelGrid>
+            </apex:form>
+        </div> 
+        <div class="bd" style="overflow:auto; background-color:fff;padding:10px;" >     
+            <apex:form id="form2">
+                <apex:dataTable value="{!AccountAssets}" var="aa" cellPadding="4" border="1" id="assettable">
+                    <apex:column headervalue="Asset Name">
+                        <apex:commandLink oncomplete="YAHOO.force.com.hideaccountasset();" rendered="true" action="{!clearvalue}" reRender="aaval, cval, form3, compval, form4, assetconfig, form5">
+                            {!aa.Name}
+                            <apex:param name="assetname" assignTo="{!AccountAssetName}" id="assetname" value="{!aa.Name}"/>
+                            <apex:param name="assetid" assignTo="{!AccountAssetId}" id="assetid" value="{!aa.Id}"/>
+                        </apex:commandLink>
+                    </apex:column>
+                    <apex:column headerValue="Account Name">
+                        {!aa.Account__r.Name}
+                    </apex:column>
+                    <apex:column headerValue="Product Name">
+                        {!aa.Product__r.Name}
+                    </apex:column>
+                </apex:dataTable>
+                <br> </br>
+                <apex:commandButton value="Cancel" immediate="true" oncomplete="YAHOO.force.com.hideaccountasset();"/>
+            </apex:form>               
+        </div>   
+    </div>
+    <div id="mycase" style="display: none" >
+        <div class="hd">
+            <apex:outputText value="Cases" />
+            <apex:form id="casesearch">
+                <apex:panelGrid columns="3">
+                    <apex:inputText value="{!SearchCase}"/>
+                    <apex:commandButton reRender="form3" value="Search" action="{!CaseResult}"/>
+                </apex:panelGrid>
+            </apex:form>
+        </div> 
+        <div class="bd" style="overflow:auto; background-color:fff;padding:10px;" >     
+            <apex:form id="form3">
+                <apex:dataTable value="{!Cases}" var="ac" cellPadding="4" border="1" id="casetable">
+                    <apex:column headervalue="Case Number">
+                        <apex:commandLink oncomplete="YAHOO.force.com.hidecase();" rendered="true" reRender="cval, aaval, form2, compval, form4, assetconfig, form5">
+                            {!ac.casenumber}
+                            <apex:param name="caseno" assignTo="{!CaseNumber}" id="caseno" value="{!ac.casenumber}"/>
+                            <apex:param name="caseid" assignTo="{!CaseId}" id="caseid" value="{!ac.Id}"/>
+                        </apex:commandLink>
+                    </apex:column>
+                    <apex:column headerValue="Open Date">
+                        {!ac.CreatedDate}
+                    </apex:column>
+                    <apex:column headerValue="Subject">
+                        {!ac.Subject}
+                    </apex:column>
+                </apex:dataTable>
+                <br> </br>
+                <apex:commandButton value="Cancel" immediate="true" oncomplete="YAHOO.force.com.hidecase();"/>
+            </apex:form>               
+        </div>   
+    </div>
+    <div id="myproductcomponent" style="display: none" >
+        <div class="hd">
+            <apex:outputText value="Components" />
+            <apex:form id="compsearch">
+                <apex:panelGrid columns="3">
+                    <apex:inputText value="{!SearchComponent}"/>
+                    <apex:commandButton reRender="form4" value="Search" action="{!ComponentResult}"/>
+                </apex:panelGrid>
+            </apex:form>
+        </div> 
+        <div class="bd" style="overflow:auto; background-color:fff;padding:10px;" >     
+            <apex:form id="form4">
+                <apex:dataTable value="{!Components}" var="pc" cellPadding="4" border="1" id="comptable">
+                    <apex:column headervalue=" Name">
+                        <apex:commandLink oncomplete="YAHOO.force.com.hideproductcomponent();" rendered="true" reRender="compval, aaval, form2, cval, form3, assetconfig, form5, pbsiot, nqty">
+                            {!pc.Component__r.Name}
+                            <apex:param name="compname" assignTo="{!ComponentName}" id="compname" value="{!pc.Component__r.Name}"/>
+                            <apex:param name="compid" assignTo="{!ComponentId}" id="compid" value="{!pc.Component__r.Id}"/>
+                            <apex:param name="compqty" assignTo="{!ComponentQty}" id="compqty" value="{!pc.AAM2__Qty__c}"/>
+                            <apex:param name="iqty" assignTo="{!Qty}" id="iqty" value="{!pc.AAM2__Qty__c}"/>
+                            <apex:param name="maxqty" assignTo="{!MaxQty}" id="maxqty" value="{!pc.Component__r.AAM2__MaxAssemblyQty__c}"/>
+                            <apex:param name="minqty" assignTo="{!MinQty}" id="minqty" value="{!pc.Component__r.AAM2__MinAssemblyQty__c}"/>
+                            <apex:param name="day" assignTo="{!MfrWarrantyDays}" id="days" value="{!pc.Component__r.AAM2__Mfrwarrantydays__c}"/>
+                        </apex:commandLink>
+                    </apex:column>
+                    <apex:column headerValue="Code">
+                        {!pc.Component__r.ProductCode}
+                    </apex:column>
+                    <apex:column headerValue="Max Qty">
+                        {!pc.Component__r.AAM2__MaxAssemblyQty__c}
+                    </apex:column>
+                    <apex:column headerValue="Min Qty">
+                        {!pc.Component__r.AAM2__MinAssemblyQty__c}
+                    </apex:column>
+                    <apex:column headerValue="Installed Qty">
+                        {!pc.AAM2__Qty__c}
+                    </apex:column>
+                </apex:dataTable>
+                <br> </br>
+                <apex:commandButton value="Cancel" immediate="true" oncomplete="YAHOO.force.com.hideproductcomponent();"/>
+            </apex:form>               
+        </div>   
+    </div>
+    <div id="myassetconfig" style="display: none" >
+        <div class="hd">
+            <apex:outputText value="Installed Components" />
+            <apex:form id="configsearch">
+                <apex:panelGrid columns="3">
+                    <apex:inputText value="{!SearchComponent1}"/>
+                    <apex:commandButton reRender="form5" value="Search" action="{!InstalledComponentResult}"/>
+                </apex:panelGrid>
+            </apex:form>
+        </div> 
+        <div class="bd" style="overflow:auto; background-color:fff;padding:10px;" >     
+            <apex:form id="form5">
+                <apex:dataTable value="{!InstalledComponents}" var="ac" cellPadding="4" border="1" id="acontable">
+                    <apex:column headervalue="Name">
+                        <apex:commandLink oncomplete="YAHOO.force.com.hideassetconfig();" rendered="true" reRender="assetconfig, compval, form4, cval, form3, aaval, form2, installqty, replqty">
+                            {!ac.ComponentId__r.Name}
+                            <apex:param name="aconval" assignTo="{!ComponentName1}" id="aconval" value="{!ac.ComponentId__r.Name}"/>
+                            <apex:param name="aconid" assignTo="{!ComponentId1}" id="aconid" value="{!ac.ComponentId__r.Id}"/>
+                            <apex:param name="aconmax" assignTo="{!MaxQty1}" id="aconmax" value="{!ac.ComponentId__r.AAM2__MaxAssemblyQty__c}"/>
+                            <apex:param name="aconmin" assignTo="{!MinQty1}" id="aconmin" value="{!ac.ComponentId__r.AAM2__MinAssemblyQty__c}"/>
+                            <apex:param name="aconqty" assignTo="{!ComponentQty1}" id="aconqty" value="{!ac.AAM2__Quantity__c}"/>
+                            <apex:param name="rqty" assignTo="{!ReplaceQty}" id="rqty" value="{!ac.AAM2__Quantity__c}"/>
+                            <apex:param name="aacid" assignTo="{!AssetConfigurationId}" id="aacid" value="{!ac.Id}"/>
+                        </apex:commandLink>
+                    </apex:column>
+                    <apex:column headerValue="Code">
+                        {!ac.ComponentId__r.ProductCode}
+                    </apex:column>
+                    <apex:column headerValue="Installed Date">
+                        {!ac.AAM2__InstallDate__c}
+                    </apex:column>
+                    <apex:column headerValue="Max Qty">
+                        {!ac.ComponentID__r.AAM2__MaxAssemblyQty__c}
+                    </apex:column>
+                    <apex:column headerValue="Min Qty">
+                        {!ac.ComponentId__r.AAM2__MinAssemblyQty__c}
+                    </apex:column>
+                    <apex:column headerValue="Installed Qty">
+                        {!ac.AAM2__Quantity__c}
+                    </apex:column>
+                </apex:dataTable>
+                <br> </br>
+                <apex:commandButton value="Cancel" immediate="true" oncomplete="YAHOO.force.com.hideassetconfig();"/>
+            </apex:form>               
+        </div>   
+    </div>
+</apex:page>

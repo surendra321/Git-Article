@@ -1,0 +1,15 @@
+<apex:page standardController="AAM2__Manufacturer__c" extensions="AAM2.DeleteManufacturer" tabStyle="AAM2__Manufacturer__c">
+    <apex:form >
+        <apex:pageBlock >
+            <b>Note :</b> You are attempting to delete a Manufacturer. Deleting this Manufacturer record will set its references in related objects as null.
+            <br/><br/>
+            Do u want to continue? Click Yes to Delete and No to Cancel.
+            <p>
+                <apex:pageBlockButtons location="bottom">
+                    <apex:commandButton value="Yes" action="{!DeleteItem}" />
+                    <apex:commandButton value="No" action="{!cancel}" />
+                </apex:pageBlockButtons>
+            </p>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,25 @@
+<apex:page controller="mybookclass" sidebar="false">
+  <apex:form >
+  Registration form step2
+  <apex:pageBlock >
+  <apex:pageblockButtons >
+  <apex:commandButton action="{!save}" value="save"/>
+  <apex:commandButton action="{!saveandnew}" value="save&new"/>
+  <apex:commandButton action="{!cancle}" value="cancle"/>
+  <apex:commandButton action="{!preview}" value="preview"/>
+  </apex:pageblockButtons>
+  
+  <apex:panelGrid columns="3" >
+  <apex:outputText >bookAuthor</apex:outputText>
+  <apex:inputtext value="{!author}" /><br/>
+  
+  <apex:outputText >bookEdition</apex:outputText>
+  <apex:inputtext value="{!edition}" /><br/>
+  </apex:panelGrid>
+  
+  
+  
+  
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>

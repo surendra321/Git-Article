@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>26.0</apiVersion>
+    <attachments>
+        <content>JVBERi0xLjQKJeLjz9MKMyAwIG9iaiA8PC9MZW5ndGggMjQ1L0ZpbHRlci9GbGF0ZURlY29kZT4+c3RyZWFtCnicjZExT8MwEIX3+xU3goTMnZ3YNWMRrYRUpEqWGBBDIGmbksSt28Dfx3EGykCL7oYnn773nuQ9TB0QGivRlfDgYAl7IEHK5PgFEh/jcQtMuICXV8ISlEaTa2whN6NqklJaUBa1+iXH+waeoYs+w4T1EHg7Y+SYuAJOr4yZRKOskBm6Fq52VShaPPSh6spQ3MxCjU/+E1kj0V1anC8cSmJ57bZD7T9MhyaGrZjkyfe+qd8//kGQFplOhO+Ph7qs0K+wuAxqqwRNEnj0vnkrwjr4fncOZMoEx45KsPnpiHV3Pm/EtLXC2NO8+Une8JVL+AZ/+W0xCmVuZHN0cmVhbQplbmRvYmoKMSAwIG9iajw8L1BhcmVudCA0IDAgUi9Db250ZW50cyAzIDAgUi9UeXBlL1BhZ2UvUmVzb3VyY2VzPDwvUHJvY1NldCBbL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSV0vRm9udDw8L0YxIDIgMCBSPj4+Pi9NZWRpYUJveFswIDAgNjEyIDc5Ml0+PgplbmRvYmoKMiAwIG9iajw8L0Jhc2VGb250L1RpbWVzLVJvbWFuL1R5cGUvRm9udC9FbmNvZGluZy9XaW5BbnNpRW5jb2RpbmcvU3VidHlwZS9UeXBlMT4+CmVuZG9iago0IDAgb2JqPDwvVHlwZS9QYWdlcy9Db3VudCAxL0tpZHNbMSAwIFJdPj4KZW5kb2JqCjUgMCBvYmo8PC9UeXBlL0NhdGFsb2cvUGFnZXMgNCAwIFI+PgplbmRvYmoKNiAwIG9iajw8L1Byb2R1Y2VyKGlUZXh0IDIuMC44IFwoYnkgbG93YWdpZS5jb21cKSkvTW9kRGF0ZShEOjIwMTIxMTE2MTM0OTAxWikvQ3JlYXRpb25EYXRlKEQ6MjAxMjExMTYxMzQ5MDFaKT4+CmVuZG9iagp4cmVmCjAgNwowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAzMjcgMDAwMDAgbiAKMDAwMDAwMDQ4MyAwMDAwMCBuIAowMDAwMDAwMDE1IDAwMDAwIG4gCjAwMDAwMDA1NzIgMDAwMDAgbiAKMDAwMDAwMDYyMiAwMDAwMCBuIAowMDAwMDAwNjY2IDAwMDAwIG4gCnRyYWlsZXIKPDwvUm9vdCA1IDAgUi9JRCBbPGRiZjAxMmQ1Njc3MDI4NWE3OWMwYmQxOTg1NGFmMzBiPjw4OWJkYjAyYWRjODEzNWQ5ZDJmNDRkMzRhY2JkMmMzMz5dL0luZm8gNiAwIFIvU2l6ZSA3Pj4Kc3RhcnR4cmVmCjc4NQolJUVPRgo=</content>
+        <name>delete1.pdf</name>
+    </attachments>
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>vfpage</name>
+    <packageVersions>
+        <majorNumber>1</majorNumber>
+        <minorNumber>6</minorNumber>
+        <namespace>SpringCMEos</namespace>
+    </packageVersions>
+    <style>none</style>
+    <type>visualforce</type>
+</EmailTemplate>

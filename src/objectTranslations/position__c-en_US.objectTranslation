@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>position</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>positions</value>
+    </caseValues>
+    <fields>
+        <label><!-- close date --></label>
+        <name>close_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- department --></label>
+        <name>department__c</name>
+        <picklistValues>
+            <masterLabel>CSE</masterLabel>
+            <translation><!-- CSE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ECE</masterLabel>
+            <translation><!-- ECE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IT</masterLabel>
+            <translation><!-- IT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MBA</masterLabel>
+            <translation><!-- MBA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MCA</masterLabel>
+            <translation><!-- MCA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MECHANICAL</masterLabel>
+            <translation><!-- MECHANICAL --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- edu-qualification --></label>
+        <name>edu_qualification__c</name>
+    </fields>
+    <fields>
+        <label><!-- educational requirements --></label>
+        <name>educational_requirements__c</name>
+        <picklistValues>
+            <masterLabel>college</masterLabel>
+            <translation><!-- college --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>highschool</masterLabel>
+            <translation><!-- highschool --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>master</masterLabel>
+            <translation><!-- master --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>pg</masterLabel>
+            <translation><!-- pg --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- hire by --></label>
+        <name>hire_by__c</name>
+    </fields>
+    <fields>
+        <label><!-- job description --></label>
+        <name>job_description__c</name>
+    </fields>
+    <fields>
+        <label><!-- legacy-id --></label>
+        <name>legacy_id__c</name>
+    </fields>
+    <fields>
+        <label><!-- location --></label>
+        <name>location__c</name>
+        <relationshipLabel><!-- positions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- max-sal --></label>
+        <name>max_sal__c</name>
+    </fields>
+    <fields>
+        <label><!-- min sal --></label>
+        <name>min_sal__c</name>
+    </fields>
+    <fields>
+        <label><!-- num of applications --></label>
+        <name>num_of_applications__c</name>
+    </fields>
+    <fields>
+        <label><!-- open date --></label>
+        <name>open_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- position title --></label>
+        <name>position_title__c</name>
+    </fields>
+    <fields>
+        <label><!-- prog-language --></label>
+        <name>prog_language__c</name>
+        <picklistValues>
+            <masterLabel>.NET</masterLabel>
+            <translation><!-- .NET --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C</masterLabel>
+            <translation><!-- C --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C++</masterLabel>
+            <translation><!-- C++ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COBOL</masterLabel>
+            <translation><!-- COBOL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FORTARN</masterLabel>
+            <translation><!-- FORTARN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PERL</masterLabel>
+            <translation><!-- PERL --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- responsibilities --></label>
+        <name>responsibilities__c</name>
+    </fields>
+    <fields>
+        <label><!-- skills required --></label>
+        <name>skills_required__c</name>
+    </fields>
+    <fields>
+        <label><!-- startdate --></label>
+        <name>startdate__c</name>
+    </fields>
+    <fields>
+        <label><!-- status --></label>
+        <name>status__c</name>
+        <picklistValues>
+            <masterLabel>closed</masterLabel>
+            <translation><!-- closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>new</masterLabel>
+            <translation><!-- new --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>open</masterLabel>
+            <translation><!-- open --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- sub-status --></label>
+        <name>sub_status__c</name>
+        <picklistValues>
+            <masterLabel>canceled</masterLabel>
+            <translation><!-- canceled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>filled</masterLabel>
+            <translation><!-- filled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>pending</masterLabel>
+            <translation><!-- pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>regected</masterLabel>
+            <translation><!-- regected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- travel req --></label>
+        <name>travel_req__c</name>
+    </fields>
+    <fields>
+        <label><!-- user --></label>
+        <name>user__c</name>
+        <relationshipLabel><!-- positions --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>nontech</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>technical posi</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- nontech --></label>
+        <name>nontech</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- tech --></label>
+        <name>tech</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- pg students r not fitt for this position --></errorMessage>
+        <name>education_validation</name>
+    </validationRules>
+</CustomObjectTranslation>

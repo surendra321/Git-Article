@@ -1,0 +1,32 @@
+<apex:page standardController="Account">
+   
+        
+        <p>You are viewing the {! account.name} account.</p>
+        <apex:detail relatedList="false" />
+        <apex:relatedList list="contacts"/>
+       
+        <apex:pageBlock title="Custom Output">
+            <apex:pageBlockSection title="Custom Section Title">
+                    <apex:outputField value="{!account.Name}"/>
+                    <apex:outputField value="{!account.Owner.Name}"/>
+                     <apex:outputField value="{!account.industry}"/>
+
+                    </apex:pageBlockSection>
+             </apex:pageBlock>
+             
+             <apex:pageBlock title="Contact">
+        <apex:dataTable value="{!account.Contacts}" var="contact" cellPadding="4" border="1">
+            <apex:column >
+                <apex:facet name="header">Name</apex:facet>
+                        {!contact.Name}
+            </apex:column>
+            <apex:column >
+                <apex:facet name="header">Phone</apex:facet>
+                        {!contact.Phone}
+            </apex:column>
+        </apex:dataTable>
+        <apex:outputLink value="{! URLFOR($Action.Account.new)}">Create</apex:outputLink>
+    </apex:pageBlock>
+           
+    
+</apex:page>

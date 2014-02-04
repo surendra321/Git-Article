@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <customSettingsVisibility>Public</customSettingsVisibility>
+    <description>Spring CM Environments</description>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Env_Prefix__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Environment prefix</description>
+        <externalId>false</externalId>
+        <label>Environment Prefix</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Environment_Selected__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Environment selected is the SpringCM environment that you are using</description>
+        <externalId>false</externalId>
+        <label>Environment Selected</label>
+        <type>Checkbox</type>
+    </fields>
+    <label>Environment</label>
+</CustomObject>

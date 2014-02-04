@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>26.0</apiVersion>
+    <description>This visual force page provides a UI to users for editing or updating an Asset Configuration.</description>
+    <label>AssetConfigurationEditPage</label>
+</ApexPage>

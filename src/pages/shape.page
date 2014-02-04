@@ -1,0 +1,16 @@
+<apex:page controller="shpcls">
+  
+  <apex:form >
+      <apex:dataTable value="{!strlst}" var="l">
+          <apex:column value="{!l}"/>
+      </apex:dataTable>
+      <apex:pageBlock ><apex:pageBlockSection >
+      <apex:pageBlockSectionItem >
+      <apex:panelGrid columns="3" >
+      <apex:outputlabel >qwqw</apex:outputlabel>
+      <apex:outputlabel >qwqw</apex:outputlabel>
+      <apex:outputlabel >qwqw</apex:outputlabel>
+      </apex:panelGrid></apex:pageBlockSectionItem></apex:pageBlockSection></apex:pageBlock>
+      
+  </apex:form>
+</apex:page>

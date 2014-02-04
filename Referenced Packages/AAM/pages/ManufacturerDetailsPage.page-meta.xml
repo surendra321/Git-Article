@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>26.0</apiVersion>
+    <description>This visual force page is created to override the standard details page of a Manufacturer record. This is to help in showing the concatenated address.</description>
+    <label>ManufacturerDetailsPage</label>
+</ApexPage>

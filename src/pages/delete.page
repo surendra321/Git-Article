@@ -1,0 +1,20 @@
+<apex:page standardController="book__c" >
+    <apex:form >
+        <apex:sectionHeader title="peram" subtitle="surendra"/>
+        <apex:pageblock title="Test Edit" mode="Edit">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="save" action="{!save}"/>
+                <apex:commandButton value="saveandnew" action="{!quicksave}"/>
+                <apex:commandButton value="cancel" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection >
+                <apex:inputfield value="{!book__c.name}" />
+                <apex:inputfield value="{!book__c.author__c}"/>
+                <apex:inputfield value="{!book__c.price__c}" required="true"/>
+                <apex:inputfield value="{!book__c.bookimage__c}" />
+            </apex:pageBlockSection>
+            
+        </apex:pageblock>
+      </apex:form>
+</apex:page>

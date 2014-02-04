@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>26.0</apiVersion>
+    <description>This page provides the user with an UI that helps them to edit all the Product Component in the same page and save them all at the same time</description>
+    <label>ProductComponentMultiLineEdit</label>
+</ApexPage>
